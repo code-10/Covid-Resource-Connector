@@ -118,9 +118,9 @@
 									$city = array("Bangalore","Mangalore");
 								
 								?>
-						<div class="form-group">			
+						<div class="form-group">
+							<label for="inputuser">State</label>
     					<select class="form-control" id="state" name="state">
-						<option value="notselected">Choose...</option>
                               				<?php for($j=0;$j<5;$j++) { ?>
 					      			<option value="<?=$state[$j]?>"><?=$state[$j]?></option>
 							<?php } ?>
@@ -128,8 +128,8 @@
 									</div>
 									
 							<div class="form-group">
+								<label for="inputuser">city</label>
     					<select class="form-control" id="city" name="city">
-						<option value="notselected">Choose...</option>
                               				<?php for($j=0;$j<2;$j++) { ?>
 					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
 							<?php } ?>
