@@ -4,7 +4,7 @@
 <body>
 		
 		<!--Navigation Bar-->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark"> <a href="#" class="navbar-brand">CRC</a>
+		<nav class="na]vbar navbar-expand-md navbar-dark bg-dark"> <a href="#" class="navbar-brand">CRC</a>
 			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"> <span class="navbar-toggler-icon"></span> </button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<div class="navbar-nav">
@@ -40,7 +40,7 @@
   						</div>
 					</div>
 				</div>
-			<?php?>
+			<?php } ?>
 		</div>
   
 </body>
