@@ -20,7 +20,7 @@
                echo '<a href="../sign_in/logout.php" class="nav-item nav-link">Logout</a>';
                }
                else{
-               echo '<a href="../sign_in/sign_in.php" class="nav-item nav-link">Sign in</a>';
+               echo '<a href="../sign_in/google_sign_in.php" class="nav-item nav-link">Sign in</a>';
                }
                ?>
          </div>
