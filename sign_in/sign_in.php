@@ -107,6 +107,7 @@
 					          <label for="inputuser">First Name</label>
 					            <input type="text" class="form-control" id="inputfirst_name" placeholder="firstname" name="first_name" required>
 				          </div>
+								<div class="form-group">
 									<label for="inputuser">Last Name</label>
 					            <input type="text" class="form-control" id="inputfirst_name" placeholder="lastname" name="last_name" required>
 				          </div>
@@ -117,7 +118,7 @@
 									$city = array("Bangalore","Mangalore");
 								
 								?>
-    					<select class="form-control" id="state" name="state">
+    					<!--<select class="form-control" id="state" name="state">
 						<option value="notselected">Choose...</option>
                               				<?php for($j=0;$j<5;$j++) { ?>
 					      			<option value="<?=$state[$j]?>"><?=$state[$j]?></option>
@@ -128,7 +129,7 @@
                               				<?php for($j=0;$j<2;$j++) { ?>
 					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
 							<?php } ?>
-    					</select>
+    					</select>-->
 								
 									<div class="form-group">
 					          <label for="inputuser">Username</label>
