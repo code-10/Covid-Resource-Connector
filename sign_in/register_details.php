@@ -1,29 +1,19 @@
 <?php include '../libraries/shield.php'; ?>
 
+<?php
+
 if (isset($_POST['register_user']))
 {
     $con = getCon();
 
-    $u = $_POST['user_name'];
-    //$u = str_replace(' ', '', $u);
-    $e = $_POST['email'];
-    $p = $_POST['password'];
-    $u = strtolower($u);
-
-    if(!preg_match('/^[0-9A-Za-z!@#$% ]+$/',$u) || preg_match('/^ /',$u) || preg_match('/ $/',$u)) {
-        
-        $badusername = true;
-        header("Location:sign_in.php?signinwhich=register&&badusername=" . $badusername . "user_name=" . $u . "email=" . $e);
-        die();
-        
-    }
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $user_name = $_POST['user_name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
     
-    if (rowExists('commonpasswords', 'possible_password', $p) || $u == $p)
-    {
-        $commonpassword = true;
-        header("Location:sign_in.php?signinwhich=register&&commonpassword=" . $commonpassword . "user_name=" . $u . "email=" . $e);
-        die();
-    }
+    $user_name = strtolower($user_name);
+    $email = strtolower($email);
     
     $p = password_hash($p, PASSWORD_DEFAULT);
 
