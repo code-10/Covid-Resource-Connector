@@ -130,6 +130,9 @@ if(!isset($_SESSION['access_token']))
 	   $user_email = $_SESSION['user_email_address'];
 	   $_SESSION['user_email'] = $user_email;
 	   
+	   $last_name = $_SESSION['user_last_name'];
+	   $_SESSION['last_name'] = $last_name;
+	   
 	   header("Location:../pages/profile.php");
 	   die();
 	   
