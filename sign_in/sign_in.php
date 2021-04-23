@@ -9,7 +9,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<div class="navbar-nav">
 				<a href="../index.php" class="nav-item nav-link">Home</a>
-				<a href="#" class="nav-item nav-link">About</a>
+				<a href="../pages/about.php" class="nav-item nav-link">About</a>
 			</div>
 				<div class="navbar-nav ml-auto"> <a href="#" class="nav-item nav-link">Sign in</a>
 			</div>
