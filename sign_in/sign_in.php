@@ -134,12 +134,6 @@
 					            <input type="text" class="form-control" id="inputfirst_name" placeholder="lastname" name="last_name" required>
 				          </div>
 								
-								<?php
-									
-									$state = array("Karnataka","Delhi","Mumbai","Bihar","Madhya Pradesh");
-									$city = array("Bangalore","Mangalore");
-								
-								?>
 						<div class="form-group">
 							<label for="inputuser">State</label>
     					<select class="form-control" id="state" name="state">
