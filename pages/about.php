@@ -25,5 +25,3 @@
    </nav>
 </body>
   
-  
-  <?php include '../footer.php'; ?>
