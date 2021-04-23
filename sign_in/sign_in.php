@@ -1,4 +1,5 @@
 <?php include_once '../header.php'; session_start(); ?>
+<?php include_once '../libraries/shield.php'; ?>
 
 <body>
 
@@ -71,6 +72,27 @@
   
   
 
+	<?php
+	
+		$con = getCon();
+	
+		$state=Array();
+		$state_res = $con->query("select * from state");
+		while($state_ele = $state_res->fetch_assoc())
+			$state[]=$state_ele['state_name'];
+		$state_count = count($state);
+	
+	
+		$city=Array();
+		$city_res = $con->query("select * from city");
+		while($city_ele = $city_res->fetch_assoc())
+			$city[]=$city_ele['city_name'];
+		$city_count = count($city);
+	
+	?>
+	
+	
+	
 <div class="container">
     	<div class="row d-flex justify-content-center">
 			<div class="col-md-6 col-md-3">
@@ -121,7 +143,7 @@
 						<div class="form-group">
 							<label for="inputuser">State</label>
     					<select class="form-control" id="state" name="state">
-                              				<?php for($j=0;$j<5;$j++) { ?>
+                              				<?php for($j=0;$j<$state_count;$j++) { ?>
 					      			<option value="<?=$state[$j]?>"><?=$state[$j]?></option>
 							<?php } ?>
     					</select>
@@ -130,7 +152,7 @@
 							<div class="form-group">
 								<label for="inputuser">city</label>
     					<select class="form-control" id="city" name="city">
-                              				<?php for($j=0;$j<2;$j++) { ?>
+                              				<?php for($j=0;$j<$city_count;$j++) { ?>
 					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
 							<?php } ?>
     					</select>
