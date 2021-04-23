@@ -23,7 +23,7 @@
 
   $google_client->addScope('profile');
 
-   $google_client->addScope('https://www.googleapis.com/auth/user.phonenumbers.read');
+   //$google_client->addScope('https://www.googleapis.com/auth/user.phonenumbers.read');
 
 
   
