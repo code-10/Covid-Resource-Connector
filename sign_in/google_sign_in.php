@@ -65,7 +65,7 @@ if(isset($_GET["code"]))
 if(!isset($_SESSION['access_token']))
 {
 
- $login_button = '<a class="btn btn-primary" href="'.$google_client->createAuthUrl().'" role="button"><i class="fa fa-google"></i>  Sign in with Google</a>';
+ $login_button = '<a class="btn btn-light" href="'.$google_client->createAuthUrl().'" role="button"><i class="fa fa-google"></i>  Sign in with Google</a>';
 	//<a href="'.$google_client->createAuthUrl().'">Sign in with Google</a>
 }
 
@@ -109,7 +109,7 @@ if(!isset($_SESSION['access_token']))
    <?php
    if($login_button == '')
    {
-	   echo '
+	   /*echo '
 	   <div class="row m-4 d-flex justify-content-center">
 	   	<div class="card" style="width: 18rem;">
   		<img src="'.$_SESSION["user_image"].'" class="card-img-top" alt="...">
@@ -120,10 +120,14 @@ if(!isset($_SESSION['access_token']))
     				<a href="logout.php" class="btn btn-primary">Logout</a>
   			</div>
 		</div>
-	    </div>';
+	    </div>';*/
 	   
 	   $user = $_SESSION['user_first_name'];
 	   $_SESSION['user_name']= $user;
+	   
+	   header("Location:../pages/profile.php");
+	   die();
+	   
     //echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive img-circle img-thumbnail" />';
     //echo '<h3><b>Name :</b> '.$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'].'</h3>';
     //echo '<h3><b>Email :</b> '.$_SESSION['user_email_address'].'</h3>';
