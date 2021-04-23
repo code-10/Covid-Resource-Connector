@@ -40,8 +40,8 @@
                         $last_name=$_SESSION['last_name'];
                         $last_name[0]=strtoupper($last_name[0]);
                         
-                        echo '<h1 class="display-6 mb-5" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' '.$last_name.' </h1>';
-                        echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-envelope"> '.$_SESSION['user_email'].'</i></a>';
+                        echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' '.$last_name.' </h1>';
+                        echo '<a href="#" class="nav-item nav-link active" style="color:white;"><i class="fa fa-envelope"> '.$_SESSION['user_email'].'</i></a>';
                     }
                     else
                     {
