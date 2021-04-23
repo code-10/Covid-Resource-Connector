@@ -26,9 +26,9 @@
 	
 		<?php $c=10; ?>
 	
-		<div class="row">
+		<div class="row m-4">
 			<?php for($i=0;$i<$c;$i++) { ?>
-				<div class="col-12 col-sm-4">
+				<div class="col-12 col-sm-4 m-2">
 					<div class="card">
   						<h5 class="card-header">Manoj</h5>
   						<div class="card-body">
