@@ -125,6 +125,9 @@ if(!isset($_SESSION['access_token']))
 	   $user = $_SESSION['user_first_name'];
 	   $_SESSION['user_name']= $user;
 	   
+	   $user_email = $_SESSION['user_email_address'];
+	   $_SESSION['user_email'] = $user_email;
+	   
 	   header("Location:../pages/profile.php");
 	   die();
 	   
