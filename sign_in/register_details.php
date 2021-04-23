@@ -1,4 +1,4 @@
-<?php include '../libraries/shield.php';
+<?php include '../libraries/shield.php'; ?>
 
 if (isset($_POST['register_user']))
 {
