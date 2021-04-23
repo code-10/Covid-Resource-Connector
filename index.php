@@ -29,7 +29,7 @@
 	
 		<?php $c=10; ?>
 	
-		<div class="row m-4">
+		<div class="row m-4 d-flex justify-content-center">
 			<?php for($i=0;$i<$c;$i++) { ?>
 				<div class="col-12 col-sm-3 m-2">
 					<div class="card">
