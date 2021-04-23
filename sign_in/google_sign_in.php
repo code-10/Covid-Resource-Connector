@@ -52,7 +52,12 @@ if(isset($_GET["code"]))
   if(!empty($data['picture']))
   {
    $_SESSION['user_image'] = $data['picture'];
-  }	 
+  }	
+	 
+  if(!empty($data['phonenumbers']))
+  {
+   $_SESSION['user_phonenumbers'] = $data['phonenumbers'];
+  }
  }
 }
 
@@ -110,6 +115,7 @@ if(!isset($_SESSION['access_token']))
   			<div class="card-body">
     				<h5 class="card-title">'.$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'].'</h5>
     				<p class="card-text">'.$_SESSION['user_email_address'].'</p>
+				<p class="card-text">'.$_SESSION['user_phonenumbers'].'</p>
     				<a href="logout.php" class="btn btn-primary">Logout</a>
   			</div>
 		</div>
