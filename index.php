@@ -1,5 +1,5 @@
 <?php include_once 'header.php'; ?>
-<?php include_once 'libraries/shield.php'; ?>
+<?php include_once 'libraries/shield.php'; session_start(); ?>
 
 <body>
 		
