@@ -1,3 +1,5 @@
+<?php include_once '../header.php'; ?>
+
 <body>
    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a href="../index.php" class="navbar-brand">CRC</a>
