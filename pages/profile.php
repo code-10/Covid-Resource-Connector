@@ -17,7 +17,6 @@
         <div class="navbar-nav ml-auto">
             <?php if(isset($_SESSION['user_name'])){
                     echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-user-o"> '.$_SESSION['user_name'].'</i></a>';
-                    echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-envelope"> '.$_SESSION['user_email'].'</i></a>';
                     echo '<a href="../sign_in/logout.php" class="nav-item nav-link">Logout</a>';
                 }
                 else{
@@ -37,8 +36,12 @@
                       
                         $user=$_SESSION['user_name'];
                         $user[0]=strtoupper($user[0]);
+                      
+                        $last_name=$_SESSION['last_name'];
+                        $last_name[0]=strtoupper($last_name[0]);
                         
-                        echo '<h1 class="display-6 mb-5" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.'</h1>';
+                        echo '<h1 class="display-6 mb-5" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' '.$last_name.' </h1>';
+                        echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-envelope"> '.$_SESSION['user_email'].'</i></a>';
                     }
                     else
                     {
