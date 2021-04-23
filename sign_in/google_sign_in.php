@@ -88,7 +88,7 @@ if(!isset($_SESSION['access_token']))
 				<a href="../index.php" class="nav-item nav-link">Home</a>
 				<a href="../pages/about.php" class="nav-item nav-link">About</a>
 			</div>
-				<div class="navbar-nav ml-auto"> <a href="#" class="nav-item nav-link">Sign in</a>
+				<!--<div class="navbar-nav ml-auto"> <a href="#" class="nav-item nav-link">Sign in</a>-->
 			</div>
 		</div>
 	</nav>
