@@ -23,5 +23,24 @@
 				</div>
 			</div>
 		</nav>
+	
+		<?php $c=10; ?>
+	
+		<div class="row">
+			<?php for($i=0;$i<$c;$i++) { ?>
+				<div class="col-12 col-sm-4">
+					<div class="card">
+  						<h5 class="card-header">Manoj</h5>
+  						<div class="card-body">
+    							<h5 class="card-title">Karnataka</h5>
+    							<p class="card-text">Oxygen Cylinder</p>
+							<p class="card-text">Area: Yelahanka</p>
+							<p class="card-text">Request Description: Blood Plasma O+ve</p>
+							<p class="card-text">Ph no: 9980712884</p>
+  						</div>
+					</div>
+				</div>
+			<?php?>
+		</div>
   
 </body>
