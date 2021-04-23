@@ -67,7 +67,7 @@ if(!isset($_SESSION['access_token']))
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>PHP Login using Google Account</title>
+  <title>SIGN IN</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -77,9 +77,27 @@ if(!isset($_SESSION['access_token']))
  
  </head>
  <body>
+  
+  
+  <!--navbar-->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark"> <a href="../index.php" class="navbar-brand">CRC</a>
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"> <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<div class="navbar-nav">
+				<a href="../index.php" class="nav-item nav-link">Home</a>
+				<a href="../pages/about.php" class="nav-item nav-link">About</a>
+			</div>
+				<div class="navbar-nav ml-auto"> <a href="#" class="nav-item nav-link">Sign in</a>
+			</div>
+		</div>
+	</nav>
+  <!--navbar end-->
+  
+  
   <div class="container">
    <br />
-   <h2 align="center">PHP Login using Google Account</h2>
+   <h2 align="center">SIGN IN</h2>
    <br />
    <div class="panel panel-default">
    <?php
