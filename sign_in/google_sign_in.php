@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //index.php
 
 //Include Configuration File
