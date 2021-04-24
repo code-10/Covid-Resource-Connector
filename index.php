@@ -39,10 +39,10 @@
 	
 		<?php $c=10; ?>
 	
-		<div class="text-center">
-			<h1 class="display-4">Find Resources to Fight Covid</h1>
-			<h2>Want Help? <a class="btn btn-primary" href="#" role="button">Create a Request</a></h2>
-			<h2>Want to Help? <a class="btn btn-primary" href="#" role="button">View Requests and Respond</a></h2>
+		<div class="text-center m-2">
+			<h1 class="display-4 m-2">Find Resources to Fight Covid</h1>
+			<h2>Want Help? <a class="btn btn-success m-2" href="#" role="button">Create a Request</a></h2>
+			<h2>Want to Help? <a class="btn btn-success m-2" href="#" role="button">View Requests/Respond</a></h2>
 		</div>
 	
 		<!--<div class="row m-4 d-flex justify-content-center">
