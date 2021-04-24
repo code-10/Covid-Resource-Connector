@@ -60,6 +60,18 @@
       }
    
       $c = count($state);
+	      
+      $first_name = Array();
+      $last_name = Array();
+	      
+      $my_posts_res_fl = $con->query("select * from user where email='$email'");
+      while($my_posts_ele_fl = $my_posts_res_fl->fetch_assoc())
+      {
+	      $first_name[] = $my_posts_ele_fl['first_name'];
+		  $last_name[] = $my_posts_ele_fl['last_name'];
+      }
+	    
+	      
    ?>
    
    
@@ -68,8 +80,9 @@
 			<?php for($i=0;$i<$c;$i++) { ?>
 				<div class="col12 col-sm-3 m-2">
 					<div class="card">
-  						<h5 class="card-header"><?=$email?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<h5 class="card-header"><?=$first_name[0]?>&nbsp<?=$last_name[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
+							<p class="card-text"><?=$email?></p>
 							<h5 class="card-title"><?=$city[$i]?>, <?=$state[$i]?></h5>
     							<p class="card-text"><?=$description[$i]?></p>
 							<p class="card-text">Ph no: <?=$phone_number[$i]?></p>
@@ -108,6 +121,16 @@
    
       $ce = count($state_e);
 	
+		$first_name_e = Array();
+      $last_name_e = Array();
+	      
+      $my_posts_res_fl_e = $con->query("select * from user where email='$email'");
+      while($my_posts_ele_fl_e = $my_posts_res_fl_e->fetch_assoc())
+      {
+	      $first_name_e[] = $my_posts_ele_fl_e['first_name'];
+		  $last_name_e[] = $my_posts_ele_fl_e['last_name'];
+      }
+	
 	?>
 	
 	<h4 class="m-4 text-center">People's posts</h4>
@@ -115,8 +138,9 @@
 			<?php for($i=0;$i<$ce;$i++) { ?>
 				<div class="col12 col-sm-3 m-2">
 					<div class="card">
-  						<h5 class="card-header"><?=$email_e[$i]?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<h5 class="card-header"><?=$first_name_e[0]?>&nbsp<?=$last_name_e[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
+							<p class="card-text"><?=$email_e[$i]?></p>
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
     							<p class="card-text"><?=$description_e[$i]?></p>
 							<p class="card-text">Ph no: <?=$phone_number_e[$i]?></p>
