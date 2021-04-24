@@ -37,14 +37,6 @@
    </nav>
 	
 	
-		<div class=" text-center m-4">
-		<?php if(isset($_SESSION['user_name']))
-			echo '<a class="btn btn-primary" href="pages/request.php" role="button">Create a request</a>';
-		      else
-			echo '<a class="btn btn-primary" href="sign_in/google_sign_in.php" role="button">Create a request</a>';
-		?>	
-		</div>
-	
 		<?php $c=10; ?>
 	
 		<div class="row m-4 d-flex justify-content-center">
