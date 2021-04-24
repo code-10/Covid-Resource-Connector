@@ -16,7 +16,7 @@
         </div>
         <div class="navbar-nav ml-auto">
             <?php if(isset($_SESSION['user_name'])){
-                    echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-user-o"> '.$_SESSION['user_name'].'</i></a>';
+                    echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-user-o"> '.$_SESSION['email'].'</i></a>';
                     echo '<a href="../sign_in/logout.php" class="nav-item nav-link">Logout</a>';
                 }
                 else{
@@ -34,17 +34,17 @@
             <?php 
                     if(isset($_SESSION['user_name'])&&(!(isset($_SESSION['simple'])))){ 
                       
-                        $user=$_SESSION['user_name'];
+                        $user=$_SESSION['user_first_name'];
                         $user[0]=strtoupper($user[0]);
                       
                         $last_name=$_SESSION['last_name'];
                         $last_name[0]=strtoupper($last_name[0]);
                         
                         echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' '.$last_name.' </h1>';
-                        echo '<a href="#" class="nav-item nav-link active" style="color:white;"><i class="fa fa-envelope"> '.$_SESSION['user_email'].'</i></a>';
+                        echo '<a href="#" class="nav-item nav-link active" style="color:white;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a>';
                     }
                     else if(isset($_SESSION['user_name'])&&(isset($_SESSION['simple']))){ 
-                        $user=$_SESSION['user_name'];
+                        $user=$_SESSION['email'];
                         echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' </h1>';
                     }
                     else
