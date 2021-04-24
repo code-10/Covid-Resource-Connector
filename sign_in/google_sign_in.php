@@ -129,10 +129,10 @@ if(!isset($_SESSION['access_token']))
 	    </div>';*/
 	   
 	   $user = $_SESSION['user_first_name'];
-	   $_SESSION['user_name']= $user;
+	   $_SESSION['user_first_name']= $user;
 	   
 	   $user_email = $_SESSION['user_email_address'];
-	   $_SESSION['user_email'] = $user_email;
+	   $_SESSION['email'] = $user_email;
 	   
 	   $last_name = $_SESSION['user_last_name'];
 	   $_SESSION['last_name'] = $last_name;
