@@ -39,9 +39,9 @@
 	
 		<div class=" text-center m-4">
 		<?php if(isset($_SESSION['user_name']))
-			
-			echo '<a class="btn btn-primary" href="#" role="button">Create a request</a>';
-			
+			echo '<a class="btn btn-primary" href="pages/request.php" role="button">Create a request</a>';
+		      else
+			echo '<a class="btn btn-primary" href="sign_in/google_sign_in.php" role="button">Create a request</a>';
 		?>	
 		</div>
 	
