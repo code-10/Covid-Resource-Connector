@@ -129,13 +129,14 @@ if(!isset($_SESSION['access_token']))
 	   
 	   if (rowExists('user', 'email', $email))
     	{
-		header("Location:../index.php");	   
+		header("Location:../".$visit);
+	   	die();	   
     	}
     	else
     	{
         	$con->query("insert into user(first_name,last_name,email) values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$last_name)."','".mysqli_real_escape_string($con,$user_email)."')");
-        	header("Location:../index.php");
-        	die();
+        	header("Location:../".$visit);
+	   	die();
 	
     	}
 	 
