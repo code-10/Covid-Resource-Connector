@@ -42,7 +42,7 @@
 		<div class="text-center m-2">
 			<h1 class="mb-5 responsive-lg">Find Resources to Fight Covid</h1>
 			<?php if(isset($_SESSION['email'])) {
-					echo '<h2 class="responsive-md mb-4">Want Help? <a class="btn btn-success btn-sm" href="pages/create_request.php" role="button">Create a Request</a></h2>';
+					echo '<h2 class="responsive-md mb-4">Want Help? <a class="btn btn-success btn-sm" href="pages/create_post.php" role="button">Create a Request</a></h2>';
 				}
 				else{
 					echo '<h2 class="responsive-md mb-4">Want Help? <a class="btn btn-success btn-sm" href="sign_in/google_sign_in.php" role="button">Create a Request</a></h2>';	
