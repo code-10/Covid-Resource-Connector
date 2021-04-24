@@ -4,15 +4,17 @@ session_start();
 
 include '../libraries/shield.php';
 
-function check_passwordu($user_name, $password)
+$visit=$_SESSION['visit'];
+
+function check_passwordu($email, $password)
 {
     
     $con = getCon();
     
-    $user = $con->query("select * from user where user_name='$user_name';");
+    $email = $con->query("select * from user where email='$email';");
     $res  = $user->fetch_assoc();
     
-    echo var_dump($res) . "<br>";
+    //echo var_dump($res) . "<br>";
     
     $password_hash = $res['password'];
     
@@ -30,17 +32,14 @@ function check_passwordu($user_name, $password)
 
 
 if (isset($_POST['login_user'])) {
-    $user_name = $_POST['user_name'];
-    $email = $_POST['username'];
-    //$user_name = str_replace(' ', '', $user_name);
-    $user_name = strtolower($user_name);
+    
+    $email = $_POST['email'];
     $password  = $_POST['password'];
     
-    if (rowExists('user', 'user_name', $user_name)) {
-        if (check_passwordu($user_name, $password)) {
+    if (rowExists('user', 'email', $email)) {
+        if (check_passwordu($email, $password)) {
             //echo "Yes";
-            
-            $_SESSION['user_name'] = $user_name;
+            $_SESSION['user_name'] = $email;
             header("Location:../".$visit);
             die();
         } else {
