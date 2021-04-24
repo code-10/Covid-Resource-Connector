@@ -100,7 +100,7 @@
                                 
                                  <div class="form-group">
 					          <label for="inputphonenumber">Phone Number</label>
-					            <input type="number" min="10" max="10" class="form-control" id="inputphonenumber" placeholder="phonenumber" name="phonenumber" required>
+					            <input type="number" min="10" max="11" class="form-control" id="inputphonenumber" placeholder="phonenumber" name="phonenumber" required>
 				          </div>
                                 <?php $email = $_SESSION['email']; ?>
                                 <div class="form-group m-2 col-12">
