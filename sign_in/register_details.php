@@ -20,7 +20,7 @@ if (isset($_POST['register_user']))
     if (rowExists('user', 'email', $email))
     {
         $emailexists = true;
-        header("Location:sign_in.php?signinwhich=register&&emailexists=" . $emailexists);
+        header("Location:google_sign_in.php?signinwhich=register&&emailexists=" . $emailexists);
         die();
     }
     else
