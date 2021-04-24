@@ -38,12 +38,12 @@
   
    <?php
       
+      if(isset($_SESSION['email'])){	
+	
       $con = getCon();	
 	
       $email = $_SESSION['email'];
       
-      $first_name = Array();
-      $last_name = Array();
       $phone_number = Array();
       $description = Array();
       $state = Array();
@@ -53,8 +53,6 @@
    
       while($my_posts_ele = $my_posts_res->fetch_assoc())
       {
-            $first_name[] = $my_posts_ele['first_name'];
-            $last_name[] = $my_posts_ele['last_name'];
             $phone_number[] = $my_posts_ele['ph_no'];
             $description[] = $my_posts_ele['description'];
             $state[] = $my_posts_ele['state'];
@@ -70,9 +68,10 @@
 			<?php for($i=0;$i<$c;$i++) { ?>
 				<div class="col12 col-sm-3 m-2">
 					<div class="card">
-  						<h5 class="card-header"><?=$first_name[$i]?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<h5 class="card-header"><?=$email[$i]?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
     							<h5 class="card-title"><?=$state[$i]?></h5>
+							<h5 class="card-title"><?=$city[$i]?></h5>
     							<p class="card-text"><?=$description[$i]?></p>
 							<p class="card-text">Ph no: <?=$phone_number[$i]?></p>
 							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
@@ -82,6 +81,8 @@
 			<?php } ?>
 		</div>
    
+	
+<?php } ?>	
   
 </body>
   
