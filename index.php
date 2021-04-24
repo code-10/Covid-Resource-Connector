@@ -36,6 +36,14 @@
       </div>
    </nav>
 	
+	
+	<div class=" text-center">
+		<?php if(isset($_SESSION['user_name']))
+			echo '<a class="btn btn-primary" href="#" role="button">Create a request</a>';
+		?>	
+	</div>
+	
+	
 		<?php $c=10; ?>
 	
 		<div class="row m-4 d-flex justify-content-center">
