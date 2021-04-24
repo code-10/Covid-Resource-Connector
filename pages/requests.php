@@ -40,6 +40,50 @@
   <h2 class="m-4 text-center">displaying requests in a min</h2>
   
   
+   <?php
+      
+      $email = $_SESSION['email'];
+      
+      $first_name = Array();
+      $last_name = Array();
+      $phone_number = Array();
+      $description = Array();
+      $state = Array();
+      $city = Array();
+   
+      $my_posts_res = $con->query("select * from post");
+   
+      while($my_posts_ele = $my_posts_res->fetch_assoc())
+      {
+            $first_name[] = $my_posts_ele['first_name'];
+            $last_name[] = $my_posts_ele['last_name'];
+            $phone_number[] = $my_posts_ele['ph_no'];
+            $description[] = $my_posts_ele['description'];
+            $state[] = $my_posts_ele['state'];
+            $city[] = $my_posts_ele['city'];  
+      }
+   
+      $c = count($first_name);
+   ?>
+   
+   
+   <h4 class="m-4 text-center">My posts</h4>
+   <div class="row m-4 d-flex justify-content-center">
+			<?php for($i=0;$i<$c;$i++) { ?>
+				<div class="col12 col-sm-3 m-2">
+					<div class="card">
+  						<h5 class="card-header"><?=$first_name[$i]?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<div class="card-body">
+    							<h5 class="card-title"><?=$state[$i]?></h5>
+    							<p class="card-text"><?=$description[$i]?></p>
+							<p class="card-text">Ph no: <?=$phone_number[$i]?></p>
+							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
+  						</div>
+					</div>
+				</div>
+			<?php } ?>
+		</div>
+   
   
 </body>
   
