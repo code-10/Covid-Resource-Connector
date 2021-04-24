@@ -152,7 +152,7 @@ if(!isset($_SESSION['access_token']))
 	
 	
 	
-	<h4>OR</h4>	
+	<h4 class="text-center m-4">OR</h4>	
 	
 	
 	
