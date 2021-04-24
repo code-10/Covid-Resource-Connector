@@ -148,4 +148,119 @@ if(!isset($_SESSION['access_token']))
    ?>
    </div>
   </div>
+	
+	
+	
+	
+	<h4>OR</h4>	
+	
+	
+	
+	
+<div class="container">
+    	<div class="row d-flex justify-content-center">
+			<div class="col-md-6 col-md-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row d-flex justify-content-center">
+							<div class="col-xs-6 col-lg-5 col-md-5 col-sm-5 col-5 m-2 text-center">
+								<a href="#" class="active" id="login-form-link" style="color:blue;">Login</a>
+							</div>
+							<div class="col-xs-6 col-lg-5 col-md-5 col-sm-5 col-5 m-2 text-center">
+								<a href="#" id="register-form-link" style="color:black;">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row d-flex justify-content-center">
+							<div class="col-lg-12">
+								
+								<form  id="login-form" method="POST" action="login_details.php" style="display: block;">
+									<div class="form-group">
+					            <label for="inputEmail">Email</label>
+					            <input type="email" class="form-control" id="inputEmail" placeholder="email" name="email" value="<?=$emailfill?>" required>
+				          </div>
+		              <div class="form-group">
+			                <label for="inputPassword">Password</label>
+			                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" required>
+		              </div>
+		                  <button type="submit" name="login_user" class="btn btn-dark">Sign in</button>
+								</form>
+								
+								<form method="POST" action="register_details.php" id="register-form" style="display: none;">
+									<div class="form-group">
+					          <label for="inputuser">First Name</label>
+					            <input type="text" class="form-control" id="inputfirst_name" placeholder="firstname" name="first_name" required>
+				          </div>
+								<div class="form-group">
+									<label for="inputuser">Last Name</label>
+					            <input type="text" class="form-control" id="inputfirst_name" placeholder="lastname" name="last_name" required>
+				          </div>
+				          <div class="form-group">
+					            <label for="inputEmail">Email</label>
+					            <input type="email" class="form-control" id="inputEmail" placeholder="email" name="email" value="<?=$emailfill?>" required>
+				          </div>
+				          <div class="form-group">
+					            <label for="inputPassword">Password</label>
+					            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" required>
+				          </div>
+					            <button type="submit" name="register_user" class="btn btn-dark">Register</button>
+								</form>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+  	<br><br>
+  
+  
+  
+  
+  
+  
+	<script>
+		
+		var signin = <?php print($signinwhich); ?>
+	
+		
+			
+		
+		
+	$(function() {
+    		$('#login-form-link').click(function(e) {
+                $("#login-form-link").css("color", "blue");
+                $("#register-form-link").css("color", "black");
+		$("#login-form").delay(100).fadeIn(100);
+ 		$("#register-form").fadeOut(100);
+		$('#register-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+		$('#register-form-link').click(function(e) {
+                $("#register-form-link").css("color", "blue");
+                $("#login-form-link").css("color", "black");
+		$("#register-form").delay(100).fadeIn(100);
+ 		$("#login-form").fadeOut(100);
+		$('#login-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+
+});
+
+	
+	
+	</script>
+  	
+	
+	
+	
+	
+	
+	
  </body>
