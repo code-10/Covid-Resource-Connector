@@ -186,7 +186,7 @@
  				 								<textarea class="form-control" id="exampleFormControlTextarea5" rows="4" name="comment"></textarea>
 											</div>
 											
-											<input type="hidden" name="email" value="<?=$post_id_e[$i]?>" />
+											<input type="hidden" name="post_id" value="<?=$post_id_e[$i]?>" />
 										
 											<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 		                  					<button type="submit" name="add_comment" class="btn btn-success">Add</button>
