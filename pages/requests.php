@@ -59,7 +59,7 @@
             $city[] = $my_posts_ele['city'];  
       }
    
-      $c = count($first_name);
+      $c = count($state);
    ?>
    
    
