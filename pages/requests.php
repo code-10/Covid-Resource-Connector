@@ -49,7 +49,7 @@
       $state = Array();
       $city = Array();
    
-      $my_posts_res = $con->query("select * from post");
+      $my_posts_res = $con->query("select * from post where email='$email'");
    
       while($my_posts_ele = $my_posts_res->fetch_assoc())
       {
