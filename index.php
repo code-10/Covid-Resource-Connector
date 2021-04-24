@@ -40,9 +40,9 @@
 		<?php $c=10; ?>
 	
 		<div class="text-center m-4">
-			<h1 class="display-4 m-4">Find Resources to Fight Covid</h1>
-			<h2 class="m-2">Want Help? <a class="btn btn-success btn-sm" href="#" role="button">Create a Request</a></h2>
-			<h2 class="m-2">Want to Help? <a class="btn btn-success btn-sm" href="#" role="button">View Requests/Respond</a></h2>
+			<h1 class="m-4 responsive-lg">Find Resources to Fight Covid</h1>
+			<h2 class="responsive-md">Want Help? <a class="btn btn-success btn-sm" href="#" role="button">Create a Request</a></h2>
+			<h2 class="responsive-md">Want to Help? <a class="btn btn-success btn-sm" href="#" role="button">View Requests/Respond</a></h2>
 		</div>
 	
 		<!--<div class="row m-4 d-flex justify-content-center">
@@ -64,3 +64,15 @@
 		</div>-->
   
 </body>
+
+
+<style>
+    /*Media Queries*/
+	@media (min-width:320px)  { .responsive-md{font-size:8px;} .responsive-lg{font-size:24px;} /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .responsive-md{font-size:16px;} .responsive-lg{font-size:24px;} /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .responsive-md{font-size:16px;} .responsive-lg{font-size:24px;}/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .responsive-md{font-size:16px;}  .responsive-lg{font-size:24px;}/* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .responsive-md{font-size:16px;}  .responsive-lg{font-size:24px;}/* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .responsive-md{font-size:16px;}  .responsive-lg{font-size:24px;}/* hi-res laptops and desktops */ }
+	
+</style>
