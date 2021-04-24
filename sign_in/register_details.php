@@ -8,41 +8,33 @@ if (isset($_POST['register_user']))
 
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
-    $user_name = $_POST['user_name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     
-    $user_name = strtolower($user_name);
+    $first_name = strtolower($first_name);
+    $last_name = strtolower($last_name);
     $email = strtolower($email);
     
-    $p = password_hash($p, PASSWORD_DEFAULT);
+    $password = password_hash($p, PASSWORD_DEFAULT);
 
-    if (rowExists('user', 'user_name', $u))
-    {
-        $userexists = true;
-        header("Location:sign_in.php?signinwhich=register&&userexists=" . $userexists);
-        die();
 
-    }
-    else if (rowExists('user', 'email', $e))
+    if (rowExists('user', 'email', $email))
     {
         $emailexists = true;
         header("Location:sign_in.php?signinwhich=register&&emailexists=" . $emailexists);
         die();
-
     }
     else
     {
-        if (($con->query("insert into user(user_name,email,password) values('$u','$e','$p');")) === True)
+        if (($con->query("insert into user(first_name,last_name,email,password) values('$first_name','$last_name','$email','$password');")) === True)
         {
-            //echo "YES";
-            header("Location:sign_in.php?singinwhich=login&&loginnow=yes");
+            header("Location:google_sign_in.php?singinwhich=login&&loginnow=yes");
             die();
         }
         else
         {
             $error = true;
-            header("Location:sign_in.php?signinwhich=register&&emailexists=" . $error);
+            header("Location:google_sign_in.php?signinwhich=register&&emailexists=" . $error);
             die();
         }
     }
