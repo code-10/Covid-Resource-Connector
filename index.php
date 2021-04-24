@@ -43,7 +43,7 @@
 			<?php for($i=0;$i<$c;$i++) { ?>
 				<div class="col-12 col-sm-3 m-2">
 					<div class="card">
-  						<h5 class="card-header">Manoj</h5>
+  						<h5 class="card-header">Manoj&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
     							<h5 class="card-title">Karnataka</h5>
     							<p class="card-text">Oxygen Cylinder</p>
