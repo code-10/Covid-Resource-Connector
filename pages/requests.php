@@ -84,7 +84,7 @@
   						<div class="card-body">
 							<h5 class="card-title"><?=$city[$i]?>, <?=$state[$i]?></h5>
     							<p class="card-text">Description: <?=$description[$i]?></p>
-							<p class="card-text">Mob: <?=$phone_number[$i]?></p>
+							<p class="card-text mb-2">Mob: <?=$phone_number[$i]?></p>
 							<p class="card-text">Email: <?=$email?></p>
 							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
   						</div>
@@ -147,7 +147,7 @@
   						<div class="card-body">
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
     							<p class="card-text">Description: <?=$description_e[$i]?></p>
-							<p class="card-text">Mob: <?=$phone_number_e[$i]?></p>
+							<p class="card-text mb-2">Mob: <?=$phone_number_e[$i]?></p>
 							<p class="card-text">Email: <?=$email_e[$i]?></p>
 							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
   						</div>
