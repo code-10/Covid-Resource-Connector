@@ -15,7 +15,7 @@ if (isset($_POST['register_user']))
     $last_name = strtolower($last_name);
     $email = strtolower($email);
     
-    $password = password_hash($p, PASSWORD_DEFAULT);
+    $password = password_hash($password, PASSWORD_DEFAULT);
 
 
     if (rowExists('user', 'email', $email))
