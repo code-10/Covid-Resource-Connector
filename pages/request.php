@@ -7,6 +7,12 @@
 
   	$_SESSION['visit'] = $visit;
 
+ 	if(!(isset($_SESSION['email'])))
+      	{
+            header("Location:../sign_in/google_sign_in.php");
+            die(); 
+      	} 		
+
 ?>
 
 <body>
