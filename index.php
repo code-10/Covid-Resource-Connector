@@ -43,7 +43,7 @@
 			<h1 class="mb-5 responsive-lg">Find Resources to Fight Covid</h1>
 			<h2 class="responsive-md mb-4">Want Help? <a class="btn btn-success btn-sm" href="#" role="button">Create a Request</a></h2>
 			<h2 class="responsive-md mb-4">Want to Help? <a class="btn btn-success btn-sm" href="#" role="button">View Requests & Respond</a></h2>
-			<a class="btn btn-info btn-sm" href="#" role="button">View All Available Resources</a>
+			<h2 class="responsive-md mb-4">Find more <a class="btn btn-info btn-sm" href="#" role="button">View All Available Resources</a></h2>
 		</div>
 	
 		<!--<div class="row m-4 d-flex justify-content-center">
