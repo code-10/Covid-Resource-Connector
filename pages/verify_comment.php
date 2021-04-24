@@ -18,6 +18,10 @@
         $comment = $_POST['comment'];
         $email = $_POST['email'];
         $post_id = $_POST['post_id'];
+       
+       echo $comment;echo "<br>";
+       echo $email;echo "<br>";
+       echo $post_id;echo "<br>";
             
     }
 
