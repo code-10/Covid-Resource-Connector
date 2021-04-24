@@ -13,7 +13,6 @@ if (isset($_POST['register_user']))
     
     $first_name = strtolower($first_name);
     $last_name = strtolower($last_name);
-    $email = strtolower($email);
     
     $password = password_hash($password, PASSWORD_DEFAULT);
 
