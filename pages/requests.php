@@ -172,6 +172,7 @@
 											<div class="form-group">
   												<label for="exampleFormControlTextarea5">Comment</label>
  				 								<textarea class="form-control" id="exampleFormControlTextarea5" rows="4" name="comment"></textarea>
+											</div>
 											<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 		                  					<button type="submit" name="add_comment" class="btn btn-success">Add</button>
 										</form>
