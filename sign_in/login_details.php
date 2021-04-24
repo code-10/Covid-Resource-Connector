@@ -40,7 +40,7 @@ if (isset($_POST['login_user'])) {
         if (check_passwordu($email, $password)) {
             //echo "Yes";
             $_SESSION['user_name'] = $email;
-            $_SESSION['simple'] = "yes";
+            $_SESSION['simple'] = true;
             header("Location:../".$visit);
             die();
         } else {
