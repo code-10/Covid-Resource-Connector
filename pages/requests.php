@@ -49,7 +49,7 @@
       $state = Array();
       $city = Array();
    
-      $my_posts_res = $con->query("select * from post where email='$email'");
+      $my_posts_res = $con->query("select * from post where email='$email' ORDER BY time ASC");
    
       while($my_posts_ele = $my_posts_res->fetch_assoc())
       {
@@ -95,7 +95,7 @@
       $city_e = Array();
       $email_e = Array();
    
-      $e_posts_res = $con->query("select * from post where email <> '$email'");
+      $e_posts_res = $con->query("select * from post where email <> '$email' ORDER BY time ASC");
    
       while($e_posts_ele = $e_posts_res->fetch_assoc())
       {
