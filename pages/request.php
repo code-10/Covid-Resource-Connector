@@ -1,4 +1,5 @@
 <?php include_once '../header.php'; session_start(); ?>
+<?php include_once '../libraries/shield.php'; ?>
 <?php
 
    $visit = $_SERVER['REQUEST_URI'];
@@ -28,5 +29,59 @@
          </div>
       </div>
    </nav>
+   
+   
+   
+   <h4>Creating a post to request for resource</h4>
+   
+   
+   <div class="row d-flex justify-content-center">
+							<div class="col-lg-12">
+								
+								<form  id="login-form" method="POST" action="verify_create_request.php" style="display: block;">
+						<div class="form-group">
+							<label for="inputuser">State</label>
+    					<select class="form-control" id="state" name="state">
+                              				<?php for($j=0;$j<$state_count;$j++) { ?>
+					      			<option value="<?=$state[$j]?>"><?=$state[$j]?></option>
+							<?php } ?>
+    					</select>
+									</div>
+									
+							<div class="form-group">
+								<label for="inputuser">city</label>
+    					<select class="form-control" id="city" name="city">
+                              				<?php for($j=0;$j<$city_count;$j++) { ?>
+					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
+							<?php } ?>
+    					</select>
+                                
+                                <div class="form-group">
+					          <label for="inputdescription">Description</label>
+					            <input type="text" class="form-control" id="inputdescription" placeholder="description" name="description" required>
+				          </div>
+                                
+                                 <div class="form-group">
+					          <label for="inputphonenumber">Description</label>
+					            <input type="number" min="10" max="10" class="form-control" id="inputphonenumber" placeholder="phonenumber" name="phonenumber" required>
+				          </div>
+                                <?php $email = $_SESSION['email']; ?>
+                                <div class="form-group m-2 col-12">
+									    <input type="hidden" name="email" value="<?=$email?>" />
+  								</div>
+                                
+									</div>
+					            <button type="submit" name="create_request" class="btn btn-dark">Create Request</button>
+								</form>
+								
+							</div>
+						</div>
+   
+   
+   
+   
+   
+   
+   
 </body>
   
