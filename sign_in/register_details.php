@@ -25,7 +25,8 @@ if (isset($_POST['register_user']))
     }
     else
     {
-        print_r($con->query("insert into user(first_name,last_name,email,password) values('$first_name','$last_name','$email','$password')"));
+        $res = $con->query("insert into user(first_name,last_name,email,password) values('$first_name','$last_name','$email','$password')")
+        print_r($res);
         
         if ($con->query("insert into user(first_name,last_name,email,password) values('$first_name','$last_name','$email','$password')"))
         {
