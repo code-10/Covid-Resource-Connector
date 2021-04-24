@@ -108,7 +108,8 @@
   								</div>
                                 
 									</div>
-					            <button type="submit" name="create_request" class="btn btn-dark">Create Request</button>
+					            <button type="submit" name="create_request" class="btn btn-success">Create Request</button>
+								<a class="btn btn-danger" href="../index.php" role="button">cancel</a>
 								</form>
 								
 							</div>
