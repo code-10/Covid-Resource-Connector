@@ -158,6 +158,34 @@ if(!isset($_SESSION['access_token']))
 	
 	<h4 class="text-center m-4">OR</h4>	
 	
+	<?php 
+	
+		$signin = $_GET['signinwhich'];
+	
+		$wrongpassword=$_GET[ 'wrongpassword']; 
+		$loginnow=$_GET['loginnow'];
+		$nouser=$_GET['user'];
+		$emailexists=$_GET['emailexists'];
+		$error=$_GET['error'];
+	
+	?>
+	<div class="container">
+		<div class="text-center">
+			<?php 
+				if($wrongpassword)
+					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Your user_name or password is wrong</div></h4>";
+				else if($loginnow)
+					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-primary' role='danger'>Login to continue</div></h4>";
+				else if($emailexists)
+		                	echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Email is already registered</div></h4>";
+		            	else if($nouser)
+					echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>You don't have a Shopquest Account, Kindly Register</div></h4>";
+				else if($error)
+		                	echo "<h4 class='animate__animated animate__fadeOut' style='--animate-duration: 40s;'><div class='alert alert-danger' role='danger'>Something happened try again</div></h4>";
+					
+			?>
+		</div>
+	</div>
 	
 	
 	
