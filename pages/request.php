@@ -98,7 +98,7 @@
 				          </div>
                                 
                                  <div class="form-group">
-					          <label for="inputphonenumber">Description</label>
+					          <label for="inputphonenumber">Phone Number</label>
 					            <input type="number" min="10" max="10" class="form-control" id="inputphonenumber" placeholder="phonenumber" name="phonenumber" required>
 				          </div>
                                 <?php $email = $_SESSION['email']; ?>
