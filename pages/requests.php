@@ -93,6 +93,7 @@
       $description_e = Array();
       $state_e = Array();
       $city_e = Array();
+      $email_e = Array();
    
       $e_posts_res = $con->query("select * from post where email <> '$email'");
    
@@ -102,6 +103,7 @@
             $description_e[] = $e_posts_ele['description'];
             $state_e[] = $e_posts_ele['state'];
             $city_e[] = $e_posts_ele['city'];  
+	    $email_e[] = $e_posts_ele['email'];
       }
    
       $ce = count($state_e);
@@ -113,7 +115,7 @@
 			<?php for($i=0;$i<$ce;$i++) { ?>
 				<div class="col12 col-sm-3 m-2">
 					<div class="card">
-  						<h5 class="card-header"><?=$email?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<h5 class="card-header"><?=$email_e[$i]?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
     							<p class="card-text"><?=$description_e[$i]?></p>
