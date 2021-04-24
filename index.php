@@ -20,7 +20,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
          <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link active">Home</a>
+            <a href="../home" class="nav-item nav-link active">Home</a>
             <a href="pages/about.php" class="nav-item nav-link">About</a>
          </div>
          <div class="navbar-nav ml-auto">
@@ -49,7 +49,7 @@
 				}
 			?>
 			<h2 class="responsive-md mb-4">Want to Help? <a class="btn btn-success btn-sm" href="pages/requests.php" role="button">View Requests & Respond</a></h2>
-			<h2 class="responsive-md mb-4">Find more <a class="btn btn-info btn-sm" href="#" role="button">View All Available Resources</a></h2>
+			<h2 class="responsive-md mb-4">Find more <a class="btn btn-info btn-sm" href="pages/responses.php" role="button">View All Available Resources</a></h2>
 		</div>
 	
 		<!--<div class="row m-4 d-flex justify-content-center">
