@@ -108,7 +108,7 @@
       $city_e = Array();
       $email_e = Array();
    
-      $e_posts_res = $con->query("select * from post where email <> '$email' ORDER BY time ASC");
+      $e_posts_res = $con->query("select * from post ORDER BY time ASC");
    
       while($e_posts_ele = $e_posts_res->fetch_assoc())
       {
@@ -124,7 +124,7 @@
 		$first_name_e = Array();
       $last_name_e = Array();
 	      
-      $my_posts_res_fl_e = $con->query("select * from user where email <> '$email'");
+      $my_posts_res_fl_e = $con->query("select * from user");
       while($my_posts_ele_fl_e = $my_posts_res_fl_e->fetch_assoc())
       {
 	      $first_name_e[] = $my_posts_ele_fl_e['first_name'];
