@@ -25,9 +25,8 @@ if (isset($_POST['register_user']))
     }
     else
     {
-        $res = $con->query("insert into user(first_name,last_name,email,password) values('$first_name','$last_name','$email','$password')");
-        print_r($res);
-        
+        var_dump($con->query("insert into user(first_name,last_name,email,password) values('$first_name','$last_name','$email','$password')"));
+    
         if ($con->query("insert into user(first_name,last_name,email,password) values('$first_name','$last_name','$email','$password')"))
         {
             //header("Location:google_sign_in.php?singinwhich=login&&loginnow=yes");
