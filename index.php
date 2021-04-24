@@ -41,7 +41,11 @@
 	
 		<div class="row m-4 d-flex justify-content-center">
 			<?php for($i=0;$i<$c;$i++) { ?>
-				<div class="col-12 col-sm-3 m-2">
+				<div class="col-4 col-sm-3 m-2">
+					<a href="#" class="nav-item nav-link active">Home</a>
+            				<a href="pages/about.php" class="nav-item nav-link">About</a>
+				</div>
+				<div class="col-8 col-sm-3 m-2">
 					<div class="card">
   						<h5 class="card-header">Manoj&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
