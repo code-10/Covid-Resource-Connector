@@ -37,11 +37,12 @@
    </nav>
 	
 	
-	<div class=" text-center">
+	
 		<?php if(isset($_SESSION['user_name']))
+			echo '<div class=" text-center">';
 			echo '<a class="btn btn-primary" href="#" role="button">Create a request</a>';
+			echo '</div>';
 		?>	
-	</div>
 	
 	
 		<?php $c=10; ?>
