@@ -13,7 +13,7 @@
 
     $con = getCon();
 
-    if(isset($_SESSION[''])){
+    if(isset($_SESSION['create_request'])){
 
     $email = $_POST['email'];
     $state = $_POST['state'];
