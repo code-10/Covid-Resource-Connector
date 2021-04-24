@@ -177,7 +177,7 @@
       								</div>
       								<div class="modal-body">
 										
-       	 								<form  id="login-form" method="POST" action="verify_comment.php" style="display:block;">
+       	 								<form  id="comment-form" method="POST" action="verify_comment.php" style="display:block;">
 											<div class="form-group">
   												<label for="exampleFormControlTextarea5">Comment</label>
  				 								<textarea class="form-control" id="exampleFormControlTextarea5" rows="4" name="comment"></textarea>
