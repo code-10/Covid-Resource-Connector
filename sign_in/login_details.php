@@ -39,7 +39,7 @@ if (isset($_POST['login_user'])) {
     if (rowExists('user', 'email', $email)) {
         if (check_passwordu($email, $password)) {
             //echo "Yes";
-            $_SESSION['user_name'] = $email;
+            $_SESSION['email'] = $email;
             $_SESSION['simple'] = true;
             header("Location:../".$visit);
             die();
