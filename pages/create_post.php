@@ -79,8 +79,8 @@
 			   						What Kind of Post is This?
 								</label>
 			   					<select class="form-control" name="request_resource" id="request_resource">
-			   						<option value="0"> I Need Help	</option>
-			   						<option value="1"> I Want to Help	</option>
+			   						<option value="0" <?= $_GET['request']?> > I Need Help	</option>
+			   						<option value="1" <?= $_GET['resource']?> > I Want to Help	</option>
 								</select>
 						  </div>
 									
