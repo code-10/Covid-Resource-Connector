@@ -82,10 +82,10 @@
 					<div class="card">
   						<h5 class="card-header"><?=$first_name[0]?>&nbsp<?=$last_name[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
-							<p class="card-text"><?=$email?></p>
 							<h5 class="card-title"><?=$city[$i]?>, <?=$state[$i]?></h5>
-    							<p class="card-text"><?=$description[$i]?></p>
-							<p class="card-text">Ph no: <?=$phone_number[$i]?></p>
+    							<p class="card-text">Description: <?=$description[$i]?></p>
+							<p class="card-text">Mob: <?=$phone_number[$i]?></p>
+							<p class="card-text">Email: <?=$email?></p>
 							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
   						</div>
 					</div>
@@ -145,10 +145,10 @@
 						
   						<h5 class="card-header"><?=$first_name_e[0]?>&nbsp<?=$last_name_e[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
-							<p class="card-text"><?=$email_e[$i]?></p>
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
-    							<p class="card-text"><?=$description_e[$i]?></p>
-							<p class="card-text">Ph no: <?=$phone_number_e[$i]?></p>
+    							<p class="card-text">Description: <?=$description_e[$i]?></p>
+							<p class="card-text">Mob: <?=$phone_number_e[$i]?></p>
+							<p class="card-text">Email: <?=$email_e[$i]?></p>
 							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
   						</div>
 					</div>
