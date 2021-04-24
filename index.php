@@ -39,7 +39,13 @@
 	
 		<?php $c=10; ?>
 	
-		<div class="row m-4 d-flex justify-content-center">
+		<div class="text-center">
+			<h1 class="display-4">Find Resources to Fight Covid</h1>
+			<h2>Want Help? <a class="btn btn-primary" href="#" role="button">Create a Request</a></h2>
+			<h2>Want to Help? <a class="btn btn-primary" href="#" role="button">View Requests and Respond</a></h2>
+		</div>
+	
+		<!--<div class="row m-4 d-flex justify-content-center">
 			<?php for($i=0;$i<$c;$i++) { ?>
 				<div class="col12 col-sm-3 m-2">
 					<div class="card">
@@ -55,6 +61,6 @@
 					</div>
 				</div>
 			<?php } ?>
-		</div>
+		</div>-->
   
 </body>
