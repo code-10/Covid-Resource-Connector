@@ -44,8 +44,27 @@
                         echo '<a href="#" class="nav-item nav-link active" style="color:white;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a>';
                     }
                     else if(isset($_SESSION['email'])&&(isset($_SESSION['simple']))){ 
-                        $user=$_SESSION['email'];
-                        echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' </h1>';
+                        
+                        $email = $_SESSION['email'];
+                      
+                        $con = getCon();
+                        $first_name = Array();
+                        $last_name = Array();
+                        
+                        $profile_res = $con->query("select * from user where email='$email'");
+                        while($profile_ele = $profile_res->fetch_assoc())
+                        {
+                            $first_name[]=$profile_ele['first_name'];
+                            $last_name[]=$profile_ele['last_name'];
+                        }
+                      
+                        $d_first_name = $first_name[0];
+                        $d_first_name[0]=strtoupper($d_first_name[0]);
+                        $d_last_name = $last_name[0];
+                        $d_last_name[0]=strtoupper($d_last_name[0]);
+                      
+                        echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$d_first_name.' '.$d_last_name.' </h1>';
+                        echo '<a href="#" class="nav-item nav-link active" style="color:white;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a>';
                     }
                     else
                     {
