@@ -68,10 +68,9 @@
 			<?php for($i=0;$i<$c;$i++) { ?>
 				<div class="col12 col-sm-3 m-2">
 					<div class="card">
-  						<h5 class="card-header"><?=$email[$i]?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<h5 class="card-header"><?=$email?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
-    							<h5 class="card-title"><?=$state[$i]?></h5>
-							<h5 class="card-title"><?=$city[$i]?></h5>
+							<h5 class="card-title"><?=$city[$i]?>, <?=$state[$i]?></h5>
     							<p class="card-text"><?=$description[$i]?></p>
 							<p class="card-text">Ph no: <?=$phone_number[$i]?></p>
 							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
