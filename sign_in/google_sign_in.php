@@ -1,4 +1,8 @@
+<?php include_once '../header.php'; session_start(); ?>
+<?php $visit = $_SESSION['visit']; ?>
+
 <?php
+
 session_start();
 //index.php
 
