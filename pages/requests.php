@@ -82,6 +82,48 @@
    
 	
 <?php } ?>	
+	
+	<?php
+	
+		$con = getCon();	
+	
+      $email = $_SESSION['email'];
+      
+      $phone_number_e = Array();
+      $description_e = Array();
+      $state_e = Array();
+      $city_e = Array();
+   
+      $e_posts_res = $con->query("select * from post where email <> '$email'");
+   
+      while($e_posts_ele = $e_posts_res->fetch_assoc())
+      {
+            $phone_number_e[] = $e_posts_ele['ph_no'];
+            $description_e[] = $e_posts_ele['description'];
+            $state_e[] = $e_posts_ele['state'];
+            $city_e[] = $e_posts_ele['city'];  
+      }
+   
+      $ce = count($state_e);
+	
+	?>
+	
+	<h4 class="m-4 text-center">People's posts</h4>
+   <div class="row m-4 d-flex justify-content-center">
+			<?php for($i=0;$i<$ce;$i++) { ?>
+				<div class="col12 col-sm-3 m-2">
+					<div class="card">
+  						<h5 class="card-header"><?=$email?>&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<div class="card-body">
+							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
+    							<p class="card-text"><?=$description_e[$i]?></p>
+							<p class="card-text">Ph no: <?=$phone_number_e[$i]?></p>
+							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
+  						</div>
+					</div>
+				</div>
+			<?php } ?>
+		</div>
   
 </body>
   
