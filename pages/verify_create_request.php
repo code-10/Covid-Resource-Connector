@@ -22,8 +22,11 @@
     $phone_number = $_POST['phonenumber'];
 
     $con->query("insert into post(email,state,city,description,ph_no) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$state)."','".mysqli_real_escape_string($con,$city)."','".mysqli_real_escape_string($con,$description)."','".mysqli_real_escape_string($con,$phone_number)."')");
-
+      
+    var_dump($con->error);   
+       
     header("Location:requests.php");
+    die();
 
     }
 ?>
