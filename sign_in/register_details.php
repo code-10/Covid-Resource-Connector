@@ -33,7 +33,7 @@ if (isset($_POST['register_user']))
         else
         {
             $error = true;
-            header("Location:google_sign_in.php?signinwhich=register&&hereemailexists=" . $error);
+            header("Location:google_sign_in.php?signinwhich=register&&emailexists=" . $error);
             die();
         }
     }
