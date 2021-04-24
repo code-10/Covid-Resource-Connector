@@ -36,12 +36,10 @@
   
   
   
-  
-  <h2 class="m-4 text-center">displaying requests in a min</h2>
-  
-  
    <?php
       
+      $con = getCon();	
+	
       $email = $_SESSION['email'];
       
       $first_name = Array();
