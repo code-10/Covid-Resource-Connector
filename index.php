@@ -24,8 +24,8 @@
             <a href="pages/about.php" class="nav-item nav-link">About</a>
          </div>
          <div class="navbar-nav ml-auto">
-            <?php if(isset($_SESSION['user_name'])) {
-               echo '<a href="pages/profile.php" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['user_name'].'</i></a>';
+            <?php if(isset($_SESSION['email'])) {
+               echo '<a href="pages/profile.php" class="nav-item nav-link active"><i class="fa fa-user-o">  '.$_SESSION['email'].'</i></a>';
                echo '<a href="../sign_in/logout.php" class="nav-item nav-link">Logout</a>';
                }
                else{
