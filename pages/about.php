@@ -1,4 +1,12 @@
 <?php include_once '../header.php'; session_start(); ?>
+<?php
+
+   $visit = $_SERVER['REQUEST_URI'];
+  	$visit = substr($visit,1);
+
+  	$_SESSION['visit'] = $visit;
+
+?>
 
 <body>
    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
