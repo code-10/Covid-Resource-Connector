@@ -151,8 +151,7 @@
 							<p class="card-text mb-2">Mob: <?=$phone_number_e[$i]?></p>
 							<p class="card-text">Email: <?=$email_e[$i]?></p>
 							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
-  							<div class="overflow-auto">This is an example of using .overflow-auto on an element with set width and height dimensions. By design, this content will vertically scroll.</div>
-						</div>
+  						</div>
 					</div>
 				</div>
 			<?php } ?>
