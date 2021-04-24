@@ -107,7 +107,8 @@
       $state_e = Array();
       $city_e = Array();
       $email_e = Array();
-   
+      $post_id_e = Array();
+	
       $e_posts_res = $con->query("select * from post ORDER BY time ASC");
    
       while($e_posts_ele = $e_posts_res->fetch_assoc())
@@ -117,6 +118,7 @@
             $state_e[] = $e_posts_ele['state'];
             $city_e[] = $e_posts_ele['city'];  
 	    $email_e[] = $e_posts_ele['email'];
+	    $post_id_e[] = $e_posts_ele['post_id'];
       }
    
       $ce = count($state_e);
@@ -182,6 +184,9 @@
   												<label for="exampleFormControlTextarea5">Comment</label>
  				 								<textarea class="form-control" id="exampleFormControlTextarea5" rows="4" name="comment"></textarea>
 											</div>
+											
+											<input type="hidden" name="email" value="<?=$post_id_e[$i]?>" />
+										
 											<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 		                  					<button type="submit" name="add_comment" class="btn btn-success">Add</button>
 										</form>
