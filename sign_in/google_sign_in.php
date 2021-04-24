@@ -134,6 +134,7 @@ if(!isset($_SESSION['access_token']))
     	}
     	else
     	{
+		$con = getCon();
         	$con->query("insert into user(first_name,last_name,email) values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$last_name)."','".mysqli_real_escape_string($con,$user_email)."')");
         	header("Location:../".$visit);
 	   	die();
