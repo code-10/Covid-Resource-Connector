@@ -1,6 +1,15 @@
 <?php include_once 'header.php'; ?>
 <?php include_once 'libraries/shield.php'; session_start(); ?>
 
+<?php
+
+	$visit = $_SERVER['REQUEST_URI'];
+  	$visit = substr($visit,1);
+
+  	$_SESSION['visit'] = $visit;
+
+?>
+
 <body>
 		
 		<!--Navigation Bar-->
