@@ -25,19 +25,16 @@ if (isset($_POST['register_user']))
     }
     else
     {
-        var_dump($con->query("insert into user(first_name,last_name,email,password) values('$first_name','$last_name','$email','$password')"));
-        var_dump($con->error);
-    
         if ($con->query("insert into user(first_name,last_name,email,password) values('$first_name','$last_name','$email','$password')"))
         {
-            //header("Location:google_sign_in.php?singinwhich=login&&loginnow=yes");
-            //die();
+            header("Location:google_sign_in.php?singinwhich=login&&loginnow=yes");
+            die();
         }
         else
         {
             $error = true;
-            //header("Location:google_sign_in.php?signinwhich=register&&emailexists=" . $error);
-            //die();
+            header("Location:google_sign_in.php?signinwhich=register&&emailexists=" . $error);
+            die();
         }
     }
 }
