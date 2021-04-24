@@ -21,12 +21,10 @@
     $description = $_POST['description'];
     $phone_number = $_POST['phonenumber'];
 
-    $res = $con->query("insert into post(email,state,city,description,ph_no) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$state)."','".mysqli_real_escape_string($con,$city)."','".mysqli_real_escape_string($con,$description)."',$phone_number)");
-      
-    var_dump($res);   
+    $res = $con->query("insert into post(email,state,city,description,ph_no) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$state)."','".mysqli_real_escape_string($con,$city)."','".mysqli_real_escape_string($con,$description)."',$phone_number)"); 
        
-    //header("Location:requests.php");
-    //die();
+    header("Location:requests.php");
+    die();
 
     }
 ?>
