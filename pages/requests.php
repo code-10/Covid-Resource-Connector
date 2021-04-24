@@ -78,7 +78,7 @@
    <h4 class="m-4 text-center">My posts</h4>
    <div class="row m-4 d-flex justify-content-center">
 			<?php for($i=0;$i<$c;$i++) { ?>
-				<div class="col-12 col-sm-3 m-2">
+				<div class="col-12 col-sm-4 m-2">
 					<div class="card">
   						<h5 class="card-header"><?=$first_name[0]?>&nbsp<?=$last_name[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
