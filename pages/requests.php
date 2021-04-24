@@ -121,16 +121,6 @@
    
       $ce = count($state_e);
 	
-		$first_name_e = Array();
-      $last_name_e = Array();
-	      
-      $my_posts_res_fl_e = $con->query("select * from user");
-      while($my_posts_ele_fl_e = $my_posts_res_fl_e->fetch_assoc())
-      {
-	      $first_name_e[] = $my_posts_ele_fl_e['first_name'];
-	      $last_name_e[] = $my_posts_ele_fl_e['last_name'];
-      }
-	
 	?>
 	
 	<h4 class="m-4 text-center">People's posts</h4>
@@ -138,7 +128,22 @@
 			<?php for($i=0;$i<$ce;$i++) { ?>
 				<div class="col12 col-sm-3 m-2">
 					<div class="card">
-  						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+						
+						<?php
+						 	$first_name_e = Array();
+      							$last_name_e = Array();
+	      
+      							$my_posts_res_fl_e = $con->query("select * from user where email='$email_e[$i]'");
+      							while($my_posts_ele_fl_e = $my_posts_res_fl_e->fetch_assoc())
+      							{
+	      							$first_name_e[] = $my_posts_ele_fl_e['first_name'];
+	      							$last_name_e[] = $my_posts_ele_fl_e['last_name'];
+      							}
+						
+						?>
+						
+						
+  						<h5 class="card-header"><?=$first_name_e[0]?>&nbsp<?=$last_name_e[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
 							<p class="card-text"><?=$email_e[$i]?></p>
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
