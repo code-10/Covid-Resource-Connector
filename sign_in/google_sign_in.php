@@ -137,7 +137,7 @@ if(!isset($_SESSION['access_token']))
 	   $last_name = $_SESSION['user_last_name'];
 	   $_SESSION['last_name'] = $last_name;
 	   
-	   header("Location:../pages/profile.php");
+	   header("Location:../".$visit);
 	   die();
 	   
     //echo '<img src="'.$_SESSION["user_image"].'" class="img-responsive img-circle img-thumbnail" />';
