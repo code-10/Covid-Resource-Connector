@@ -170,9 +170,8 @@
 										
        	 								<form  id="login-form" method="POST" action="verify_comment.php" style="display:block;">
 											<div class="form-group">
-			              					<label for="inputcomment">Comment</label>
-			                					<textarea id="comment" name="comment" rows="4" cols="50"></textarea>
-		              						</div>
+  												<label for="exampleFormControlTextarea5">Comment</label>
+ 				 								<textarea class="form-control" id="exampleFormControlTextarea5" rows="4" name="comment"></textarea>
 											<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 		                  					<button type="submit" name="add_comment" class="btn btn-success">Add</button>
 										</form>
