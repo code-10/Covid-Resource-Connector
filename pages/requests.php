@@ -37,7 +37,7 @@
   
   
   
-  <h2>displaying requests in a min</h2>
+  <h2 class="m-4 text-center">displaying requests in a min</h2>
   
   
   
