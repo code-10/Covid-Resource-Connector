@@ -12,7 +12,7 @@ function check_passwordu($email, $password)
     $con = getCon();
     
     $email = $con->query("select * from user where email='$email';");
-    $res  = $user->fetch_assoc();
+    $res  = $email->fetch_assoc();
     
     //echo var_dump($res) . "<br>";
     
