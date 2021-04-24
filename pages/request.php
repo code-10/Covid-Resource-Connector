@@ -36,17 +36,45 @@
       </div>
    </nav>
    
+	
+	<?php
+	
+		$con = getCon();
+	
+		$state=Array();
+		$state_res = $con->query("select * from state");
+		while($state_ele = $state_res->fetch_assoc())
+			$state[]=$state_ele['state_name'];
+		$state_count = count($state);
+	
+	
+		$city=Array();
+		$city_res = $con->query("select * from city");
+		while($city_ele = $city_res->fetch_assoc())
+			$city[]=$city_ele['city_name'];
+		$city_count = count($city);
+	
+	?>
    
    
-   <h4>Creating a post to request for resource</h4>
+   <h4 class="m-4 text-center">Creating a post to request for resource</h4>
    
    <div class="container">
     	<div class="row d-flex justify-content-center">
 			<div class="col-md-6 col-md-3">
-   <div class="row d-flex justify-content-center">
+   					<div class="row d-flex justify-content-center">
 							<div class="col-lg-12">
 								
 								<form  id="login-form" method="POST" action="verify_create_request.php" style="display: block;">
+								<div class="form-group">
+					          <label for="inputuser">First Name</label>
+					            <input type="text" class="form-control" id="inputfirst_name" placeholder="firstname" name="first_name" required>
+				          </div>
+								<div class="form-group">
+									<label for="inputuser">Last Name</label>
+					            <input type="text" class="form-control" id="inputfirst_name" placeholder="lastname" name="last_name" required>
+				          </div>
+									
 						<div class="form-group">
 							<label for="inputuser">State</label>
     					<select class="form-control" id="state" name="state">
