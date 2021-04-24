@@ -116,22 +116,49 @@ if(!isset($_SESSION['access_token']))
    <?php
    if($login_button == '')
    {
-	 
 	   
-	   $user = $_SESSION['user_first_name'];
+	   
+	   if (rowExists('user', 'email', $email))
+    {
+		   
+	$user = $_SESSION['user_first_name'];
 	   $_SESSION['user_first_name']= $user;
 	   
 	   $user_email = $_SESSION['user_email_address'];
 	   $_SESSION['email'] = $user_email;
 	   
 	   $last_name = $_SESSION['user_last_name'];
-	   $_SESSION['last_name'] = $last_name;
+	   $_SESSION['last_name'] = $last_name;	   
+		   
+        header("Location:../".$visit);
+        die();
+    }
+    else
+    {
+        if ($con->query("insert into user(first_name,last_name,email) values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$last_name)."','".mysqli_real_escape_string($con,$user_email)."')"))
+        {
+            $user = $_SESSION['user_first_name'];
+	   $_SESSION['user_first_name']= $user;
 	   
+	   $user_email = $_SESSION['user_email_address'];
+	   $_SESSION['email'] = $user_email;
 	   
-	   $con = getCon();
+	   $last_name = $_SESSION['user_last_name'];
+	   $_SESSION['last_name'] = $last_name;	   
+		   
+        header("Location:../".$visit);
+        die();
+		
+        }
+        else
+        {
+            $error = true;
+            header("Location:google_sign_in.php?signinwhich=register");
+            die();
+        }
+    }
 	   
-	   $con->query("insert into user(first_name,last_name,email) values('".mysqli_real_escape_string($con,$user)."','".mysqli_real_escape_string($con,$last_name)."','".mysqli_real_escape_string($con,$user_email)."')");
-	   
+	  
 	   header("Location:../".$visit);
 	   die();
 	   
