@@ -150,7 +150,43 @@
 							<p class="card-text mb-2">Mob: <?=$phone_number_e[$i]?></p>
 							<p class="card-text">Email: <?=$email_e[$i]?></p>
 							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
-  						</div>
+						
+						
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  								Add a Comment
+							</button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  							<div class="modal-dialog modal-dialog-centered" role="document">
+    							<div class="modal-content">
+      								<div class="modal-header">
+        								<h5 class="modal-title" id="exampleModalLongTitle">Add your Comment</h5>
+        								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          									<span aria-hidden="true">&times;</span>
+        								</button>
+      								</div>
+      								<div class="modal-body">
+										
+       	 								<form  id="login-form" method="POST" action="verify_comment.php" style="display: block;">
+											<div class="form-group">
+			              					<label for="inputcomment">Username</label>
+			                					<input type="text" class="form-control" id="inputcomment" placeholder="comment" name="comment" required>
+		              						</div>
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		                  					<button type="submit" name="add_comment" class="btn btn-dark">Add</button>
+										</form>
+										
+      								</div>
+    							</div>
+  							</div>
+						</div>
+							
+							
+							
+							
+							
+						</div>
 					</div>
 				</div>
 			<?php } ?>
