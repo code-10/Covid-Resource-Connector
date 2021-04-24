@@ -50,7 +50,7 @@
 							<p class="card-text">Area: Yelahanka</p>
 							<p class="card-text">Request Description: Blood Plasma O+ve</p>
 							<p class="card-text">Ph no: 9980712884</p>
-							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
   						</div>
 					</div>
 				</div>
