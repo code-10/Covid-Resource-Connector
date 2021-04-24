@@ -74,6 +74,15 @@
 									<label for="inputuser">Last Name</label>
 					            <input type="text" class="form-control" id="inputfirst_name" placeholder="lastname" name="last_name" required>
 				          </div>
+						  <div class='form-group'>
+			   					<label for="request_resource">
+			   						What Kind of Post is This?
+								</label>
+			   					<select class="form-control" name="request_resource" id="request_resource">
+			   						<option value="0"> I Need Help	</option>
+			   						<option value="1"> I Want to Help	</option>
+								</select>
+						  </div>
 									
 						<div class="form-group">
 							<label for="inputuser">State</label>

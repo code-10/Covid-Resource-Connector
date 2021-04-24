@@ -20,8 +20,9 @@
     $city = $_POST['city'];
     $description = $_POST['description'];
     $phone_number = $_POST['phonenumber'];
+    $request_resource = $_POST['request_resource'];
 
-    $res = $con->query("insert into post(email,state,city,description,ph_no) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$state)."','".mysqli_real_escape_string($con,$city)."','".mysqli_real_escape_string($con,$description)."','$phone_number')"); 
+    $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$state)."','".mysqli_real_escape_string($con,$city)."','".mysqli_real_escape_string($con,$description)."','$phone_number','$request_resource')"); 
        
     header("Location:requests.php");
     die();
