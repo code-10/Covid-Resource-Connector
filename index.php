@@ -22,8 +22,6 @@
          <div class="navbar-nav">
             <a href="#" class="nav-item nav-link active">Home</a>
             <a href="pages/about.php" class="nav-item nav-link">About</a>
-	    <a href="pages/request.php" class="nav-item nav-link">Request</a>
-            <a href="pages/response.php" class="nav-item nav-link">Response</a>
          </div>
          <div class="navbar-nav ml-auto">
             <?php if(isset($_SESSION['email'])) {
