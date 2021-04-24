@@ -159,7 +159,7 @@
 						<!-- Modal -->
 						<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   							<div class="modal-dialog modal-dialog-centered" role="document">
-    							<div class="modal-content">
+    							<div class="modal-content p-2">
       								<div class="modal-header">
         								<h5 class="modal-title" id="exampleModalLongTitle">Add your Comment</h5>
         								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -168,13 +168,13 @@
       								</div>
       								<div class="modal-body">
 										
-       	 								<form  id="login-form" method="POST" action="verify_comment.php" style="display: block;">
+       	 								<form  id="login-form" method="POST" action="verify_comment.php" style="display:block;">
 											<div class="form-group">
-			              					<label for="inputcomment">Username</label>
-			                					<input type="text" class="form-control" id="inputcomment" placeholder="comment" name="comment" required>
+			              					<label for="inputcomment">Comment</label>
+			                					<textarea id="comment" name="comment" rows="4" cols="50"></textarea>
 		              						</div>
-											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		                  					<button type="submit" name="add_comment" class="btn btn-dark">Add</button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		                  					<button type="submit" name="add_comment" class="btn btn-success">Add</button>
 										</form>
 										
       								</div>
