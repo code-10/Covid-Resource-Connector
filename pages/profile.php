@@ -15,7 +15,7 @@
             <a href="about.php" class="nav-item nav-link">About</a>
         </div>
         <div class="navbar-nav ml-auto">
-            <?php if(isset($_SESSION['user_name'])){
+            <?php if(isset($_SESSION['email'])){
                     echo '<a href="#" class="nav-item nav-link active"><i class="fa fa-user-o"> '.$_SESSION['email'].'</i></a>';
                     echo '<a href="../sign_in/logout.php" class="nav-item nav-link">Logout</a>';
                 }
@@ -32,7 +32,7 @@
     <div class="p-4" style="background-color:black;">
         <div class="text-center">
             <?php 
-                    if(isset($_SESSION['user_name'])&&(!(isset($_SESSION['simple'])))){ 
+                    if(isset($_SESSION['email'])&&(!(isset($_SESSION['simple'])))){ 
                       
                         $user=$_SESSION['user_first_name'];
                         $user[0]=strtoupper($user[0]);
@@ -43,7 +43,7 @@
                         echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' '.$last_name.' </h1>';
                         echo '<a href="#" class="nav-item nav-link active" style="color:white;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a>';
                     }
-                    else if(isset($_SESSION['user_name'])&&(isset($_SESSION['simple']))){ 
+                    else if(isset($_SESSION['email'])&&(isset($_SESSION['simple']))){ 
                         $user=$_SESSION['email'];
                         echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' </h1>';
                     }
