@@ -154,10 +154,11 @@
 							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
 						
 						
+							<?php if(isset($_SESSION['email'])) { ?>
 							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalCenter">
   								Add a Comment
 							</button>
-
+							<?php } ?>	
 							
 							
 							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalLong">
