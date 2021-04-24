@@ -40,7 +40,9 @@
    
    <h4>Creating a post to request for resource</h4>
    
-   
+   <div class="container">
+    	<div class="row d-flex justify-content-center">
+			<div class="col-md-6 col-md-3">
    <div class="row d-flex justify-content-center">
 							<div class="col-lg-12">
 								
@@ -82,6 +84,9 @@
 								
 							</div>
 						</div>
+   				</div>
+		</div>
+   </div>
    
    
    
