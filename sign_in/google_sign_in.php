@@ -127,7 +127,7 @@ if(!isset($_SESSION['access_token']))
 	   $last_name = $_SESSION['user_last_name'];
 	   $_SESSION['last_name'] = $last_name;
 	   
-	   if (rowExists('user', 'email', $email))
+	   if (rowExists('user', 'email', $user_email))
     	{
 		header("Location:../".$visit);
 	   	die();	   
