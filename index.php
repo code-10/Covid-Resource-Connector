@@ -48,7 +48,7 @@
 					echo '<h2 class="responsive-md mb-4">Want Help? <a class="btn btn-success btn-sm" href="sign_in/google_sign_in.php" role="button">Create a Request</a></h2>';	
 				}
 			?>
-			<h2 class="responsive-md mb-4">Want to Help? <a class="btn btn-success btn-sm" href="#" role="button">View Requests & Respond</a></h2>
+			<h2 class="responsive-md mb-4">Want to Help? <a class="btn btn-success btn-sm" href="pages/requests.php" role="button">View Requests & Respond</a></h2>
 			<h2 class="responsive-md mb-4">Find more <a class="btn btn-info btn-sm" href="#" role="button">View All Available Resources</a></h2>
 		</div>
 	
