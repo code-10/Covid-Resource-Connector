@@ -130,7 +130,7 @@ if(!isset($_SESSION['access_token']))
 	   $last_name = $_SESSION['user_last_name'];
 	   $_SESSION['last_name'] = $last_name;	   
 		   
-        header("Location:../".$visit);
+        header("Location:../index.php");
         die();
     }
     else
@@ -146,7 +146,7 @@ if(!isset($_SESSION['access_token']))
 	   $last_name = $_SESSION['user_last_name'];
 	   $_SESSION['last_name'] = $last_name;	   
 		   
-        header("Location:../".$visit);
+        header("Location:../index.php");
         die();
 		
         }
@@ -157,10 +157,7 @@ if(!isset($_SESSION['access_token']))
             die();
         }
     }
-	   
-	  
-	   header("Location:../".$visit);
-	   die();
+	 
 	   
    }
    else
