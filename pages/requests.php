@@ -227,9 +227,9 @@
       									<div class="modal-body">
 										
 										<?php for($k=0;$k<$cc;$k++) { ?>
-											<p><?=$comment[$i]?></p>
-											<p><?=$email[$i]?></p>
-											<p><?=$time[$i]?></p>
+											<p><?=$comment[$k]?></p>
+											<p><?=$email[$k]?></p>
+											<p><?=$time[$k]?></p>
 										<?php } ?>
 										
       									</div>
