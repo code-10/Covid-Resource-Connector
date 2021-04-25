@@ -227,9 +227,9 @@
       									<div class="modal-body">
 										
 										<?php for($k=0;$k<$cc;$k++) { ?>
-											<p class="mb-1 text-monospace"><?=$comment[$k]?></p>
-											<p class="font-weight-light mb-1"><?=$email[$k]?></p>
-											<p class="font-weight-light mb-1"><?=$time[$k]?></p>
+											<p class="text-monospace mb-1"><?=$comment[$k]?></p>
+											<p class="font-weight-light mb-0 responsive-md"><?=$email[$k]?></p>
+											<p class="font-weight-light mb-0 responsive-md"><?=$time[$k]?></p>
 										<?php } ?>
 										
       									</div>
@@ -262,3 +262,15 @@
   
 </body>
   
+
+<style>
+    /*Media Queries*/
+	@media (min-width:320px)  { .responsive-md{font-size:8px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .responsive-md{font-size:16px;}  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .responsive-md{font-size:16px;}  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .responsive-md{font-size:16px;}  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .responsive-md{font-size:16px;}  /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .responsive-md{font-size:16px;}  /* hi-res laptops and desktops */ }
+	
+</style>
+
