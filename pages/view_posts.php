@@ -1,7 +1,6 @@
 <?php include_once '../header.php'; session_start(); ?>
 <?php include_once '../libraries/shield.php'; ?>
 <?php
-
 	$con = getCon();
 
    	$visit = $_SERVER['REQUEST_URI'];

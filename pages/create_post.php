@@ -1,6 +1,7 @@
 <?php include_once '../header.php'; session_start(); ?>
 <?php include_once '../libraries/shield.php'; ?>
 <?php
+	authentication_required();
 
    $visit = $_SERVER['REQUEST_URI'];
   	$visit = substr($visit,1);

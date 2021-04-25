@@ -32,7 +32,7 @@ function rowExists($table, $search_param, $search_value)
 }
 
 function authentication_required(){
-    if (isset($_SESSION['email']))
+    if (!isset($_SESSION['email']))
     {
         header("location:/sign_in/google_sign_in.php");
         die("Need to be Authenticated Bruh");
