@@ -151,7 +151,7 @@
 							<?php } ?>	
 							
 							
-							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalLong">
+							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalLong<?=$i?>">
   								View Comments
 							</button>
 							
@@ -213,7 +213,7 @@
 						?>
 							
 						<!--view comments-->
-						<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+						<div class="modal fade" id="exampleModalLong<?=$i?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   							<div class="modal-dialog" role="document">
     								<div class="modal-content">
       									<div class="modal-header">
