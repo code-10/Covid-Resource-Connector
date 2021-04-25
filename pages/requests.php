@@ -233,7 +233,7 @@
 											<p class="font-weight-light mb-0 responsive-md"><?=$email[$k]?></p>
 											<p class="font-weight-light mb-4 responsive-md"><?=$time[$k]?></p>
 											<?php if($user_email==$email[$k]) { ?>
-												<i class="bi bi-trash"></i>
+												<i class="fa fa-trash" aria-hidden="true"></i>
 											<?php } ?>
 										<?php } ?>
 										
