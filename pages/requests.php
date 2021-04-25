@@ -119,7 +119,7 @@
       $upvotes_e = Array();
       $downvotes_e = Array();
 	
-      $e_posts_res = $con->query("select p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,u.first_name,u.last_name from post as p,user as u where u.email=p.email and p.request_resource='$request_resource' order by time asc");
+      $e_posts_res = $con->query("select p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,u.first_name,u.last_name from post as p,user as u where u.email=p.email and p.email!='$email' and p.request_resource='$request_resource' order by time asc");
    
       while($e_posts_ele = $e_posts_res->fetch_assoc())
       {
