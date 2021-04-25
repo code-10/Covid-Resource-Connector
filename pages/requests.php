@@ -231,8 +231,8 @@
 										<?php for($k=0;$k<$cc;$k++) { ?>
 											<p class="text-monospace mb-1">
 												<?php if($user_email==$email[$k]) { ?>
-													<i class="fa fa-trash" aria-hidden="true" style="color:red;"></i>
-												<?php } ?>&nbsp<?=$comment[$k]?>
+													<i class="fa fa-trash" aria-hidden="true" style="color:red;"></i>&nbsp
+												<?php } ?><?=$comment[$k]?>
 											</p> 
 											<p class="font-weight-light mb-0 responsive-md"><?=$email[$k]?></p>
 											<p class="font-weight-light mb-4 responsive-md"><?=$time[$k]?></p>
