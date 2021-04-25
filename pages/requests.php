@@ -86,7 +86,7 @@
     							<p class="card-text">Description: <?=$description[$i]?></p>
 							<p class="card-text mb-2">Mob: <?=$phone_number[$i]?></p>
 							<p class="card-text">Email: <?=$email?></p>
-							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
+							<!--<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>-->
   						</div>
 					</div>
 				</div>
@@ -141,7 +141,7 @@
     							<p class="card-text">Description: <?=$description_e[$i]?></p>
 							<p class="card-text mb-2">Mob: <?=$phone_number_e[$i]?></p>
 							<p class="card-text">Email: <?=$email_e[$i]?></p>
-							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
+							<!--<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>-->
 						
 						
 							<?php if(isset($_SESSION['email'])) { ?>
