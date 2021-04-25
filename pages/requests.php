@@ -9,6 +9,8 @@
 
   	$_SESSION['visit'] = $visit;
 
+	$user_email = $_SESSION['email'];
+
 ?>
 
 <body>
@@ -230,6 +232,9 @@
 											<p class="text-monospace mb-1"><?=$comment[$k]?></p>
 											<p class="font-weight-light mb-0 responsive-md"><?=$email[$k]?></p>
 											<p class="font-weight-light mb-4 responsive-md"><?=$time[$k]?></p>
+											<?php if($user_email==$email[$k]) { ?>
+												<i class="bi bi-trash"></i>
+											<?php } ?>
 										<?php } ?>
 										
       									</div>
