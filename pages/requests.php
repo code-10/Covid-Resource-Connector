@@ -194,14 +194,13 @@
 							
 						<?php
 							
-
-							/*$con = getCon();
+							$con = getCon();
 
 							$comment = Array();
 							$email = Array();
 							$time = Array();
 								
-							$comment_res = $con->query("select * from comment");
+							$comment_res = $con->query("select * from comment where post_id='$post_id_e[$i]'");
 							while($comment_ele = $comment_res->fetch_assoc())
 							{
 								$comment[] = $comment_ele['comment'];
@@ -209,7 +208,7 @@
 								$time[] = $comment_ele['time'];
 							}
 							
-							$cc = count($comment);*/
+							$cc = count($comment);
 							
 						?>
 							
