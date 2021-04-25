@@ -61,7 +61,7 @@
         {
             if(rowExists('updownvote','post_id',$post_id))
             {
-                header("Location:requests.php?valid=no");
+                header("Location:view_posts.php?valid=no");
                 die();
             }
             else
@@ -70,7 +70,7 @@
               
                   $con->query("update post set upvotes='$new_upvotes' where post_id='$post_id'");    
                   var_dump($con->error);
-                  //header("Location:requests.php?valid=yes");
+                  //header("Location:view_posts.php?valid=yes");
                   //die();
             }
         }
@@ -80,7 +80,7 @@
           
             $con->query("update post set downvotes='$new_downvotes' where post_id='$post_id'");   
             var_dump($con->error);
-            //header("Location:requests.php?valid=yes");
+            //header("Location:view_posts.php?valid=yes");
             //die();
             
         }

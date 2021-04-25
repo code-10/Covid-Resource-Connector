@@ -17,7 +17,7 @@
     {
         $post_id = $_GET['post_id'];
         $con->query("delete from post where post_id='$post_id'");
-        header("Location:requests.php");
+        header("Location:view_posts.php");
         die();
     }
 

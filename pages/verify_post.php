@@ -24,7 +24,7 @@
 
     $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$state)."','".mysqli_real_escape_string($con,$city)."','".mysqli_real_escape_string($con,$description)."','$phone_number','$request_resource')"); 
        
-    header("Location:requests.php");
+    header("Location:view_posts.php");
     die();
 
     }

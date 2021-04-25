@@ -17,7 +17,7 @@
     {
         $comment_id = $_GET['comment_id'];
         $con->query("delete from comment where comment_id='$comment_id'");
-        header("Location:requests.php");
+        header("Location:view_posts.php");
          die();
     }
 

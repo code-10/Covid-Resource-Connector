@@ -21,7 +21,7 @@
       
         $res = $con->query("insert into comment(post_id,comment,email) values('".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$comment)."','".mysqli_real_escape_string($con,$email)."')"); 
        
-        header("Location:requests.php");
+        header("Location:view_posts.php");
         die();
          
     }
