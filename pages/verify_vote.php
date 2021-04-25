@@ -19,12 +19,39 @@
         $email = $_SESSION['email'];
         $post_id = $_GET['post_id'];
         $vote = $_GET['vote'];
-        
-        if($vote=="up")
-           $vote=1;
-        else if($vote=="down")
-           $vote=0;
       
-        $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
+        if(rowExists('updownvote','email',$email))
+        {
+            if(rowExists('updownvote','post_id',$post_id))
+            {
+                header("Location:requests.php?valid=no");
+                die();
+            }
+            else
+            {
+                  if($vote=="up")
+                    $vote=1;
+                  else if($vote=="down")
+                    $vote=0;
+      
+                  $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
+                  header("Location:requests.php?valid=yes");
+                  die();
+            }
+        }
+        else
+        {
+            if($vote=="up")
+                $vote=1;
+            else if($vote=="down")
+                    $vote=0;
+      
+            $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
+            header("Location:requests.php?valid=yes");
+            die();
+            
+        }
+      
+      
     }
 ?>
