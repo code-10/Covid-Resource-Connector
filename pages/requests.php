@@ -201,10 +201,12 @@
 							$comment = Array();
 							$email = Array();
 							$time = Array();
+						     	$comment_id =Array();
 								
 							$comment_res = $con->query("select * from comment where post_id='$post_id_e[$i]'");
 							while($comment_ele = $comment_res->fetch_assoc())
 							{
+								$comment_id[]=$comment_ele['comment_id'];
 								$comment[] = $comment_ele['comment'];
 								$email[] = $comment_ele['email'];
 								$time[] = $comment_ele['time'];
@@ -231,7 +233,7 @@
 										<?php for($k=0;$k<$cc;$k++) { ?>
 											<p class="text-monospace mb-1">
 												<?php if($user_email==$email[$k]) { ?>
-													<i class="fa fa-trash" aria-hidden="true" style="color:red;"></i>&nbsp
+													<a href="delete_comment.php?comment_id=<?=$comment_id[$k]?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
 												<?php } ?><?=$comment[$k]?>
 											</p> 
 											<p class="font-weight-light mb-0 responsive-md"><?=$email[$k]?></p>
