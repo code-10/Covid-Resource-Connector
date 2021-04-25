@@ -2,7 +2,9 @@
 <?php include_once '../libraries/shield.php'; ?>
 <?php
 
-   $visit = $_SERVER['REQUEST_URI'];
+	$con = getCon();
+
+   	$visit = $_SERVER['REQUEST_URI'];
   	$visit = substr($visit,1);
 
   	$_SESSION['visit'] = $visit;
@@ -39,8 +41,6 @@
    <?php
       
       if(isset($_SESSION['email'])){	
-	
-      $con = getCon();	
 	
       $email = $_SESSION['email'];
       
