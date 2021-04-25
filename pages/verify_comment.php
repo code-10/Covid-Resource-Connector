@@ -19,10 +19,12 @@
         $email = $_SESSION['email'];
         $post_id = $_POST['post_id'];
       
-        $res = $con->query("insert into comment(post_id,comment,email) values('".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$comment)."','".mysqli_real_escape_string($con,$email)."')"); 
+         echo $post_id;
        
-        header("Location:requests.php");
-        die();
+        //$res = $con->query("insert into comment(post_id,comment,email) values('".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$comment)."','".mysqli_real_escape_string($con,$email)."')"); 
+       
+        //header("Location:requests.php");
+        //die();
          
     }
 
