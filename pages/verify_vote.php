@@ -35,7 +35,7 @@
           echo $current_upvotes[0];
           echo "<br>";
           echo $new_upvotes;
-          echo "<br>":
+          echo "<br>";
                 
           
         }
@@ -53,7 +53,7 @@
           echo $current_downvotes[0];
           echo "<br>";
           echo $new_downvotes;
-          echo "<br>":
+          echo "<br>";
           
         }
       
