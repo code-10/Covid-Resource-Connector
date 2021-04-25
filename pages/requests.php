@@ -207,7 +207,7 @@
 							
 						<?php
 							
-							$con = getCon();
+							/*$con = getCon();
 							$comment = Array();
 							$email = Array();
 							$time = Array();
@@ -220,7 +220,7 @@
 								$time[] = $comment_ele['time'];
 							}
 							
-							$cc = count($comment);
+							$cc = count($comment);*/
 							
 						?>
 							
