@@ -107,8 +107,10 @@
       $city_e = Array();
       $email_e = Array();
       $post_id_e = Array();
+      $first_name_e = Array();
+      $last_name_e = Array();
 	
-      $e_posts_res = $con->query("select * from post ORDER BY time ASC");
+      $e_posts_res = $con->query("select p.post_id,p.description,p.state,p.city,p.time,p.ph_no,u.first_name,u.last_name from post as p,user as u where u.email=p.email order by time asc");
    
       while($e_posts_ele = $e_posts_res->fetch_assoc())
       {
@@ -118,6 +120,8 @@
             $city_e[] = $e_posts_ele['city'];  
 	    $email_e[] = $e_posts_ele['email'];
 	    $post_id_e[] = $e_posts_ele['post_id'];
+	    $first_name_e[] = $e_posts_ele['first_name'];
+	    $last_name_e[] = $e_posts_ele['last_name'];
       }
    
       $ce = count($state_e);
@@ -130,26 +134,8 @@
 				<div class="col-12 col-sm-4 m-2">
 					<div class="card">
 						
-						<?php
-	
-
-							/*$con = getCon();
-
-	
-						 	$first_name_e = Array();
-      							$last_name_e = Array();
-	      
-      							$my_posts_res_fl_e = $con->query("select * from user where email='$email_e[$i]'");
-      							while($my_posts_ele_fl_e = $my_posts_res_fl_e->fetch_assoc())
-      							{
-	      							$first_name_e[] = $my_posts_ele_fl_e['first_name'];
-	      							$last_name_e[] = $my_posts_ele_fl_e['last_name'];
-      							}*/
 						
-						?>
-						
-						
-  						<h5 class="card-header"><?=$first_name_e[0]?>&nbsp<?=$last_name_e[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
   						<div class="card-body">
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
     							<p class="card-text">Description: <?=$description_e[$i]?></p>
