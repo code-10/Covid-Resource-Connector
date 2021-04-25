@@ -55,6 +55,7 @@
       $description = Array();
       $state = Array();
       $city = Array();
+	  $post_id = Array();
    
       $my_posts_res = $con->query("select * from post where email='$email' and request_resource='$request_resource' ORDER BY time ASC");
    
@@ -64,6 +65,7 @@
             $description[] = $my_posts_ele['description'];
             $state[] = $my_posts_ele['state'];
             $city[] = $my_posts_ele['city'];  
+			$post_id[] = $my_posts_ele['post_id'];
       }
    
       $c = count($state);
@@ -87,7 +89,10 @@
 			<?php for($i=0;$i<$c;$i++) { ?>
 				<div class="col-12 col-sm-4 m-2">
 					<div class="card">
-  						<h5 class="card-header"><?=$first_name[0]?>&nbsp<?=$last_name[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<h5 class="card-header">
+						  <?=$first_name[0]?>&nbsp<?=$last_name[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
+						  <a href="delete_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
+						</h5>
   						<div class="card-body">
 							<h5 class="card-title"><?=$city[$i]?>, <?=$state[$i]?></h5>
     							<p class="card-text">Description: <?=$description[$i]?></p>
