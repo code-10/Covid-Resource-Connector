@@ -32,10 +32,10 @@
           
           $new_upvotes = $current_upvotes[0]+1;
           
-          echo $current_upvotes[0];
+          /*echo $current_upvotes[0];
           echo "<br>";
           echo $new_upvotes;
-          echo "<br>";
+          echo "<br>";*/
                 
           
         }
@@ -50,10 +50,10 @@
           
           $new_downvotes = $current_downvotes[0]+1;
           
-          echo $current_downvotes[0];
+          /*echo $current_downvotes[0];
           echo "<br>";
           echo $new_downvotes;
-          echo "<br>";
+          echo "<br>";*/
           
         }
       
@@ -68,8 +68,8 @@
             {
                   $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
               
-                  $con->query("update post set upvotes='$new_upvotes' where post_id='$post_id'");    
-              
+                  $check = $con->query("update post set upvotes='$new_upvotes' where post_id='$post_id'");    
+                  var_dump($check->error);
                   //header("Location:requests.php?valid=yes");
                   //die();
             }
@@ -78,7 +78,9 @@
         {
             $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
           
-            $con->query("update post set downvotes='$new_downvotes' where post_id='$post_id'");   
+            $check = $con->query("update post set downvotes='$new_downvotes' where post_id='$post_id'");   
+          
+            var_dump($check->error);
           
             //header("Location:requests.php?valid=yes");
             //die();
