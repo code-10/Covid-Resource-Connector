@@ -200,6 +200,27 @@
 							
 							
 							
+							
+							
+						<?php
+							
+							$con = getCon();
+							$comment = Array();
+							$email = Array();
+							$time = Array();
+								
+							$comment_res = $con->query("select * from comments");
+							while($comment_ele = $comment_res->fetch_assoc())
+							{
+								$comment[] = $comment_ele['comment'];
+								$email[] = $comment_ele['email'];
+								$time[] = $comment_ele['time'];
+							}
+							
+							$cc = count($comment);
+							
+						?>
+							
 						<!--view comments-->
 						<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   							<div class="modal-dialog" role="document">
@@ -211,7 +232,11 @@
         									</button>
       									</div>
       									<div class="modal-body">
-        									will show posts in a min
+        									<?php for($i=0;$i<$cc;$i++) { ?>
+											<p><?=$email[$i]?></p>
+											<p><?=$comment[$i]?></p>
+											<p><?=$time[$i]?></p>
+										<?php } ?>
       									</div>
       									<div class="modal-footer">
         									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
