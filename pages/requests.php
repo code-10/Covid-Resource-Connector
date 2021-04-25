@@ -98,7 +98,6 @@
 	
 	<?php
 	
-		$con = getCon();	
 	
       $email = $_SESSION['email'];
       
@@ -133,7 +132,6 @@
 						
 						<?php
 	
-							$con = getCon();
 	
 						 	$first_name_e = Array();
       							$last_name_e = Array();
@@ -207,7 +205,6 @@
 							
 						<?php
 							
-							$con = getCon();
 							$comment = Array();
 							$email = Array();
 							$time = Array();
