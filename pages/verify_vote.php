@@ -61,15 +61,15 @@
         {
             if(rowExists('updownvote','post_id',$post_id))
             {
-                //header("Location:requests.php?valid=no");
-                //die();
+                header("Location:requests.php?valid=no");
+                die();
             }
             else
             {
                   $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
               
-                  $check = $con->query("update post set upvotes='$new_upvotes' where post_id='$post_id'");    
-                  var_dump($check->error);
+                  $con->query("update post set upvotes='$new_upvotes' where post_id='$post_id'");    
+                  
                   //header("Location:requests.php?valid=yes");
                   //die();
             }
@@ -78,9 +78,7 @@
         {
             $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
           
-            $check = $con->query("update post set downvotes='$new_downvotes' where post_id='$post_id'");   
-          
-            var_dump($check->error);
+            $con->query("update post set downvotes='$new_downvotes' where post_id='$post_id'");   
           
             //header("Location:requests.php?valid=yes");
             //die();
