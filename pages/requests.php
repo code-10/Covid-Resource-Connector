@@ -147,7 +147,7 @@
 						
 						
 							<?php if(isset($_SESSION['email'])) { ?>
-							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalCenter">
+							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalCenter<?=$i?>">
   								Add a Comment
 							</button>
 							<?php } ?>	
@@ -161,7 +161,7 @@
 							
 							
 						<!-- Modal -->
-						<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal fade" id="exampleModalCenter<?=$i?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   							<div class="modal-dialog modal-dialog-centered" role="document">
     							<div class="modal-content p-2">
       								<div class="modal-header">
