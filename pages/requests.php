@@ -147,7 +147,7 @@
     							<p class="card-text">Description: <?=$description_e[$i]?></p>
 							<p class="card-text mb-2">Mob: <?=$phone_number_e[$i]?></p>
 							<p class="card-text">Email: <?=$email_e[$i]?></p>
-							<p class="card-text"><a href="vote.php?email=<?=$email_e[$i]?>&&post_id=<?=$post_id_e[$i]?>&&vote=up"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a>&nbsp&nbsp<a href="vote.php?email=<?=$email_e[$i]?>&&post_id=<?=$post_id_e[$i]?>&&vote=down"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a></p>
+							<p class="card-text"><a href="verify_vote.php?email=<?=$email_e[$i]?>&&post_id=<?=$post_id_e[$i]?>&&vote=up"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a>&nbsp&nbsp<a href="verify_vote.php?email=<?=$email_e[$i]?>&&post_id=<?=$post_id_e[$i]?>&&vote=down"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a></p>
 						
 						
 							<?php if(isset($_SESSION['email'])) { ?>
