@@ -68,8 +68,8 @@
             {
                   $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
               
-                  $con->query("update post set upvotes='$new_upvotes' where post_id='$post_id'");    
-                  
+                  $check = $con->query("update post set upvotes='$new_upvotes' where post_id='$post_id'");    
+                  var_dump($check->error);
                   //header("Location:requests.php?valid=yes");
                   //die();
             }
@@ -78,8 +78,8 @@
         {
             $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
           
-            $con->query("update post set downvotes='$new_downvotes' where post_id='$post_id'");   
-          
+            $check = $con->query("update post set downvotes='$new_downvotes' where post_id='$post_id'");   
+            var_dump($check->error);
             //header("Location:requests.php?valid=yes");
             //die();
             
