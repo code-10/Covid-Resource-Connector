@@ -31,6 +31,11 @@
             $current_upvotes[] = $current_upvotes_ele['upvotes'];
           
           $new_upvotes = $current_upvotes[0]+1;
+          
+          echo $current_upvotes[0];
+          echo "<br>";
+          echo $new_upvotes;
+          echo "<br>":
                 
           
         }
@@ -44,14 +49,20 @@
             $current_downvotes[] = $current_downvotes_ele['downvotes'];
           
           $new_downvotes = $current_downvotes[0]+1;
+          
+          echo $current_downvotes[0];
+          echo "<br>";
+          echo $new_downvotes;
+          echo "<br>":
+          
         }
       
         if(rowExists('updownvote','email',$email))
         {
             if(rowExists('updownvote','post_id',$post_id))
             {
-                header("Location:requests.php?valid=no");
-                die();
+                //header("Location:requests.php?valid=no");
+                //die();
             }
             else
             {
@@ -59,8 +70,8 @@
               
                   $con->query("update post set upvotes='$new_upvotes' where post_id='$post_id'");    
               
-                  header("Location:requests.php?valid=yes");
-                  die();
+                  //header("Location:requests.php?valid=yes");
+                  //die();
             }
         }
         else
@@ -69,8 +80,8 @@
           
             $con->query("update post set downvotes='$new_downvotes' where post_id='$post_id'");   
           
-            header("Location:requests.php?valid=yes");
-            die();
+            //header("Location:requests.php?valid=yes");
+            //die();
             
         }
       
