@@ -26,7 +26,7 @@
           
           $current_upvotes = Array();
           
-          $current_upvotes_res = $con->query("select upvotes from post where post_id='$post_id'");
+          $current_upvotes_res = $con->query("select * from post where post_id='$post_id'");
           while($current_upvotes_ele = $current_upvotes_res->fetch_assoc())
             $current_upvotes[] = $current_upvotes_ele['upvotes'];
           
@@ -39,7 +39,7 @@
           
           $current_downvotes = Array();
           
-          $current_downvotes_res = $con->query("select downvotes from post where post_id='$post_id'");
+          $current_downvotes_res = $con->query("select * from post where post_id='$post_id'");
           while($current_downvotes_ele = $current_downvotes_res->fetch_assoc())
             $current_downvotes[] = $current_downvotes_ele['downvotes'];
           
