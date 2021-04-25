@@ -175,7 +175,7 @@
        	 								<form  id="comment-form" method="POST" action="verify_comment.php" style="display:block;">
 											<div class="form-group">
   												<label for="exampleFormControlTextarea5">Comment</label>
- 				 								<textarea class="form-control" id="exampleFormControlTextarea5" rows="4" name="comment"></textarea>
+ 				 								<textarea maxlength="50" class="form-control" id="exampleFormControlTextarea5" rows="4" name="comment"></textarea>
 											</div>
 											
 											<input type="hidden" name="post_id" value="<?php echo $post_id_e[$i];?>" />
