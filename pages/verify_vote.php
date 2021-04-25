@@ -20,8 +20,11 @@
         $post_id = $_GET['post_id'];
         $vote = $_GET['vote'];
         
-        echo $email;echo "<br>";
-        echo $post_id;echo "<br>";
-        echo $vote;echo "<br>";
+        if($vote=="up")
+           $vote=1;
+        else if($vote=="down")
+           $vote=0;
+      
+        $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
     }
 ?>
