@@ -229,7 +229,7 @@
 										<?php for($k=0;$k<$cc;$k++) { ?>
 											<p class="text-monospace mb-1"><?=$comment[$k]?></p>
 											<p class="font-weight-light mb-0 responsive-md"><?=$email[$k]?></p>
-											<p class="font-weight-light mb-0 responsive-md"><?=$time[$k]?></p>
+											<p class="font-weight-light mb-4 responsive-md"><?=$time[$k]?></p>
 										<?php } ?>
 										
       									</div>
