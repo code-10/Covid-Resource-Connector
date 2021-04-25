@@ -235,11 +235,7 @@
         									</button>
       									</div>
       									<div class="modal-body">
-        									<?php for($i=0;$i<$cc;$i++) { ?>
-											<p><?=$email[$i]?></p>
-											<p><?=$comment[$i]?></p>
-											<p><?=$time[$i]?></p>
-										<?php } ?>
+        									will post in a min
       									</div>
       									<div class="modal-footer">
         									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
