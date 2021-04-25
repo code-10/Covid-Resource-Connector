@@ -222,9 +222,19 @@
           										<span aria-hidden="true">&times;</span>
         									</button>
       									</div>
+									
+									
       									<div class="modal-body">
-        									will post in a min
+										
+										<?php for($k=0;$k<$cc;$k++) { ?>
+											<p><?=$comment[$i]?></p>
+											<p><?=$email[$i]?></p>
+											<p><?=$time[$i]?></p>
+										<?php } ?>
+										
       									</div>
+									
+									
       									<div class="modal-footer">
         									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       									</div>
