@@ -11,6 +11,11 @@
 
 	$user_email = $_SESSION['email'];
 
+	$map_rr = [ 'request' => 0, 'resource' => 1];
+	$request_resource = $map_rr[$_GET['type']];
+	if(!$request_resource) #defaults to show only requests.
+	  $request_resource = 0;
+
 ?>
 
 <body>
@@ -45,13 +50,13 @@
       if(isset($_SESSION['email'])){	
 	
       $email = $_SESSION['email'];
-      
+
       $phone_number = Array();
       $description = Array();
       $state = Array();
       $city = Array();
    
-      $my_posts_res = $con->query("select * from post where email='$email' ORDER BY time ASC");
+      $my_posts_res = $con->query("select * from post where email='$email' and request_resource='$request_resource' ORDER BY time ASC");
    
       while($my_posts_ele = $my_posts_res->fetch_assoc())
       {
@@ -114,7 +119,7 @@
       $upvotes_e = Array();
       $downvotes_e = Array();
 	
-      $e_posts_res = $con->query("select p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,u.first_name,u.last_name from post as p,user as u where u.email=p.email order by time asc");
+      $e_posts_res = $con->query("select p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,u.first_name,u.last_name from post as p,user as u where u.email=p.email and p.request_resource='$request_resource' order by time asc");
    
       while($e_posts_ele = $e_posts_res->fetch_assoc())
       {
