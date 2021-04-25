@@ -132,6 +132,10 @@
 						
 						<?php
 	
+<<<<<<< HEAD
+=======
+							/*$con = getCon();
+>>>>>>> 1ea23fa39bc084111046deb66761ee3804bf1f8e
 	
 						 	$first_name_e = Array();
       							$last_name_e = Array();
@@ -141,7 +145,7 @@
       							{
 	      							$first_name_e[] = $my_posts_ele_fl_e['first_name'];
 	      							$last_name_e[] = $my_posts_ele_fl_e['last_name'];
-      							}
+      							}*/
 						
 						?>
 						
@@ -205,6 +209,10 @@
 							
 						<?php
 							
+<<<<<<< HEAD
+=======
+							/*$con = getCon();
+>>>>>>> 1ea23fa39bc084111046deb66761ee3804bf1f8e
 							$comment = Array();
 							$email = Array();
 							$time = Array();
@@ -217,7 +225,7 @@
 								$time[] = $comment_ele['time'];
 							}
 							
-							$cc = count($comment);
+							$cc = count($comment);*/
 							
 						?>
 							
