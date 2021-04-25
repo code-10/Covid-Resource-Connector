@@ -132,6 +132,9 @@
 					<div class="card">
 						
 						<?php
+	
+							$con = getCon();
+	
 						 	$first_name_e = Array();
       							$last_name_e = Array();
 	      
