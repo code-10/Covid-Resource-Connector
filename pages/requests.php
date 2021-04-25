@@ -217,7 +217,7 @@
   							<div class="modal-dialog" role="document">
     								<div class="modal-content">
       									<div class="modal-header">
-        									<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        									<h5 class="modal-title" id="exampleModalLongTitle">Comments</h5>
         									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           										<span aria-hidden="true">&times;</span>
         									</button>
@@ -228,8 +228,8 @@
 										
 										<?php for($k=0;$k<$cc;$k++) { ?>
 											<p><?=$comment[$k]?></p>
-											<p><?=$email[$k]?></p>
-											<p><?=$time[$k]?></p>
+											<p class="font-weight-light m-2"><?=$email[$k]?></p>
+											<p class="font-weight-light m-2"><?=$time[$k]?></p>
 										<?php } ?>
 										
       									</div>
