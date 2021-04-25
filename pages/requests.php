@@ -133,7 +133,7 @@
 						
 						<?php
 	
-							$con = getCon();
+							/*$con = getCon();
 	
 						 	$first_name_e = Array();
       							$last_name_e = Array();
@@ -143,7 +143,7 @@
       							{
 	      							$first_name_e[] = $my_posts_ele_fl_e['first_name'];
 	      							$last_name_e[] = $my_posts_ele_fl_e['last_name'];
-      							}
+      							}*/
 						
 						?>
 						
