@@ -209,7 +209,7 @@
 							$email = Array();
 							$time = Array();
 								
-							$comment_res = $con->query("select * from comments");
+							$comment_res = $con->query("select * from comment");
 							while($comment_ele = $comment_res->fetch_assoc())
 							{
 								$comment[] = $comment_ele['comment'];
