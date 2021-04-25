@@ -137,7 +137,11 @@
 					<div class="card">
 						
 						
-  						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
+  						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
+							<?php if($user_email==$email_e[$i]) { ?>
+								<a href="delete_post.php?post_id=<?=$post_id_e[$i]?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
+							<?php } ?>
+						</h5>
   						<div class="card-body">
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
     							<p class="card-text">Description: <?=$description_e[$i]?></p>
