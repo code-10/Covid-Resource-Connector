@@ -153,9 +153,9 @@
 							<p class="card-text">Email: <?=$email_e[$i]?></p>
 							
 							<?php if($_SESSION['email']) { ?>
-								<p class="card-text"><a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=up"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a><p><?=$upvotes_e[$i]?></p>&nbsp&nbsp<a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=down"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a><p><?=$downvotes_e[$i]?></p></p>
+								<p class="card-text"><a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=up"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a><i><?=$upvotes_e[$i]?></i>&nbsp&nbsp<a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=down"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a><i><?=$downvotes_e[$i]?></i></p>
 							<?php } else { ?>
-								<p class="card-text"><a href="../sign_in/google_sign_in.php"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a><p><?=$upvotes_e[$i]?></p>&nbsp&nbsp<a href="../sign_in/google_sign_in.php"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a><p><?=$downvotes_e[$i]?></p></p>
+								<p class="card-text"><a href="../sign_in/google_sign_in.php"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a><i><?=$upvotes_e[$i]?></i>&nbsp&nbsp<a href="../sign_in/google_sign_in.php"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a><i><?=$downvotes_e[$i]?></i></p>
 							<?php } ?>
 							
 							
