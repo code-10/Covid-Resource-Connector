@@ -229,12 +229,11 @@
       									<div class="modal-body">
 										
 										<?php for($k=0;$k<$cc;$k++) { ?>
-											<p class="text-monospace mb-1"><?=$comment[$k]?></p>
+											<p class="text-monospace mb-1"><?php if($user_email==$email[$k]) { ?>
+												<i class="fa fa-trash" aria-hidden="true"></i>
+											<?php } ?>&nbsp&nbsp<?=$comment[$k]?></p> 
 											<p class="font-weight-light mb-0 responsive-md"><?=$email[$k]?></p>
 											<p class="font-weight-light mb-4 responsive-md"><?=$time[$k]?></p>
-											<?php if($user_email==$email[$k]) { ?>
-												<i class="fa fa-trash" aria-hidden="true"></i>
-											<?php } ?>
 										<?php } ?>
 										
       									</div>
