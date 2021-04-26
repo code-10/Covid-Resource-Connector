@@ -67,6 +67,7 @@
   						<h5 class="card-header">
 						  <?=$first_name[0]?>&nbsp<?=$last_name[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
 						  <a href="delete_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
+						  <a href="modify_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-edit" aria-hidden="true" style="color:green;"></i></a>&nbsp
 						</h5>
   						<div class="card-body">
 							<h5 class="card-title"><?=$city[$i]?>, <?=$state[$i]?></h5>
@@ -127,9 +128,6 @@
 						
 						
   						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
-							<?php if($user_email==$email_e[$i]) { ?>
-								<a href="delete_post.php?post_id=<?=$post_id_e[$i]?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
-							<?php } ?>
 						</h5>
   						<div class="card-body">
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
@@ -146,13 +144,13 @@
 							
 						
 							<?php if(isset($_SESSION['email'])) { ?>
-							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalCenter<?=$i?>">
+							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalCenter<?=$post_id_e[$i];?>">
   								Add a Comment
 							</button>
 							<?php } ?>	
 							
 							
-							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalLong<?=$i?>">
+							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalLong<?=$post_id_e[$i];?>">
   								View Comments
 							</button>
 							
@@ -160,7 +158,7 @@
 							
 							
 						<!-- Modal -->
-						<div class="modal fade" id="exampleModalCenter<?=$i?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal fade" id="exampleModalCenter<?=$post_id_e[$i];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   							<div class="modal-dialog modal-dialog-centered" role="document">
     							<div class="modal-content p-2">
       								<div class="modal-header">
@@ -195,13 +193,10 @@
 							
 						<?php
 							
-							$con = getCon();
-
 							$comment = Array();
 							$email = Array();
 							$time = Array();
-						     	$comment_id =Array();
-								
+						    $comment_id =Array();
 							$comment_res = $con->query("select * from comment where post_id='$post_id_e[$i]'");
 							while($comment_ele = $comment_res->fetch_assoc())
 							{
@@ -216,7 +211,7 @@
 						?>
 							
 						<!--view comments-->
-						<div class="modal fade" id="exampleModalLong<?=$i?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+						<div class="modal fade" id="exampleModalLong<?=$post_id_e[$i]?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   							<div class="modal-dialog" role="document">
     								<div class="modal-content">
       									<div class="modal-header">
