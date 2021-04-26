@@ -39,7 +39,7 @@
             $description[] = $my_posts_ele['description'];
             $state[] = $my_posts_ele['state'];
             $city[] = $my_posts_ele['city'];  
-			$post_id[] = $my_posts_ele['post_id'];
+	    $post_id[] = $my_posts_ele['post_id'];
       }
    
       $c = count($state);
@@ -84,7 +84,7 @@
 	
 <?php } ?>	
 	
-	<?php
+<?php
 	
 	
       $email = $_SESSION['email'];
@@ -118,7 +118,7 @@
    
       $ce = count($state_e);
 	
-	?>
+?>
 	
 	<h4 class="m-4 text-center">People's posts</h4>
    <div class="row m-4 d-flex justify-content-center">
@@ -127,7 +127,10 @@
 					<div class="card">
 						
 						
-  						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
+  						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp
+							<?php if($upvotes_e[$i]>100) { ?>
+								<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
+							<?php } ?>
 						</h5>
   						<div class="card-body">
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
