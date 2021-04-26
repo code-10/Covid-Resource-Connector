@@ -29,7 +29,9 @@
       $description = Array();
       $state = Array();
       $city = Array();
-	  $post_id = Array();
+      $post_id = Array();
+      $first_name = Array();
+      $last_name = Array();
    
       $my_posts_res = $con->query("select * from post where email='$email' and request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
    
@@ -40,19 +42,11 @@
             $state[] = $my_posts_ele['state'];
             $city[] = $my_posts_ele['city'];  
 	    $post_id[] = $my_posts_ele['post_id'];
+	    $first_name[] = $my_posts_ele['first_name'];
+	    $last_name[] = $my_posts_ele['last_name'];
       }
    
       $c = count($state);
-	      
-      $first_name = Array();
-      $last_name = Array();
-	      
-      $my_posts_res_fl = $con->query("select * from user where email='$email'");
-      while($my_posts_ele_fl = $my_posts_res_fl->fetch_assoc())
-      {
-	      $first_name[] = $my_posts_ele_fl['first_name'];
-	      $last_name[] = $my_posts_ele_fl['last_name'];
-      }
 	    
 	      
    ?>
@@ -65,7 +59,7 @@
 				<div class="col-12 col-sm-4 m-2">
 					<div class="card">
   						<h5 class="card-header p-3">
-						  <?=$first_name[0]?>&nbsp<?=$last_name[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
+						  <?=$first_name[$i]?>&nbsp<?=$last_name[$i]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
 						  <a href="delete_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
 						  <a href="modify_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-edit" aria-hidden="true" style="color:green;"></i></a>&nbsp
 						</h5>
