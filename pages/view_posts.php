@@ -138,8 +138,8 @@
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
     							<p class="card-text">Description: <?=$description_e[$i]?></p>
 							<p class="card-text mb-2">Mob: <?=$phone_number_e[$i]?></p>
-							<p class="font-weight-light mb-2 responsive-md"><?=$email_e[$i]?></p>
-							<p class="font-weight-light mb-2 responsive-md"><?=$time_e[$i]?></p>
+							<p class="text-muted mb-0 responsive-md"><?=$email_e[$i]?></p>
+							<p class="text-muted mb-2 responsive-md"><?=$time_e[$i]?></p>
 							
 							<?php if($_SESSION['email']) { ?>
 								<p class="card-text"><a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=up"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a>&nbsp<?=$upvotes_e[$i]?>&nbsp&nbsp<a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=down"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a>&nbsp<?=$downvotes_e[$i]?></p>
