@@ -100,7 +100,7 @@
   								</div>
                                 
 									</div>
-					            <button type="submit" name="create_post" class="btn btn-success m-2">Create Request</button>
+					            <button type="submit" name="create_post" class="btn btn-success m-2">Create Post</button>
 								<a class="btn btn-danger m-2" href="../index.php" role="button">cancel</a>
 								</form>
 								
