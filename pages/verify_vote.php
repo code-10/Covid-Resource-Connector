@@ -1,10 +1,8 @@
-  
-<?php include_once '../header.php'; session_start(); ?>
+<?php session_start(); ?>
 <?php include_once '../libraries/shield.php'; ?>
 <?php
 
-   $visit = $_SERVER['REQUEST_URI'];
-  	$visit = substr($visit,1);
+   $visit = $_SERVER['HTTP_REFERER'];
 
   	$_SESSION['visit'] = $visit;		
 
@@ -19,72 +17,50 @@
         $email = $_SESSION['email'];
         $post_id = $_GET['post_id'];
         $vote = $_GET['vote'];   
-      
-   
-        if($vote=="up"){
-          $vote=1;
-          
-          $current_upvotes = Array();
-          
-          $current_upvotes_res = $con->query("select * from post where post_id='$post_id'");
-          while($current_upvotes_ele = $current_upvotes_res->fetch_assoc())
-            $current_upvotes[] = $current_upvotes_ele['upvotes'];
-          
-          $new_upvotes = $current_upvotes[0]+1;
-          
-          /*echo $current_upvotes[0];
-          echo "<br>";
-          echo $new_upvotes;
-          echo "<br>";*/
-                
-          
-        }
-        else if($vote=="down"){
-          $vote=0;
-          
-          $current_downvotes = Array();
-          
-          $current_downvotes_res = $con->query("select * from post where post_id='$post_id'");
-          while($current_downvotes_ele = $current_downvotes_res->fetch_assoc())
-            $current_downvotes[] = $current_downvotes_ele['downvotes'];
-          
-          $new_downvotes = $current_downvotes[0]+1;
-          
-          /*echo $current_downvotes[0];
-          echo "<br>";
-          echo $new_downvotes;
-          echo "<br>";*/
-          
-        }
-      
-        if(rowExists('updownvote','email',$email))
+        $vote_map = [ 'up' => 1, 'down' => -1];
+        $upordown = $vote_map[$vote];
+        $upvotes=0;
+        $downvotes=0;
+        if($vote==='up')
         {
-            if(rowExists('updownvote','post_id',$post_id))
-            {
-                header("Location:view_posts.php?valid=no");
-                die();
-            }
-            else
-            {
-                  $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
-              
-                  $con->query("update post set upvotes='$new_upvotes' where post_id='$post_id'");    
-                  var_dump($con->error);
-                  //header("Location:view_posts.php?valid=yes");
-                  //die();
-            }
+          $upvotes = 1;
+          $downvotes = -1;
         }
-        else
+        if($vote === "down")
         {
-            $con->query("insert into updownvote(email,post_id,upordown) values('".mysqli_real_escape_string($con,$email)."','".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$vote)."')");
-          
-            $con->query("update post set downvotes='$new_downvotes' where post_id='$post_id'");   
+          $upvotes = -1;
+          $downvotes = +1;
+        }
+
+
+        $previousVote=$con->query("select upordown from updownvote where email='$email' and post_id='$post_id' ")->fetch_assoc()['upordown'];
+
+        if($previousVote) {
+          if((int)$previousVote === $upordown)
+            echo "";
+          else{
             var_dump($con->error);
-            //header("Location:view_posts.php?valid=yes");
-            //die();
-            
+            $con->query("update post as p,updownvote as v set v.upordown='$upordown',p.upvotes=p.upvotes+$upvotes,p.downvotes=p.downvotes+$downvotes where v.email='$email' and v.post_id='$post_id' and v.post_id=p.post_id;");
+            var_dump($con->error);
+          }          
+
         }
-      
-      
-    }
+        else {
+          echo var_dump($x);
+          $con->query("insert into updownvote(email,post_id,upordown) values('$email','$post_id','$upordown')");
+          var_dump($con->error);
+          if( $vote === "up")
+            $con->query("update post set upvotes=upvotes+1 where post_id='$post_id'");
+          else if($vote === "down")
+            $con->query("update post set downvotes=downvotes+1 where post_id='$post_id'");
+          else
+            die("Invalid value for vote parameter");
+          var_dump($con->error);
+
+        }
+        
+        
+        header("location:$visit");
+        die();
+      }
 ?>
