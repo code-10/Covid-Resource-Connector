@@ -40,6 +40,25 @@
 	?>
    
    
+	<?php
+	
+		//for tag
+		$tag_id = Array();
+		$tag_name = Array();
+	
+		$tag_res = $con->query("select * from tag");
+		while($tag_ele = $tag_res->fetch_assoc())
+		{
+			$tag_id[] = $tag_ele['tag_id'];
+			$tag_name[] = $tag_ele['tag_name'];	
+		}
+	
+		$tag_count = count($tag_id);
+	
+	
+	?>
+	
+	
    <h4 class="m-4 text-center">Creating a post to request for resource</h4>
    
    <div class="container">
@@ -84,6 +103,17 @@
 							<?php } ?>
     					</select>
 									</div>
+								
+									
+						<div class="form-group">
+								<label for="inputuser">Need</label>
+    					<select class="form-control" id="tag" name="tag">
+                              				<?php for($k=0;$k<$tag_count;$k++) { ?>
+					      			<option value="<?=$tag_id[$k]?>"><?=$tag_name[$k]?></option>
+							<?php } ?>
+    					</select>
+									</div>			
+									
                                 
                                 <div class="form-group">
 					          <label for="inputdescription">Description</label>
