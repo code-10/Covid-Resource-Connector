@@ -33,6 +33,7 @@
       $first_name = Array();
       $last_name = Array();
       $time = Array();	
+      $tag_name = Array();	      
 	      
       //$my_posts_res = $con->query("select * from post where email='$email' and request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
       $my_posts_res = $con->query("select p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name from post as p,tag as t where t.tag_id=p.tag_id and email='$email' and request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
@@ -49,6 +50,7 @@
 	    $first_name[] = $my_posts_ele['first_name'];
 	    $last_name[] = $my_posts_ele['last_name'];
 	    $time[] = $my_posts_ele['time'];
+	    $tag_name[] = $my_posts_ele['tag_name'];
       }
    
       $c = count($state);
@@ -67,6 +69,7 @@
 						  <?=$first_name[$i]?>&nbsp<?=$last_name[$i]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
 						  <a href="delete_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
 						  <a href="modify_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-edit" aria-hidden="true" style="color:green;"></i></a>&nbsp
+						  <span class="badge badge-pill badge-info"><?=$tag_name[$i]?></span>
 						</h5>
   						<div class="card-body p-3">
 							<h5 class="card-title"><?=$city[$i]?>, <?=$state[$i]?></h5>
