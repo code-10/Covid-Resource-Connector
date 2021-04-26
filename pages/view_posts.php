@@ -64,12 +64,12 @@
 			<?php for($i=0;$i<$c;$i++) { ?>
 				<div class="col-12 col-sm-4 m-2">
 					<div class="card">
-  						<h5 class="card-header">
+  						<h5 class="card-header p-3">
 						  <?=$first_name[0]?>&nbsp<?=$last_name[0]?>&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
 						  <a href="delete_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
 						  <a href="modify_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-edit" aria-hidden="true" style="color:green;"></i></a>&nbsp
 						</h5>
-  						<div class="card-body">
+  						<div class="card-body p-3">
 							<h5 class="card-title"><?=$city[$i]?>, <?=$state[$i]?></h5>
     							<p class="card-text">Description: <?=$description[$i]?></p>
 							<p class="card-text mb-2">Mob: <?=$phone_number[$i]?></p>
@@ -127,12 +127,12 @@
 					<div class="card">
 						
 						
-  						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp
+  						<h5 class="card-header p-3"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp
 							<?php if($upvotes_e[$i]>100) { ?>
 								<span class="badge badge-pill badge-success">Verified <i class="fa fa-check-circle" aria-hidden="true" style="color:white;"></i></span>
 							<?php } ?>
 						</h5>
-  						<div class="card-body">
+  						<div class="card-body p-3">
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
     							<p class="card-text">Description: <?=$description_e[$i]?></p>
 							<p class="card-text mb-2">Mob: <?=$phone_number_e[$i]?></p>
