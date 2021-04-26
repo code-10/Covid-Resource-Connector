@@ -99,8 +99,9 @@
       $last_name_e = Array();
       $upvotes_e = Array();
       $downvotes_e = Array();
+      $time_e = Array();
 	
-      $e_posts_res = $con->query("select p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,u.first_name,u.last_name from post as p,user as u where u.email=p.email and p.email!='$email' and p.request_resource='$request_resource' order by time asc, upvotes desc, downvotes asc");
+      $e_posts_res = $con->query("select p.time,p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,u.first_name,u.last_name from post as p,user as u where u.email=p.email and p.email!='$email' and p.request_resource='$request_resource' order by time asc, upvotes desc, downvotes asc");
    
       while($e_posts_ele = $e_posts_res->fetch_assoc())
       {
@@ -114,6 +115,7 @@
 	    $last_name_e[] = $e_posts_ele['last_name'];
 	    $upvotes_e[] = $e_posts_ele['upvotes'];
      	    $downvotes_e[] = $e_posts_ele['downvotes'];
+	    $time_e[] = $e_posts_ele['time'];
       }
    
       $ce = count($state_e);
@@ -136,7 +138,8 @@
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
     							<p class="card-text">Description: <?=$description_e[$i]?></p>
 							<p class="card-text mb-2">Mob: <?=$phone_number_e[$i]?></p>
-							<p class="card-text">Email: <?=$email_e[$i]?></p>
+							<p class="font-weight-light mb-2 responsive-md"><?=$email_e[$i]?></p>
+							<p class="font-weight-light mb-2 responsive-md"><?=$time_e[$i]?></p>
 							
 							<?php if($_SESSION['email']) { ?>
 								<p class="card-text"><a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=up"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a>&nbsp<?=$upvotes_e[$i]?>&nbsp&nbsp<a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=down"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a>&nbsp<?=$downvotes_e[$i]?></p>
