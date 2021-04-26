@@ -114,7 +114,7 @@
 	    $upvotes_e[] = $e_posts_ele['upvotes'];
      	    $downvotes_e[] = $e_posts_ele['downvotes'];
 	    $time_e[] = $e_posts_ele['time'];
-	    $tag_name = $e_posts_ele['tag_name'];;
+	    $tag_name[] = $e_posts_ele['tag_name'];;
       }
    
       $ce = count($state_e);
