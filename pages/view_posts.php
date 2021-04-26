@@ -142,7 +142,7 @@
 	<?php } ?>
 	
    <div class="row m-4 d-flex justify-content-center">
-			<?php for($i=0;$i<$ce;$i++) { echo $fix; ?>
+			<?php for($i=0;$i<$ce;$i++) { ?>
 				<div class="col-12 col-sm-4 m-2">
 					<div class="card">
 						
