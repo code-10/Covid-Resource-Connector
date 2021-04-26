@@ -32,7 +32,8 @@
       $post_id = Array();
       $first_name = Array();
       $last_name = Array();
-   
+      $time = Array();	
+	      
       $my_posts_res = $con->query("select * from post where email='$email' and request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
    
       while($my_posts_ele = $my_posts_res->fetch_assoc())
@@ -44,6 +45,7 @@
 	    $post_id[] = $my_posts_ele['post_id'];
 	    $first_name[] = $my_posts_ele['first_name'];
 	    $last_name[] = $my_posts_ele['last_name'];
+	    $time[] = $my_posts_ele['time'];
       }
    
       $c = count($state);
@@ -67,7 +69,8 @@
 							<h5 class="card-title"><?=$city[$i]?>, <?=$state[$i]?></h5>
     							<p class="card-text">Description: <?=$description[$i]?></p>
 							<p class="card-text mb-2">Mob: <?=$phone_number[$i]?></p>
-							<p class="card-text">Email: <?=$email?></p>
+							<p class="text-muted mb-0 responsive-md"><?=$email?></p>
+							<p class="text-muted mb-2 responsive-md"><?=$time[$i]?></p>
 							<!--<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>-->
   						</div>
 					</div>
