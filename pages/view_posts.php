@@ -240,8 +240,8 @@
       									</div>
 									
 									
-      									<div class="modal-footer">
-        									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      									<div class="modal-footer p-1">
+        									<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       									</div>
     								</div>
   							</div>
