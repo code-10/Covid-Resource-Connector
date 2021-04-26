@@ -22,9 +22,10 @@
         $phone_number = mysqli_real_escape_string($con,$_POST['phonenumber']);
         $request_resource = mysqli_real_escape_string($con,$_POST['request_resource']);
         $post_id = $_POST['post_id'];
+        $tag_id = $_POST['tag_id'];
 
         if(!isset($_POST['modify']))
-            $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource) values('$email','$state','$city','$description','$phone_number','$request_resource')");    
+            $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource,tag_id) values('$email','$state','$city','$description','$phone_number','$request_resource','$tag_id')");    
         else
         {
             $res = $con->query("update post set state='$state',city='$city',description='$description',ph_no='$phone_number',request_resource='$request_resource' where post_id='$post_id'"); 
