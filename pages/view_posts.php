@@ -129,7 +129,7 @@
 						
   						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp
 							<?php if($upvotes_e[$i]>100) { ?>
-								<span class="badge badge-success">Verified <i class="fa fa-check-circle" aria-hidden="true" style="color:white;"></i></span>
+								<span class="badge badge-pill badge-success">Verified <i class="fa fa-check-circle" aria-hidden="true" style="color:white;"></i></span>
 							<?php } ?>
 						</h5>
   						<div class="card-body">
@@ -147,13 +147,13 @@
 							
 						
 							<?php if(isset($_SESSION['email'])) { ?>
-							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalCenter<?=$post_id_e[$i];?>">
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter<?=$post_id_e[$i];?>">
   								Add a Comment
 							</button>
 							<?php } ?>	
 							
 							
-							<button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalLong<?=$post_id_e[$i];?>">
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong<?=$post_id_e[$i];?>">
   								View Comments
 							</button>
 							
