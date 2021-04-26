@@ -87,7 +87,8 @@
                                 
                                 <div class="form-group">
 					          <label for="inputdescription">Description</label>
-					            <input type="text" class="form-control" id="inputdescription" placeholder="description" name="description" required>
+								<textarea maxlength="1000" class="form-control" id="exampleFormControlTextarea" rows="4" name="description"></textarea>
+					            <!--<input type="text" class="form-control" id="inputdescription" placeholder="description" name="description" required>-->
 				          </div>
                                 
                                  <div class="form-group">
