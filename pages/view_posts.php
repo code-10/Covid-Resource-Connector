@@ -140,6 +140,7 @@
 	<?php } else { ?>
 		<h4 class="m-4 text-center">People's posts</h4>
 	<?php } ?>
+	
    <div class="row m-4 d-flex justify-content-center">
 			<?php for($i=0;$i<$ce;$i++) { ?>
 				<div class="col-12 col-sm-4 m-2">
@@ -167,11 +168,11 @@
 						</h5>
 						
   						<div class="card-body p-3">
-							<h5 class="card-title"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$city[$i]?>, <?=$state[$i]?><?php } else { ?><?=$city_e[$i]?>, <?=$state_e[$i]?></h5><?php } ?>
-    							<p class="card-text">Description: <?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$description[$i]?><?php } else { ?><?=$description_e[$i]?></p><?php } ?>
-							<p class="card-text mb-2">Mob: <?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$phone_number[$i]?><?php } else { ?><?=$phone_number_e[$i]?></p><?php } ?>
-							<p class="text-muted mb-0 responsive-md"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$email?><?php } else { ?><?=$email_e[$i]?></p><?php } ?>
-							<p class="text-muted mb-2 responsive-md"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$time[$i]?><?php } else { ?><?=$time_e[$i]?></p><?php } ?>
+							<h5 class="card-title mb-1"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$city[$i]?>, <?=$state[$i]?><?php } else { ?><?=$city_e[$i]?>, <?=$state_e[$i]?><?php } ?></h5>
+    							<p class="card-text">Description: <?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$description[$i]?><?php } else { ?><?=$description_e[$i]?><?php } ?></p>
+							<p class="card-text mb-2">Mob: <?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$phone_number[$i]?><?php } else { ?><?=$phone_number_e[$i]?><?php } ?></p>
+							<p class="text-muted mb-0 responsive-md"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$email?><?php } else { ?><?=$email_e[$i]?><?php } ?></p>
+							<p class="text-muted mb-2 responsive-md"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$time[$i]?><?php } else { ?><?=$time_e[$i]?><?php } ?></p>
 							
 							<?php if($_SESSION['email']) { ?>
 								<p class="card-text"><a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=up"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a>&nbsp<?=$upvotes_e[$i]?>&nbsp&nbsp<a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=down"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a>&nbsp<?=$downvotes_e[$i]?></p>
@@ -284,14 +285,7 @@
 				
 						<!--view comments end-->
 							
-							
-							
-							
-					
-							
-							
-							
-							
+								
 							
 							
 						</div>
