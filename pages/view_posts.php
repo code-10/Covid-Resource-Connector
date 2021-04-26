@@ -129,7 +129,7 @@
 						
   						<h5 class="card-header"><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?>&nbsp
 							<?php if($upvotes_e[$i]>100) { ?>
-								<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i>
+								<h5><span class="badge badge-success"><i class="fa fa-check-circle" aria-hidden="true" style="color:white;"></i></span></h5>
 							<?php } ?>
 						</h5>
   						<div class="card-body">
