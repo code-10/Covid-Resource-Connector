@@ -82,7 +82,7 @@
 							<p class="card-text mb-2">Mob: <?=$phone_number[$i]?></p>
 							<p class="text-muted mb-0 responsive-md"><?=$email?></p>
 							<p class="text-muted mb-2 responsive-md"><?=$time[$i]?></p>
-							<!--<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>-->
+							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
   						</div>
 					</div>
 				</div>
