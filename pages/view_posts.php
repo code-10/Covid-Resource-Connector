@@ -97,8 +97,9 @@
       $upvotes_e = Array();
       $downvotes_e = Array();
       $time_e = Array();
+      $tag_name = Array();
 	
-      $e_posts_res = $con->query("select p.time,p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,p.first_name,p.last_name from post as p,user as u where u.email=p.email and p.email!='$email' and p.request_resource='$request_resource' order by time asc, upvotes desc, downvotes asc");
+      $e_posts_res = $con->query("select t.tag_name,p.time,p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,p.first_name,p.last_name from post as p,tag as t,user as u where u.email=p.email and p.tag_id=t.tag_id and p.email!='$email' and p.request_resource='$request_resource' order by time asc, upvotes desc, downvotes asc");
    
       while($e_posts_ele = $e_posts_res->fetch_assoc())
       {
@@ -113,6 +114,7 @@
 	    $upvotes_e[] = $e_posts_ele['upvotes'];
      	    $downvotes_e[] = $e_posts_ele['downvotes'];
 	    $time_e[] = $e_posts_ele['time'];
+	    $tag_name = $e_posts_ele['tag_name'];;
       }
    
       $ce = count($state_e);
@@ -130,6 +132,7 @@
 							<?php if($upvotes_e[$i]>100) { ?>
 								<span class="badge badge-pill badge-success">Verified <i class="fa fa-check-circle" aria-hidden="true" style="color:white;"></i></span>
 							<?php } ?>
+							<span class="badge badge-pill badge-info"><?=$tag_name[$i]?></span>
 						</h5>
   						<div class="card-body p-3">
 							<h5 class="card-title"><?=$city_e[$i]?>, <?=$state_e[$i]?></h5>
