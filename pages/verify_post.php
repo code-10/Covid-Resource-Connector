@@ -30,7 +30,7 @@
             $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource,tag_id,first_name,last_name) values('$email','$state','$city','$description','$phone_number','$request_resource','$tag_id','$first_name','$last_name')");    
         else
         {
-            $res = $con->query("update post set state='$state',city='$city',description='$description',ph_no='$phone_number',request_resource='$request_resource' where post_id='$post_id'"); 
+            $res = $con->query("update post set state='$state',tag_id='$tag_id',city='$city',description='$description',ph_no='$phone_number',request_resource='$request_resource' where post_id='$post_id'"); 
         }
         header("Location:view_posts.php");
         die();
