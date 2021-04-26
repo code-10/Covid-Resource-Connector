@@ -42,6 +42,20 @@ if($post_details === NULL)
     while ($city_ele = $city_res->fetch_assoc())
         $city[] = $city_ele['city_name'];
     $city_count = count($city);
+    
+    
+    
+    $tag_id = Array();
+		$tag_name = Array();
+	
+		$tag_res = $con->query("select * from tag");
+		while($tag_ele = $tag_res->fetch_assoc())
+		{
+			$tag_id[] = $tag_ele['tag_id'];
+			$tag_name[] = $tag_ele['tag_name'];	
+		}
+	
+		$tag_count = count($tag_id);
 
     ?>
 
@@ -94,6 +108,15 @@ if($post_details === NULL)
                                     <?php } ?>
                                 </select>
                             </div>
+                            
+                            <div class="form-group">
+								<label for="inputuser">Need</label>
+    					        <select class="form-control" id="tag" name="tag_id">
+                              	    <?php for($k=0;$k<$tag_count;$k++) { ?>
+					      			    <option value="<?=$tag_id[$k]?>"><?=$tag_name[$k]?></option>
+							        <?php } ?>
+    					        </select>
+							</div>
 
                             <div class="form-group">
                                 <label for="inputdescription">Description</label>
