@@ -31,7 +31,7 @@
       $city = Array();
 	  $post_id = Array();
    
-      $my_posts_res = $con->query("select * from post where email='$email' and request_resource='$request_resource' ORDER BY time ASC");
+      $my_posts_res = $con->query("select * from post where email='$email' and request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
    
       while($my_posts_ele = $my_posts_res->fetch_assoc())
       {
@@ -100,7 +100,7 @@
       $upvotes_e = Array();
       $downvotes_e = Array();
 	
-      $e_posts_res = $con->query("select p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,u.first_name,u.last_name from post as p,user as u where u.email=p.email and p.email!='$email' and p.request_resource='$request_resource' order by time asc");
+      $e_posts_res = $con->query("select p.upvotes,p.downvotes,p.post_id,p.description,p.state,p.city,p.time,p.ph_no,p.email,u.first_name,u.last_name from post as p,user as u where u.email=p.email and p.email!='$email' and p.request_resource='$request_resource' order by time asc, upvotes desc, downvotes asc");
    
       while($e_posts_ele = $e_posts_res->fetch_assoc())
       {
