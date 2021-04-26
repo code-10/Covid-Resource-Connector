@@ -61,7 +61,7 @@
    ?>
    
    
-   <h4 class="m-4 text-center">My posts</h4>
+   <!--<h4 class="m-4 text-center">My posts</h4>
 
    <div class="row m-4 d-flex justify-content-center">
 			<?php for($i=0;$i<$c;$i++) { ?>
@@ -87,7 +87,7 @@
 					</div>
 				</div>
 			<?php } ?>
-		</div>
+		</div>-->
    
 	
 <?php } ?>	
@@ -132,7 +132,11 @@
 	
 ?>
 	
-	<h4 class="m-4 text-center">People's posts</h4>
+	<?php if(isset($_SESSION['email'])) { ?>
+		<h4 class="m-4 text-center">My posts</h4>
+	<?php } else { ?>
+		<h4 class="m-4 text-center">People's posts</h4>
+	<?php } ?>
    <div class="row m-4 d-flex justify-content-center">
 			<?php for($i=0;$i<$ce;$i++) { ?>
 				<div class="col-12 col-sm-4 m-2">
