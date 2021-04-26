@@ -56,6 +56,8 @@
       }
    
       $c = count($state);
+      
+      $fix = $c;
 	    
 	      
    ?>
@@ -130,6 +132,7 @@
    
       $ce = count($state_e);
 	
+	
 ?>
 	
 	<?php if(isset($_SESSION['email'])) { ?>
@@ -143,8 +146,8 @@
 					<div class="card">
 						
 						
-  						<h5 class="card-header p-3"><?php if(isset($_SESSION['email'])) { ?><?=$first_name[$i]?>&nbsp<?=$last_name[$i]?><?php } else { ?><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?><?php } ?>&nbsp
-							<?php if(isset($_SESSION['email'])) { ?>
+  						<h5 class="card-header p-3"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$first_name[$i]?>&nbsp<?=$last_name[$i]?><?php } else { ?><?=$first_name_e[$i]?>&nbsp<?=$last_name_e[$i]?><?php } ?>&nbsp
+							<?php if(isset($_SESSION['email'])&&$fix!=0) { ?>
 								<?php if($upvotes[$i]>100) { ?>
 									<span class="badge badge-pill badge-success">Verified <i class="fa fa-check-circle" aria-hidden="true" style="color:white;"></i></span>
 								<?php } ?>
@@ -154,7 +157,7 @@
 								<?php } ?>
 							<?php } ?>
 							
-							<?php if(isset($_SESSION['email'])) { ?>
+							<?php if(isset($_SESSION['email'])&&$fix!=0) { ?>
 								<a href="delete_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
 						  		<a href="modify_post.php?post_id=<?=$post_id[$i]?>"><i class="fa fa-edit" aria-hidden="true" style="color:green;"></i></a>&nbsp
 						  		<span class="badge badge-pill badge-info"><?=$tag_name[$i]?></span>
@@ -164,11 +167,11 @@
 						</h5>
 						
   						<div class="card-body p-3">
-							<h5 class="card-title"><?php if(isset($_SESSION['email'])) { ?><?=$city[$i]?>, <?=$state[$i]?><?php } else { ?><?=$city_e[$i]?>, <?=$state_e[$i]?></h5><?php } ?>
-    							<p class="card-text">Description: <?php if(isset($_SESSION['email'])) { ?><?=$description[$i]?><?php } else { ?><?=$description_e[$i]?></p><?php } ?>
-							<p class="card-text mb-2">Mob: <?php if(isset($_SESSION['email'])) { ?><?=$phone_number[$i]?><?php } else { ?><?=$phone_number_e[$i]?></p><?php } ?>
-							<p class="text-muted mb-0 responsive-md"><?php if(isset($_SESSION['email'])) { ?><?=$email?><?php } else { ?><?=$email_e[$i]?></p><?php } ?>
-							<p class="text-muted mb-2 responsive-md"><?php if(isset($_SESSION['email'])) { ?><?=$time[$i]?><?php } else { ?><?=$time_e[$i]?></p><?php } ?>
+							<h5 class="card-title"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$city[$i]?>, <?=$state[$i]?><?php } else { ?><?=$city_e[$i]?>, <?=$state_e[$i]?></h5><?php } ?>
+    							<p class="card-text">Description: <?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$description[$i]?><?php } else { ?><?=$description_e[$i]?></p><?php } ?>
+							<p class="card-text mb-2">Mob: <?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$phone_number[$i]?><?php } else { ?><?=$phone_number_e[$i]?></p><?php } ?>
+							<p class="text-muted mb-0 responsive-md"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$email?><?php } else { ?><?=$email_e[$i]?></p><?php } ?>
+							<p class="text-muted mb-2 responsive-md"><?php if(isset($_SESSION['email'])&&$fix!=0) { ?><?=$time[$i]?><?php } else { ?><?=$time_e[$i]?></p><?php } ?>
 							
 							<?php if($_SESSION['email']) { ?>
 								<p class="card-text"><a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=up"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a>&nbsp<?=$upvotes_e[$i]?>&nbsp&nbsp<a href="verify_vote.php?post_id=<?=$post_id_e[$i]?>&&vote=down"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a>&nbsp<?=$downvotes_e[$i]?></p>
@@ -294,7 +297,7 @@
 						</div>
 					</div>
 				</div>
-			<?php } ?>
+			<?php $fix=$fix-1; } ?>
 		</div>
   
 </body>
