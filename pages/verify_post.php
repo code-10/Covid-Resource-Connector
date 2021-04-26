@@ -21,11 +21,13 @@
         $description = mysqli_real_escape_string($con,$_POST['description']);
         $phone_number = mysqli_real_escape_string($con,$_POST['phonenumber']);
         $request_resource = mysqli_real_escape_string($con,$_POST['request_resource']);
+        $first_name =  mysqli_real_escape_string($con,$_POST['first_name']);
+        $last_name = mysqli_real_escape_string($con,$_POST['last_name']);
         $post_id = $_POST['post_id'];
         $tag_id = $_POST['tag_id'];
 
         if(!isset($_POST['modify']))
-            $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource,tag_id) values('$email','$state','$city','$description','$phone_number','$request_resource','$tag_id')");    
+            $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource,tag_id,first_name,last_name) values('$email','$state','$city','$description','$phone_number','$request_resource','$tag_id','$first_name','$last_name')");    
         else
         {
             $res = $con->query("update post set state='$state',city='$city',description='$description',ph_no='$phone_number',request_resource='$request_resource' where post_id='$post_id'"); 
