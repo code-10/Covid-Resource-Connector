@@ -53,7 +53,7 @@
 		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">City</label>
     			<select class="form-control" id="city" name="city">
-				<option value="1" selected>All</option>
+				
     			</select>
 		</div>	
 
