@@ -25,7 +25,7 @@
 	
 	
 	<div class="container">
-	<form class="row row-cols-lg-auto g-3 align-items-center" method="GET" action="filter.php">
+	<form class="row d-flex justify-content-center p-4" method="GET" action="filter.php">
   		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state">
