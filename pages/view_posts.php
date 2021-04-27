@@ -39,7 +39,7 @@
 	
 	
 	<div class="container">
-	<form class="row d-flex justify-content-center p-4" method="POST" action="">
+	<form class="row d-flex justify-content-center p-4" method="POST" action="filter.php">
   		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state">
@@ -53,7 +53,7 @@
 		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">City</label>
     			<select class="form-control" id="city" name="city">
-				
+				<option value="1" selected>All</option>
     			</select>
 		</div>	
 
