@@ -35,6 +35,18 @@
 	
 		$cc = count($state_id);
 	
+	
+		$tag_name = Array();
+		$tag_id = Array();
+		$tag_res = $con->query("select * from tag");
+		while($tag_ele = $tag_res->fetch_assoc())
+		{
+			$tag_id[]=$tag_ele['tag_id'];
+			$tag_name[]=$tag_ele['tag_name'];	
+		}
+	
+		$tt = count($tag_id);
+	
 	?>
 	
 	
@@ -59,10 +71,13 @@
 
 		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">Need</label>
-    			<select class="form-control" id="need" name="need" onchange="this.form.submit()">
+    			<select class="form-control" id="state" name="state">
 				<option value="1" selected>All</option>
+				<?php for($i=0;$i<$tt;$i++) { ?>
+					<option value="<?=$tag_id[$i]?>"><?=$tag_name[$i]?></option>
+				<?php } ?>
     			</select>
-		</div>	
+		</div>		
 	</form>
 	</div>
 	
