@@ -28,7 +28,7 @@
 	<form class="row row-cols-lg-auto g-3 align-items-center" method="GET" action="filter.php">
   		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">State</label>
-    			<select class="form-control" id="state" name="state" onchange="this.form.submit()">
+    			<select class="form-control" id="state" name="state">
 				<option value="1" selected>One</option>
       				<option value="2">Two</option>
       				<option value="3">Three</option>
@@ -37,7 +37,7 @@
 
 		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">city</label>
-    			<select class="form-control" id="city" name="city" onchange="this.form.submit()">
+    			<select class="form-control" id="city" name="city">
 				<option value="1" selected>One</option>
       				<option value="2">Two</option>
       				<option value="3">Three</option>
