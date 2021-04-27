@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php include_once '../libraries/shield.php'; ?>
 <?php
-
+  authentication_required();
    $visit = $_SERVER['HTTP_REFERER'];
 
   	$_SESSION['visit'] = $visit;		

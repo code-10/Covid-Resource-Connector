@@ -1,11 +1,11 @@
 <?php include_once '../header.php'; session_start(); ?>
 <?php include_once '../libraries/shield.php'; ?>
 <?php
+    authentication_required();
+   $visit = $_SERVER['HTTP_REFERER'];
+  	$visit1 = substr($visit,1);
 
-   $visit = $_SERVER['REQUEST_URI'];
-  	$visit = substr($visit,1);
-
-  	$_SESSION['visit'] = $visit;		
+  	$_SESSION['visit'] = $visit1;		
 
 ?>
 
@@ -17,7 +17,7 @@
     {
         $post_id = $_GET['post_id'];
         $con->query("delete from post where post_id='$post_id'");
-        header("Location:view_posts.php");
+        header("Location:$visit");
         die();
     }
 
