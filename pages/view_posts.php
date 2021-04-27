@@ -24,14 +24,13 @@
 	
 	
 	
+	
 	<div class="container">
 	<form class="row d-flex justify-content-center p-4" method="GET" action="filter.php">
   		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state">
 				<option value="1" selected>All</option>
-      				<option value="2">Two</option>
-      				<option value="3">Three</option>
     			</select>
 		</div>	
 
@@ -39,8 +38,6 @@
 			<label for="inputuser">City</label>
     			<select class="form-control" id="city" name="city">
 				<option value="1" selected>All</option>
-      				<option value="2">Two</option>
-      				<option value="3">Three</option>
     			</select>
 		</div>	
 
@@ -48,8 +45,6 @@
 			<label for="inputuser">Need</label>
     			<select class="form-control" id="need" name="need" onchange="this.form.submit()">
 				<option value="1" selected>All</option>
-      				<option value="2">Two</option>
-      				<option value="3">Three</option>
     			</select>
 		</div>	
 	</form>
