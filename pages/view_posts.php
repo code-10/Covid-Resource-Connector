@@ -39,7 +39,7 @@
 	
 	
 	<div class="container">
-	<form class="row d-flex justify-content-center p-4" method="GET" action="filter.php">
+	<form class="row d-flex justify-content-center p-4" method="GET" action="">
   		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state">
@@ -105,6 +105,21 @@
    </div>
 </body>
   
+
+<script type="text/javascript">
+	$(document).ready(function(){
+			$("#state").change(function(){
+				var sid = $("#state").val();
+				$.ajax({
+					url: 'filter_config.php',
+					method: 'post',
+					data: 'sid=' + sid
+				}).done(function(state){
+					console.log(city);
+				})
+			})
+		})
+</script>
 
 <style>
     /*Media Queries*/
