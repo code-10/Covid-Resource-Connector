@@ -2,7 +2,7 @@
 include_once "../libraries/shield.php";
 include_once "../header.php";
 session_start();
-
+date_default_timezone_set('Asia/Kolkata');
 function getUserOptions($post_id){
     $html=<<<EOD
         <a href="delete_post.php?post_id=$post_id"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
@@ -40,7 +40,13 @@ function renderUserPost($data, $type, $user_email=NULL){
     $description = $data['description'];
     $phone_number = $data['ph_no'];
     $email = $data['email'];
+
     $time = $data['time'];
+    
+    $l10nDate = new DateTime($time, new DateTimeZone('UTC'));
+    $l10nDate->setTimeZone(new DateTimeZone('Asia/Kolkata'));
+    $time = $l10nDate->format('Y-m-d h:i:s');
+    
     $postOptions = $type==='user' ? getUserOptions($post_id) : "";
     $commentList = "";
     $comment_res = $con->query("select * from comment where post_id='$post_id'");
