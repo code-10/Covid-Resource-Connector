@@ -24,7 +24,16 @@
 	
 	<?php
 	
-		$state = $con->query("select * from state")->fetch_assoc();
+		$state_id = Array();
+		$state_name = Array();
+		$state_res = $con->query("select * from state");
+		while($state_ele = $state_res->fetch_assoc())
+		{
+			$state_id[]=$state_ele['state_id'];
+			$state_name[]=$state_ele['state_name'];	
+		}
+	
+		$cc = count($state_id);
 	
 	?>
 	
@@ -35,8 +44,8 @@
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state">
 				<option value="1" selected>All</option>
-				<?php foreach($state as $s) { ?>
-					<option value="<?=$s['state_id']?>" selected><?=$s['state_name']?></option>
+				<?php for($i=0;$i<$cc;$i++) { ?>
+					<option value="<?=$state_id[$i]?>" selected><?=$state_name[$i]?></option>
 				<?php } ?>
     			</select>
 		</div>	
