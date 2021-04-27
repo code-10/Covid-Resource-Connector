@@ -45,7 +45,7 @@
     			<select class="form-control" id="state" name="state">
 				<option value="1" selected>All</option>
 				<?php for($i=0;$i<$cc;$i++) { ?>
-					<option value="<?=$state_id[$i]?>" selected><?=$state_name[$i]?></option>
+					<option value="<?=$state_id[$i]?>"><?=$state_name[$i]?></option>
 				<?php } ?>
     			</select>
 		</div>	
