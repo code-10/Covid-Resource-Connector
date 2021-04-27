@@ -38,7 +38,7 @@ function renderUserPost($data, $type, $user_email=NULL){
     $city = $data['city'];
     $state = $data['state'];
     $description = $data['description'];
-    $phone_number = $data['phone_number'];
+    $phone_number = $data['ph_no'];
     $email = $data['email'];
     $time = $data['time'];
     $postOptions = $type==='user' ? getUserOptions($post_id) : "";
