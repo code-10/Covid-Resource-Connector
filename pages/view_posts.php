@@ -36,7 +36,7 @@
 		</div>	
 
 		<div class="col-12 col-sm-3 text-center">
-			<label for="inputuser">city</label>
+			<label for="inputuser">City</label>
     			<select class="form-control" id="city" name="city">
 				<option value="1" selected>One</option>
       				<option value="2">Two</option>
@@ -45,7 +45,7 @@
 		</div>	
 
 		<div class="col-12 col-sm-3 text-center">
-			<label for="inputuser">need</label>
+			<label for="inputuser">Need</label>
     			<select class="form-control" id="need" name="need" onchange="this.form.submit()">
 				<option value="1" selected>One</option>
       				<option value="2">Two</option>
