@@ -112,7 +112,7 @@
 				var sid = $("#state").val();
 				$.ajax({
 					url: 'filter_config.php',
-					type: 'post',
+					method: 'post',
 					data: 'sid=' + sid
 				}).done(function(city){
 					console.log(city);
