@@ -26,6 +26,48 @@
       if(isset($_SESSION['email'])){	
 		  $email = $_SESSION['email'];
 	?>
+	
+
+	
+	
+	<form class="row row-cols-lg-auto g-3 align-items-center">
+  		<div class="col-12 col-sm-4">
+    		<label class="visually-hidden" for="inlineFormSelectPref">State</label>
+    		<select class="form-select" id="inlineFormSelectPref">
+      			<option value="1" selected>One</option>
+      			<option value="2">Two</option>
+      			<option value="3">Three</option>
+    		</select>
+  		</div>
+
+		<div class="col-12 col-sm-4">
+    		<label class="visually-hidden" for="inlineFormSelectPref">City</label>
+    		<select class="form-select" id="inlineFormSelectPref">
+      			<option value="1" selected>One</option>
+      			<option value="2">Two</option>
+      			<option value="3">Three</option>
+    		</select>
+  		</div>
+		
+		<div class="col-12 col-sm-4">
+    		<label class="visually-hidden" for="inlineFormSelectPref">Type</label>
+    		<select class="form-select" id="inlineFormSelectPref">
+      			<option value="1" selected>One</option>
+      			<option value="2">Two</option>
+      			<option value="3">Three</option>
+    		</select>
+  		</div>
+
+ 		<div class="col-12">
+    		<button type="submit" class="btn btn-primary">Submit</button>
+  		</div>
+	</form>
+	
+	
+	
+	
+	
+	
 
 		<h4 class="m-4 text-center">My posts</h4>
 		<div class="row m-4 d-flex justify-content-center">
