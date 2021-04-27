@@ -114,7 +114,7 @@
 					url: 'filter_config.php',
 					method: 'post',
 					data: 'sid=' + sid
-				}).done(function(state){
+				}).done(function(city){
 					console.log(city);
 				})
 			})
