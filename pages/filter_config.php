@@ -14,7 +14,7 @@
         $city[] = $city_ele['city_name'];
     }
     
-		echo json_encode($city_res);
+		echo json_encode($city);
 	}
 
 ?>
