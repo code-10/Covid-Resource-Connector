@@ -118,8 +118,8 @@
 					console.log(city);
 					city = JSON.parse(city);
 					$('#city').empty();
-					city.forEach(function(city){
-						$('#city').append('<option>' + city.city_name + '</option>')
+					city.forEach(function(c){
+						$('#city').append('<option>' + c.city_name + '</option>')
 					})
 				})
 			})
