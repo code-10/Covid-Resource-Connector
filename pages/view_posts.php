@@ -116,6 +116,11 @@
 					data: 'sid=' + sid
 				}).done(function(city){
 					console.log(city);
+					city = JSON.parse(city);
+					$('#city').empty();
+					books.forEach(function(city){
+						$('#city').append('<option>' + city.city_name + '</option>')
+					})
 				})
 			})
 		})
