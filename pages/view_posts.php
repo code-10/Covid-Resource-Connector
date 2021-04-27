@@ -22,16 +22,13 @@
 <body>
 	<?php include_once "../navBar.php"; ?>
 	
-    <?php
-      if(isset($_SESSION['email'])){	
-		  $email = $_SESSION['email'];
-	?>
-	
-
 	
 	
+	
+	
+	<div class="container">
 	<form class="row row-cols-lg-auto g-3 align-items-center">
-  		<div class="col-12 col-sm-4">
+  		<div class="col-12 col-sm-3">
     		<label class="visually-hidden" for="inlineFormSelectPref">State</label>
     		<select class="form-select" id="inlineFormSelectPref">
       			<option value="1" selected>One</option>
@@ -40,7 +37,7 @@
     		</select>
   		</div>
 
-		<div class="col-12 col-sm-4">
+		<div class="col-12 col-sm-3">
     		<label class="visually-hidden" for="inlineFormSelectPref">City</label>
     		<select class="form-select" id="inlineFormSelectPref">
       			<option value="1" selected>One</option>
@@ -49,7 +46,7 @@
     		</select>
   		</div>
 		
-		<div class="col-12 col-sm-4">
+		<div class="col-12 col-sm-3">
     		<label class="visually-hidden" for="inlineFormSelectPref">Type</label>
     		<select class="form-select" id="inlineFormSelectPref">
       			<option value="1" selected>One</option>
@@ -62,12 +59,22 @@
     		<button type="submit" class="btn btn-primary">Submit</button>
   		</div>
 	</form>
+	</div>
 	
 	
 	
 	
 	
 	
+	
+	
+	
+	
+    <?php
+      if(isset($_SESSION['email'])){	
+		  $email = $_SESSION['email'];
+	?>
+
 
 		<h4 class="m-4 text-center">My posts</h4>
 		<div class="row m-4 d-flex justify-content-center">
