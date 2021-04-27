@@ -22,7 +22,11 @@
 <body>
 	<?php include_once "../navBar.php"; ?>
 	
+	<?php
 	
+		$state = $con->query("select * from state")->fetch_assoc();
+	
+	?>
 	
 	
 	<div class="container">
@@ -31,6 +35,9 @@
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state">
 				<option value="1" selected>All</option>
+				<?php foreach($state as $s) { ?>
+					<option value="<?=$s['state_id']?>" selected><?=$s['state_name']?></option>
+				<?php } ?>
     			</select>
 		</div>	
 
