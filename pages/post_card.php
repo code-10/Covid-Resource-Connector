@@ -45,7 +45,7 @@ function renderUserPost($data, $type, $user_email=NULL){
     
     $l10nDate = new DateTime($time, new DateTimeZone('UTC'));
     $l10nDate->setTimeZone(new DateTimeZone('Asia/Kolkata'));
-    $time = $l10nDate->format('Y-m-d h:i:s');
+    $time = $l10nDate->format('Y-m-d H:i:s');
     
     $postOptions = $type==='user' ? getUserOptions($post_id) : "";
     $commentList = "";
