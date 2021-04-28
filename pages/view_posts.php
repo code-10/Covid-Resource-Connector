@@ -96,8 +96,6 @@
 		$city = $_POST['city'];
 		$need = $_POST['need'];
 		
-		echo $need;
-		
 	}
 		
 		
