@@ -115,7 +115,6 @@
 				}
 			?>
 		</div>
-	<?php } ?>
 
 		<h4 class="m-4 text-center">People's posts</h4>
 	
