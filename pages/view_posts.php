@@ -59,7 +59,7 @@
     			<select class="form-control" id="state" name="state" required>
 				<option value="0" selected>All</option>
 				<?php for($i=0;$i<$cc;$i++) { ?>
-					<option value="<?=$state_id[$i]?>"><?=$state_name[$i]?></option>
+					<option value="<?=$state_name[$i]?>"><?=$state_name[$i]?></option>
 				<?php } ?>
     			</select>
 		</div>	
@@ -95,19 +95,15 @@
 		$city = $_POST['city'];
 		$need = $_POST['need'];
 		
-		echo $state;echo "<br>";
-		echo $city;echo "<br>";
-		echo $need;echo "<br>";
-	}
 		
 ?>
 
 
-<!--<h4 class="m-4 text-center">My posts</h4>
+<h4 class="m-4 text-center">My posts</h4>
 		<div class="row m-4 d-flex justify-content-center">
 			<?php 
 				$con = getCon();
-				$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
+				$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.state='$state' and p.city='$city' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
 				$postComp = "";
 				while($data = $my_posts_res->fetch_assoc()) {
 					$postComp = renderUserPost($data, 'user', $email); 
@@ -120,18 +116,18 @@
 	
    <div class="row m-4 d-flex justify-content-center">
 					<?php 
-						$my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.request_resource='$request_resource' and p.email!='$email' ORDER BY time ASC, upvotes desc, downvotes asc");
+						$my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.request_resource='$request_resource' and p.email!='$email' and p.state='$state' and p.city='$city' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
 						$postComp = "";
 						while($data = $my_posts_res->fetch_assoc()) {
 							$postComp = renderUserPost($data, 'public',$email); 
 							echo $postComp;
 						}
         			?>
-   </div>-->
+   </div>
 
 
 
-<?php //} ?>	
+<?php } ?>	
 	
 	
 	
