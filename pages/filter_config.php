@@ -4,7 +4,7 @@
   
   $con = getCon();
 
-  if(isset($_POST['sid'])) {
+  /*if(isset($_POST['sid'])) {
 
     $sid = $_POST['sid'];
 	  
@@ -15,8 +15,7 @@
     }
     
 		echo json_encode($city);
-	}
-
+	}*/
 
   if(isset($_POST['sname'])) {
 
