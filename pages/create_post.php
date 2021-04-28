@@ -41,12 +41,12 @@
 	
 		//first state display cities
 		$first_state_city_id = Array();
-		$first_state__city_name = Array();
+		$first_state_city_name = Array();
 		$first_state_city_res = $con->query("select * from city where state_id=1;");
 		while($first_state_city_ele = $first_state_city_res->fetch_assoc())
 		{
 			$first_state_city_id[] = $first_state_city_ele['city_id'];
-			$first_state__city_name[] = $first_state_city_ele['city_name'];
+			$first_state_city_name[] = $first_state_city_ele['city_name'];
 		}
 		
 		$fc = count($first_state_city_id);
