@@ -95,13 +95,19 @@
     					</select>
 									</div>
 									
+									
+									
 							<div class="form-group">
 								<label for="inputuser">city</label>
-    					<select class="form-control" id="city" name="city">
+    					<!--<select class="form-control" id="city" name="city">
                               				<?php for($j=0;$j<$city_count;$j++) { ?>
 					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
 							<?php } ?>
-    					</select>
+    					</select>-->
+								<select class="form-control" id="city" name="city">
+									<option value="-1" selected disabled>select state</option>
+    							</select>
+								
 									</div>
 								
 									
@@ -144,7 +150,26 @@
 <br><br><br><br>
    
    
-   
+<script type="text/javascript">
+	$(document).ready(function(){
+			$("#state").change(function(){
+				var sid = $("#state").val();
+				$.ajax({
+					url: 'filter_config.php',
+					method: 'post',
+					data: 'sid=' + sid
+				}).done(function(city){
+					console.log(city);
+					city = JSON.parse(city);
+					$('#city').empty();
+					city.forEach(function(c){
+						$('#city').append('<option>' + c + '</option>')
+					})
+				})
+			})
+		})
+</script>
+
    
    
    
