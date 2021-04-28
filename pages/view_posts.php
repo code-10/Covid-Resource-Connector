@@ -179,11 +179,11 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 			$("#state").change(function(){
-				var sid = $("#state").val();
+				var sname = $("#state").val();
 				$.ajax({
 					url: 'filter_config.php',
 					method: 'post',
-					data: 'sid=' + sid
+					data: 'sname=' + sname
 				}).done(function(city){
 					console.log(city);
 					city = JSON.parse(city);
