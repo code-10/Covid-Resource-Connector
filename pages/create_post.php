@@ -1,7 +1,7 @@
 <?php include_once '../header.php'; session_start(); ?>
 <?php include_once '../libraries/shield.php'; ?>
 <?php
-	//authentication_required();
+	authentication_required();
 
    $visit = $_SERVER['REQUEST_URI'];
   	$visit = substr($visit,1);
@@ -9,12 +9,11 @@
   	$_SESSION['visit'] = $visit;
 
 
-	//////////Testing///////////
- 	/*if(!(isset($_SESSION['email'])))
+ 	if(!(isset($_SESSION['email'])))
       	{
             header("Location:../sign_in/google_sign_in.php");
             die(); 
-      	}*/ 		
+      	} 		
 
 ?>
 
