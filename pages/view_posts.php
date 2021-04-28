@@ -55,7 +55,7 @@
   		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state">
-				<option value="1" selected>All</option>
+				<option value="0" selected>All</option>
 				<?php for($i=0;$i<$cc;$i++) { ?>
 					<option value="<?=$state_id[$i]?>"><?=$state_name[$i]?></option>
 				<?php } ?>
