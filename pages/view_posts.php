@@ -79,7 +79,6 @@
 				<?php for($i=0;$i<$tt;$i++) { ?>
 					<option value="<?=$tag_id[$i]?>"><?=$tag_name[$i]?></option>
 				<?php } ?>
-		 		<input type="hidden" id="tag_name" name="tag_name" value="<?=$tag_name[$i]?>">
     			</select>
 		</div>		
 	</form>
@@ -96,7 +95,6 @@
 		$state = $_POST['state'];
 		$city = $_POST['city'];
 		$need = $_POST['need'];
-		$tag_name = $_POST['tag_name'];
 		
 	}
 		
@@ -113,7 +111,7 @@
 		<?php
 			if(isset($_POST['need']))
 			{	
-				echo '<h4 class="m-4 text-center">Displaying results for'.$city.', '.$state.' '.$tag_name.'</h4>';
+				echo '<h5 class="m-4 text-center">Displaying results for'.$city.', '.$state.'</h5>';
 			}
 		?>
 	
