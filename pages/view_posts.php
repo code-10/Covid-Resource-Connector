@@ -54,7 +54,7 @@
 	<form class="row d-flex justify-content-center p-4" method="POST" action="filter.php">
   		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">State</label>
-    			<select class="form-control" id="state" name="state">
+    			<select class="form-control" id="state" name="state" required>
 				<option value="0" selected>All</option>
 				<?php for($i=0;$i<$cc;$i++) { ?>
 					<option value="<?=$state_id[$i]?>"><?=$state_name[$i]?></option>
@@ -64,7 +64,7 @@
 
 		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">City</label>
-    			<select class="form-control" id="city" name="city">
+    			<select class="form-control" id="city" name="city" required>
 				<option value="1" selected>All</option>
     			</select>
 		</div>	
