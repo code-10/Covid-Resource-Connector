@@ -70,7 +70,7 @@
 				<option value="All" selected>All</option>
     			</select>
 		</div>	
-
+		
 		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">Need</label>
     			<select class="form-control" id="need" name="need" onchange='this.form.submit()'>
@@ -79,6 +79,7 @@
 				<?php for($i=0;$i<$tt;$i++) { ?>
 					<option value="<?=$tag_id[$i]?>"><?=$tag_name[$i]?></option>
 				<?php } ?>
+		 		<input type="hidden" id="tag_name" name="tag_name" value="<?=$tag_name[$i]?>">
     			</select>
 		</div>		
 	</form>
@@ -95,6 +96,7 @@
 		$state = $_POST['state'];
 		$city = $_POST['city'];
 		$need = $_POST['need'];
+		$tag_name = $_POST['tag_name'];
 		
 	}
 		
@@ -107,8 +109,14 @@
       if(isset($_SESSION['email'])){	
 		  $email = $_SESSION['email'];
 	?>
-
-
+		
+		<?php
+			if(isset($_POST['need']))
+			{	
+				echo '<h4 class="m-4 text-center">Displaying results for'.$city.', '.$state.' '.$tag_name.'</h4>';
+			}
+		?>
+	
 		<h4 class="m-4 text-center">My posts</h4>
 		<div class="row m-4 d-flex justify-content-center">
 			<?php 
