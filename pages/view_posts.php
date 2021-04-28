@@ -106,7 +106,7 @@
 		<?php
 			if(isset($_POST['need']))
 			{	
-				echo '<h5 class="m-4 text-center">Displaying results for '.$city.', '.$state.'</h5>';
+				echo '<h5 class="m-4 text-center">Displaying results for '.$city.' City, '.$state.' State</h5>';
 			}
 		?>
 	
