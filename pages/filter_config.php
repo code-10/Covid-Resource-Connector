@@ -17,4 +17,19 @@
 		echo json_encode($city);
 	}
 
+
+  if(isset($_POST['sname'])) {
+
+    $sname = mysqli_real_escape_string($con,$_POST['sname']);
+	  
+    $city = Array();
+    $city_res = $con->query("select c.city_name from city as c, state as s where s.state_id=c.state_id and s.state_name='$sname'"); 
+    while($city_ele = $city_res->fetch_assoc()){
+        $city[] = $city_ele['city_name'];
+    }
+    
+		echo json_encode($city);
+	}
+	
+
 ?>
