@@ -94,51 +94,11 @@
 		$state = $_POST['state'];
 		$city = $_POST['city'];
 		$need = $_POST['need'];
+	}
 		
 		
 ?>
 
-
-<h4 class="m-4 text-center">My posts</h4>
-		<div class="row m-4 d-flex justify-content-center">
-			<?php 
-				$con = getCon();
-				$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.state='$state' and p.city='$city' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
-				$postComp = "";
-				while($data = $my_posts_res->fetch_assoc()) {
-					$postComp = renderUserPost($data, 'user', $email); 
-					echo $postComp;
-				}
-			?>
-		</div>
-
-		<h4 class="m-4 text-center">People's posts</h4>
-	
-   <div class="row m-4 d-flex justify-content-center">
-					<?php 
-						$my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.request_resource='$request_resource' and p.email!='$email' and p.state='$state' and p.city='$city' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
-						$postComp = "";
-						while($data = $my_posts_res->fetch_assoc()) {
-							$postComp = renderUserPost($data, 'public',$email); 
-							echo $postComp;
-						}
-        			?>
-   </div>
-
-
-
-<?php } ?>	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
     <?php
@@ -151,7 +111,14 @@
 		<div class="row m-4 d-flex justify-content-center">
 			<?php 
 				$con = getCon();
-				$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
+	      			if(isset($_POST['need']))
+				{
+					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.state='$state' and p.city='$city' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
+				}
+	      			else
+				{
+					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
+				}
 				$postComp = "";
 				while($data = $my_posts_res->fetch_assoc()) {
 					$postComp = renderUserPost($data, 'user', $email); 
@@ -165,7 +132,14 @@
 	
    <div class="row m-4 d-flex justify-content-center">
 					<?php 
-						$my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.request_resource='$request_resource' and p.email!='$email' ORDER BY time ASC, upvotes desc, downvotes asc");
+	   					if(isset($_POST['need']))
+						{
+							$my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.request_resource='$request_resource' and p.email!='$email' and p.state='$state' and p.city='$city' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
+						}
+	   					else
+						{
+							$my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.request_resource='$request_resource' and p.email!='$email' ORDER BY time ASC, upvotes desc, downvotes asc");
+						}
 						$postComp = "";
 						while($data = $my_posts_res->fetch_assoc()) {
 							$postComp = renderUserPost($data, 'public',$email); 
