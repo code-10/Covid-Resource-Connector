@@ -57,7 +57,6 @@
   		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state" required>
-				<option selected disabled>select need</option>
 				<option value="All" selected>All</option>
 				<?php for($i=0;$i<$cc;$i++) { ?>
 					<option value="<?=$state_name[$i]?>"><?=$state_name[$i]?></option>
@@ -75,7 +74,8 @@
 		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">Need</label>
     			<select class="form-control" id="need" name="need" onchange='this.form.submit()'>
-				<option value="0" selected>All</option>
+				<option selected disabled>select need</option>
+				<option value="0">All</option>
 				<?php for($i=0;$i<$tt;$i++) { ?>
 					<option value="<?=$tag_id[$i]?>"><?=$tag_name[$i]?></option>
 				<?php } ?>
