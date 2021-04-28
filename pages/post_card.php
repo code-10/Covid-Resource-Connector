@@ -43,6 +43,9 @@ function renderUserPost($data, $type, $user_email=NULL){
 
     $time = $data['time'];
     
+    //trying
+    $post_id = $data['post_id'];
+    
     $l10nDate = new DateTime($time, new DateTimeZone('UTC'));
     $l10nDate->setTimeZone(new DateTimeZone('Asia/Kolkata'));
     $time = $l10nDate->format('Y-m-d H:i:s');
@@ -84,6 +87,7 @@ function renderUserPost($data, $type, $user_email=NULL){
             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong$post_id">
                 View Comments
             </button>
+            <p class="text-muted mb-0 responsive-md">post id: $post_id</p>
         </div>
         <div class="modal fade" id="exampleModalCenter$post_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
