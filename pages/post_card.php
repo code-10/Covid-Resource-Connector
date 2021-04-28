@@ -87,7 +87,7 @@ function renderUserPost($data, $type, $user_email=NULL){
             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong$post_id">
                 View Comments
             </button>
-            <p class="text-muted mb-0 responsive-md">post id: $post_id</p>
+            <p class="text-muted m-2 responsive-md float-right">post id: $post_id</p>
         </div>
         <div class="modal fade" id="exampleModalCenter$post_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
