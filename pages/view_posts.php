@@ -75,7 +75,7 @@
 		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">Need</label>
     			<select class="form-control" id="need" name="need" onchange='this.form.submit()'>
-				<option value="1" selected>All</option>
+				<option value="0" selected>All</option>
 				<?php for($i=0;$i<$tt;$i++) { ?>
 					<option value="<?=$tag_id[$i]?>"><?=$tag_name[$i]?></option>
 				<?php } ?>
