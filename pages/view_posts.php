@@ -98,6 +98,7 @@
 		echo $state;echo "<br>";
 		echo $city;echo "<br>";
 		echo $need;echo "<br>";
+	}
 		
 ?>
 
@@ -131,7 +132,7 @@
 
 
 
-<?php } ?>	
+<?php //} ?>	
 	
 	
 	
