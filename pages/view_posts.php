@@ -196,9 +196,55 @@
         			?>
    </div>
 </body>
-  
+<script>
+function voteHandler(tag){
+	const post_id = $(tag).attr('data-post-id');
+	const vote_type = $(tag).attr('data-vote-type');
+	const parentTag = $(tag).parent()
+	const upvoteTag = $(parentTag).find(".upvote");
+	const downvoteTag = $(parentTag).find(".downvote");
+
+	const upvotes = parseInt(upvoteTag.text());
+	const downvotes = parseInt(downvoteTag.text());
+	
+	$.ajax({
+		url:"verify_vote.php",
+		method:"GET",
+		data:{post_id:post_id, vote:vote_type},
+	})
+	.done( resp => {
+		resp = resp.trim()
+		if(resp === "good")
+		{
+			if(vote_type==="up")
+			{
+				upvoteTag.text( upvotes + 1);
+				downvoteTag.text(downvotes - 1);
+			}
+			else if(vote_type==="down")
+			{
+				upvoteTag.text(upvotes - 1)
+				downvoteTag.text(downvotes + 1)
+			}
+		}
+		else if(resp === "bad")
+		{
+			alert("Already Did That.");
+		}
+		else if(resp === "auth")
+		{
+			alert("you need to login");
+		}
+	})
+	.fail( (x,y,z) => {
+		console.log(x,y,z)
+	})
+}
+</script>
 
 <script type="text/javascript">
+
+
 	$(document).ready(function(){
 			$("#state").change(function(){
 				var sname = $("#state").val();
@@ -216,6 +262,7 @@
 				})
 			})
 		})
+
 </script>
 
 <style>

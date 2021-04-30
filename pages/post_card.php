@@ -78,8 +78,8 @@ function renderUserPost($data, $type, $user_email=NULL){
             <p class="text-muted mb-0 responsive-md">$email</p>
             <p class="text-muted mb-2 responsive-md">$time</p>
             <p class="card-text">
-                <a href="verify_vote.php?post_id=$post_id&&vote=up"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i></a>&nbsp$upvotes&nbsp&nbsp
-                <a href="verify_vote.php?post_id=$post_id&&vote=down"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></a>&nbsp$downvotes
+                <a data-post-id="$post_id" data-vote-type="up" onclick="voteHandler(this)"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp<span class='upvote'>$upvotes</span>&nbsp&nbsp</a>
+                <a data-post-id="$post_id" data-vote-type="down" onclick="voteHandler(this)"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i>&nbsp<span class='downvote'>$downvotes</span></a>
             </p>
             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter$post_id">
                 Add a Comment
@@ -148,14 +148,14 @@ function renderUserPost($data, $type, $user_email=NULL){
 <!-- <div class="row m-4 d-flex justify-content-center">
     <div class="d-flex flex-row">
         <?php 
-        $email = $_SESSION['email'];
-        $con = getCon();
-        $my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
-        $postComp = "";
-        while($data = $my_posts_res->fetch_assoc()) {
-            $postComp = renderUserPost($data, 'user', $email); 
-            echo $postComp;
-        }
+        // $email = $_SESSION['email'];
+        // $con = getCon();
+        // $my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
+        // $postComp = "";
+        // while($data = $my_posts_res->fetch_assoc()) {
+        //     $postComp = renderUserPost($data, 'user', $email); 
+        //     echo $postComp;
+        // }
         ?>
     </div>
 </div>
@@ -163,13 +163,13 @@ function renderUserPost($data, $type, $user_email=NULL){
 <div class="row m-4 d-flex justify-content-center">
     <div class="d-flex flex-row">
         <?php 
-        $con = getCon();
-        $my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.request_resource='$request_resource' and p.email!='$email' ORDER BY time ASC, upvotes desc, downvotes asc");
-        $postComp = "";
-        while($data = $my_posts_res->fetch_assoc()) {
-            $postComp = renderUserPost($data, 'public', $email); 
-            echo $postComp;
-        }
+        // $con = getCon();
+        // $my_posts_res = $con->query("select p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.request_resource='$request_resource' and p.email!='$email' ORDER BY time ASC, upvotes desc, downvotes asc");
+        // $postComp = "";
+        // while($data = $my_posts_res->fetch_assoc()) {
+        //     $postComp = renderUserPost($data, 'public', $email); 
+        //     echo $postComp;
+        // }
         ?>
     </div>
 </div> -->
