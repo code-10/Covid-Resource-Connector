@@ -197,6 +197,10 @@
    </div>
 </body>
 <script>
+function commentHandler(e){
+	e.prevenDefault();
+	console.log("lol");
+}
 function voteHandler(tag){
 	const post_id = $(tag).attr('data-post-id');
 	const vote_type = $(tag).attr('data-vote-type');
@@ -214,7 +218,7 @@ function voteHandler(tag){
 	})
 	.done( resp => {
 		resp = resp.trim()
-		if(resp === "good")
+		if(resp === "good2")
 		{
 			if(vote_type==="up")
 			{
@@ -226,6 +230,13 @@ function voteHandler(tag){
 				upvoteTag.text(upvotes - 1)
 				downvoteTag.text(downvotes + 1)
 			}
+		}
+		else if(resp==="good1")
+		{
+			if(vote_type==="up")
+				upvoteTag.text( upvotes + 1);
+			else if(vote_type==="down")
+				downvoteTag.text(downvotes + 1)
 		}
 		else if(resp === "bad")
 		{
@@ -240,6 +251,7 @@ function voteHandler(tag){
 		console.log(x,y,z)
 	})
 }
+
 </script>
 
 <script type="text/javascript">

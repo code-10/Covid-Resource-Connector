@@ -39,7 +39,7 @@
             echo "bad";
           else{
             $con->query("update post as p,updownvote as v set v.upordown='$upordown',p.upvotes=p.upvotes+$upvotes,p.downvotes=p.downvotes+$downvotes where v.email='$email' and v.post_id='$post_id' and v.post_id=p.post_id;");
-            echo "good";
+            echo "good2";
           }          
 
         }
@@ -51,7 +51,7 @@
             $con->query("update post set downvotes=downvotes+1 where post_id='$post_id'");
           else
             die("Invalid value for vote parameter");
-          echo "good";
+          echo "good1";
         }
     }
     else
