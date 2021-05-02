@@ -1,4 +1,4 @@
-<?php include_once '../header.php'; session_start(); ?>
+<?php session_start(); ?>
 <?php include_once '../libraries/shield.php'; ?>
 <?php
 

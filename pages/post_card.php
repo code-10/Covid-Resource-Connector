@@ -15,16 +15,18 @@ function renderComment($user_email,$email,$comment_id,$comment,$time){
     if ($user_email === $email)
     {
         $deleteOption=<<<EOD
-            <a href="delete_comment.php?comment_id=$comment_id"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
+            <a onclick="deleteHandler(event)" data-comment-id="$comment_id"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
         EOD;
     }
     return <<<EOD
-        <p class="text-monospace mb-1">
-        $deleteOption
-        $comment
-        </p> 
-        <p class="font-weight-light mb-0 responsive-md">$email</p>
-        <p class="font-weight-light mb-4 responsive-md">$time</p>
+        <div>
+            <p class="text-monospace mb-1">
+                $deleteOption
+                $comment
+            </p> 
+            <p class="font-weight-light mb-0 responsive-md">$email</p>
+            <p class="font-weight-light mb-4 responsive-md">$time</p>
+        </div>
         EOD;
 }
 function renderUserPost($data, $type, $user_email=NULL){
@@ -100,15 +102,15 @@ function renderUserPost($data, $type, $user_email=NULL){
                     </div>
                     <div class="modal-body">
                     
-                        <form  id="comment-form" method="POST" action="verify_comment.php" style="display:block;">
-                        <div class="form-group">
-                                <label for="exampleFormControlTextarea5">Comment</label>
-                                <textarea maxlength="100" class="form-control" id="exampleFormControlTextarea5" rows="4" name="comment"></textarea>
-                        </div>
-                        
-                        <input type="hidden" name="post_id" value="$post_id" />
+                        <form  id="comment-form" method="POST" onsubmit="commentHandler(event)" style="display:block;">
+                            <div class="form-group">
+                                    <label for="exampleFormControlTextarea5">Comment</label>
+                                    <textarea maxlength="100" class="form-control" id="exampleFormControlTextarea5" rows="4" name="comment"></textarea>
+                            </div>
+                            
+                            <input type="hidden" name="post_id" value="$post_id" />
                     
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             <button type="submit" name="add_comment" class="btn btn-success">Add</button>
                     </form>
                     

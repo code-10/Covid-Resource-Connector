@@ -197,10 +197,60 @@
    </div>
 </body>
 <script>
-function commentHandler(e){
-	e.prevenDefault();
-	console.log("lol");
+const email="<?=$email?>"
+
+function deleteHandler(e){
+	const comment_id = $(e.target).parent().attr("data-comment-id");
+	$(e.target).parent().parent().parent().remove()
+	$.ajax({
+		method:'GET',
+		url:'delete_comment.php',
+		data:{comment_id:comment_id}
+	})
+	.done(resp => {
+		console.log(resp);
+	})
 }
+function commentHandler(e){
+	e.preventDefault();
+	const form = e.target;
+	const post_id = form.elements['post_id'].value
+	const comment = form.elements['comment'].value
+	const data = {post_id:post_id, comment:comment};
+	console.log(data);
+	if(comment === "")
+		return;
+	$.ajax({
+		url:'verify_comment.php',
+		method:"POST",
+		data:data,
+	})
+	.done( resp => {
+		resp = JSON.parse(resp)
+		if(resp.msg === 'good')
+		{	
+			const id = resp.id
+			let [month, day, year]    = new Date().toLocaleDateString("en-US").split("/")
+			let [hour, minute, second] = new Date().toLocaleTimeString("en-US").split(/:| /)
+			$(`#exampleModalLong${post_id} .modal-body`).append(`
+				<div>
+					<p class='text-monospace mb-1'>
+						<a onclick="deleteHandler(event)" data-comment-id="${id}"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
+						${comment}
+					</p>
+					<p class="font-weight-light mb-0 responsive-md"> ${email} </p>
+					<p class="font-weight-light mb-4 responsive-md">${year}-${month}-${day} ${hour}:${minute}:${second} </p>
+				</div>
+
+			`)
+		}
+		else if(resp.msg ==='auth')
+		{
+			alert("Login First");
+		}
+	})
+}
+
 function voteHandler(tag){
 	const post_id = $(tag).attr('data-post-id');
 	const vote_type = $(tag).attr('data-vote-type');
