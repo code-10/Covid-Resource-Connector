@@ -8,6 +8,7 @@
 
   	$_SESSION['visit'] = $visit;
 
+
  	if(!(isset($_SESSION['email'])))
       	{
             header("Location:../sign_in/google_sign_in.php");
@@ -36,6 +37,20 @@
 		while($city_ele = $city_res->fetch_assoc())
 			$city[]=$city_ele['city_name'];
 		$city_count = count($city);
+	
+	
+		
+		$first_state_city_id = Array();
+		$first_state_city_name = Array();
+		$first_state_city_res = $con->query("select * from city where state_id=1;");
+		while($first_state_city_ele = $first_state_city_res->fetch_assoc())
+		{
+			$first_state_city_id[] = $first_state_city_ele['city_id'];
+			$first_state_city_name[] = $first_state_city_ele['city_name'];
+		}
+
+		$fc = count($first_state_city_id);
+		
 	
 	?>
    
@@ -95,13 +110,21 @@
     					</select>
 									</div>
 									
+									
+									
 							<div class="form-group">
 								<label for="inputuser">city</label>
-    					<select class="form-control" id="city" name="city">
+    					<!--<select class="form-control" id="city" name="city">
                               				<?php for($j=0;$j<$city_count;$j++) { ?>
 					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
 							<?php } ?>
-    					</select>
+    					</select>-->
+								<select class="form-control" id="city" name="city">
+									<?php for($j=0;$j<$fc;$j++) { ?>
+					      					<option value="<?=$first_state_city_name[$j]?>"><?=$first_state_city_name[$j]?></option>
+									<?php } ?>
+    							</select>
+								
 									</div>
 								
 									
@@ -117,7 +140,7 @@
                                 
                                 <div class="form-group">
 					          <label for="inputdescription">Description</label>
-								<textarea maxlength="1000" class="form-control" id="exampleFormControlTextarea" rows="4" name="description"></textarea>
+								<textarea maxlength="256" class="form-control" id="exampleFormControlTextarea" rows="4" name="description"></textarea>
 					            <!--<input type="text" class="form-control" id="inputdescription" placeholder="description" name="description" required>-->
 				          </div>
                                 
@@ -144,7 +167,26 @@
 <br><br><br><br>
    
    
-   
+<script type="text/javascript">
+	$(document).ready(function(){
+			$("#state").change(function(){
+				var sname = $("#state").val();
+				$.ajax({
+					url: 'filter_config.php',
+					method: 'post',
+					data: 'sname=' + sname
+				}).done(function(city){
+					console.log(city);
+					city = JSON.parse(city);
+					$('#city').empty();
+					city.forEach(function(c){
+						$('#city').append('<option>' + c + '</option>')
+					})
+				})
+			})
+		})
+</script>
+
    
    
    

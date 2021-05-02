@@ -2,8 +2,8 @@
 <?php include_once '../libraries/shield.php'; ?>
 <?php
 
-   $visit = $_SERVER['REQUEST_URI'];
-  	$visit = substr($visit,1);
+   $visit = $_SERVER['HTTP_REFERER'];
+  	// $visit = substr($visit,1);
 
   	$_SESSION['visit'] = $visit;		
 
@@ -17,7 +17,7 @@
     {
         $comment_id = $_GET['comment_id'];
         $con->query("delete from comment where comment_id='$comment_id'");
-        header("Location:view_posts.php");
+        header("Location:$visit");
          die();
     }
 

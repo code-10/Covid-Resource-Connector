@@ -1,11 +1,11 @@
 <?php include_once '../header.php'; session_start(); ?>
 <?php include_once '../libraries/shield.php'; ?>
 <?php
+    authentication_required();
+   $visit = $_SERVER['HTTP_REFERER'];
+  	$visit1 = substr($visit,1);
 
-   $visit = $_SERVER['REQUEST_URI'];
-  	$visit = substr($visit,1);
-
-  	$_SESSION['visit'] = $visit;		
+  	$_SESSION['visit'] = $visit1;		
 
 ?>
 
@@ -21,7 +21,7 @@
       
         $res = $con->query("insert into comment(post_id,comment,email) values('".mysqli_real_escape_string($con,$post_id)."','".mysqli_real_escape_string($con,$comment)."','".mysqli_real_escape_string($con,$email)."')"); 
        
-        header("Location:view_posts.php");
+        header("Location:$visit");
         die();
          
     }
