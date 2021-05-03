@@ -154,7 +154,7 @@
   								</div>
                                 
 									</div>
-					            <button type="submit" id="create_post" name="create_post" class="btn btn-success m-2">Create Post</button>
+					            <button type="submit" id="createdisable" name="create_post" class="btn btn-success m-2">Create Post</button>
 								<a class="btn btn-danger m-2" href="../index.php" role="button">cancel</a>
 								</form>
 								
@@ -172,7 +172,7 @@
 	
 <script>
     function disableButton() {
-        var btn = document.getElementById('create_post');
+        var btn = document.getElementById('createdisable');
         btn.disabled = true;
 	btn.style.padding = "0.5em 1em";
         btn.innerText = 'Saving....';
