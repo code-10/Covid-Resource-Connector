@@ -120,7 +120,23 @@
 					      			<option value="<?=$tag_id[$k]?>"><?=$tag_name[$k]?></option>
 							<?php } ?>
     					</select>
-									</div>			
+									</div>		
+									
+									
+								
+									
+									
+						<div class="form-group">
+							<?php for($k=0;$k<$tag_count;$k++) { ?>
+								<input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+								<label class="btn btn-outline-success btn-sm" for="btn-check-outlined"></label><br>	
+							<?php } ?>
+						</div>		
+									
+									
+									
+									
+									
 									
                                 
                                 <div class="form-group">
