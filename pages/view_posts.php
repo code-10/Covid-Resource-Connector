@@ -17,6 +17,8 @@
 	if(!$request_resource) #defaults to show only requests.
 	  $request_resource = 0;
 
+	$needdisplay = $_SESSION['needdisplay'];
+
 ?>
 
 
@@ -106,7 +108,7 @@
 		<?php
 			if(isset($_POST['need']))
 			{	
-				echo '<h5 class="m-4 text-center">Displaying results for '.$city.' City, '.$state.' State</h5>';
+				echo '<h5 class="m-4 text-center">Displaying results for '.$city.' City, '.$state.' State and '.$needdisplay.'</h5>';
 			}
 		?>
 	
