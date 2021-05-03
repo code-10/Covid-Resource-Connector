@@ -128,9 +128,8 @@
 									
 						<div class="form-group">
 							<?php for($k=0;$k<$tag_count;$k++) { ?>
-								<label class="btn btn-outline-success btn-sm" for="btn-check-outlined"><?=$tag_name[$k]?>
-									<input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off" value="<?=$tag_id[$k]?>">
-								</label><br>	
+								<input type="checkbox" class="btn-check" id="btn-check-outlined<?=$k?>" value="<?=$tag_id[$k]?>" name="needs[]" autocomplete="off">
+								<label class="btn btn-outline-primary" for="btn-check-outlined<?=$k?>"><?=$tag_name[$k]?></label><br>
 							<?php } ?>
 						</div>		
 									
