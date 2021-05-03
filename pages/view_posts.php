@@ -312,10 +312,12 @@ function voteHandler(tag){
 	$(document).ready(function(){
 			$("#state").change(function(){
 				var sname = $("#state").val();
+				var need = $("#need").val();
 				$.ajax({
 					url: 'filter_config.php',
 					method: 'post',
-					data: 'sname=' + sname
+					//data: 'sname=' + sname,
+					data:{sname:sname,need:need}
 				}).done(function(city){
 					console.log(city);
 					city = JSON.parse(city);
