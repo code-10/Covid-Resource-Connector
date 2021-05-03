@@ -82,7 +82,7 @@
    					<div class="row d-flex justify-content-center">
 							<div class="col-lg-12">
 								
-								<form  onsubmit="disablebutton()" id="login-form" method="POST" action="verify_post.php" style="display: block;">
+								<form onsubmit="disablebutton()" id="login-form" method="POST" action="verify_post.php" style="display: block;">
 								<div class="form-group">
 					          <label for="inputuser">First Name</label>
 					            <input type="text" class="form-control" id="inputfirst_name" placeholder="firstname" name="first_name" required>
