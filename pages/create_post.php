@@ -175,7 +175,7 @@
 	document.getElementById('createdisable').onclick = function() {
         	var btn = document.getElementById('createdisable');
 		btn.disabled = true;
-		btn.style.padding = "0.5em 1em";
+		//btn.style.padding = "0.5em 1em";
         	btn.innerText = 'Saving....';
     }
 </script>
