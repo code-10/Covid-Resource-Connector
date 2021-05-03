@@ -104,8 +104,8 @@
 						<div class="form-group">
 							<label for="inputuser">State</label>
     					<select class="form-control" id="state" name="state">
+							<option selected disabled>select state</option>
                               				<?php for($j=0;$j<$state_count;$j++) { ?>
-								<option selected disabled>select need</option>
 					      			<option value="<?=$state[$j]?>"><?=$state[$j]?></option>
 							<?php } ?>
     					</select>
