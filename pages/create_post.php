@@ -40,7 +40,7 @@
 	
 	
 		
-		$first_state_city_id = Array();
+		/*$first_state_city_id = Array();
 		$first_state_city_name = Array();
 		$first_state_city_res = $con->query("select * from city where state_id=1;");
 		while($first_state_city_ele = $first_state_city_res->fetch_assoc())
@@ -49,7 +49,7 @@
 			$first_state_city_name[] = $first_state_city_ele['city_name'];
 		}
 
-		$fc = count($first_state_city_id);
+		$fc = count($first_state_city_id);*/
 		
 	
 	?>
@@ -121,9 +121,9 @@
 							<?php } ?>
     					</select>
 								<!--<select class="form-control" id="city" name="city">
-									<?php for($j=0;$j<$fc;$j++) { ?>
-					      					<option value="<?=$first_state_city_name[$j]?>"><?=$first_state_city_name[$j]?></option>
-									<?php } ?>
+									<?php //for($j=0;$j<$fc;$j++) { ?>
+					      					<option value="<?php //$first_state_city_name[$j]?>"><?php //$first_state_city_name[$j]?></option>
+									<?php //} ?>
     							</select>-->
 								
 									</div>
