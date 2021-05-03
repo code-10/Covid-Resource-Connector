@@ -217,6 +217,8 @@ function commentHandler(e){
 	const post_id = form.elements['post_id'].value
 	const comment = form.elements['comment'].value
 	const data = {post_id:post_id, comment:comment};
+	$(`#exampleModalCenter${post_id}`).modal('hide')
+
 	console.log(data);
 	if(comment === "")
 		return;
