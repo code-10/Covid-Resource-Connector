@@ -105,6 +105,7 @@
 							<div class="form-group">
 								<label for="inputuser">city</label>
     					<select class="form-control" id="city" name="city">
+							<option selected disabled>select city</option>
                               				<?php for($j=0;$j<$city_count;$j++) { ?>
 					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
 							<?php } ?>
