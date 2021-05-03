@@ -128,7 +128,7 @@
 									
 						<div class="form-group">
 							<?php for($k=0;$k<$tag_count;$k++) { ?>
-								<label><input type="checkbox" name="needs[]" value="<?=$tag_id[$k]?>"><?=$tag_name[$k]?></label>
+								<label class="p-2"><input type="checkbox" class="m-2" name="needs[]" value="<?=$tag_id[$k]?>"><?=$tag_name[$k]?></label>
 							<?php } ?>
 						</div>		
 									
