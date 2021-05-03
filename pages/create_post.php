@@ -82,7 +82,7 @@
    					<div class="row d-flex justify-content-center">
 							<div class="col-lg-12">
 								
-								<form  id="login-form" method="POST" action="verify_post.php" style="display: block;">
+								<form  onsubmit="disablebutton()" id="login-form" method="POST" action="verify_post.php" style="display: block;">
 								<div class="form-group">
 					          <label for="inputuser">First Name</label>
 					            <input type="text" class="form-control" id="inputfirst_name" placeholder="firstname" name="first_name" required>
@@ -154,7 +154,7 @@
   								</div>
                                 
 									</div>
-					            <button type="submit" name="create_post" class="btn btn-success m-2">Create Post</button>
+					            <button type="submit" id="create_post" name="create_post" class="btn btn-success m-2">Create Post</button>
 								<a class="btn btn-danger m-2" href="../index.php" role="button">cancel</a>
 								</form>
 								
@@ -166,6 +166,24 @@
    
 <br><br><br><br>
    
+
+
+<!--sending-->
+	
+<script>
+    function disableButton() {
+        var btn = document.getElementById('create_post');
+        btn.disabled = true;
+	btn.style.padding = "0.5em 1em";
+        btn.innerText = 'Saving....';
+    }
+</script>
+	
+	
+<!--sending end-->
+  
+
+
    
 <script type="text/javascript">
 	$(document).ready(function(){
