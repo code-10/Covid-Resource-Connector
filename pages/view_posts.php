@@ -17,7 +17,6 @@
 	if(!$request_resource) #defaults to show only requests.
 	  $request_resource = 0;
 
-	$needdisplay = $_SESSION['needdisplay'];
 
 ?>
 
@@ -108,7 +107,7 @@
 		<?php
 			if(isset($_POST['need']))
 			{	
-				echo '<h5 class="m-4 text-center">Displaying results for '.$city.' City, '.$state.' State and '.$needdisplay.'</h5>';
+				echo '<h5 class="m-4 text-center">Displaying results for '.$city.' City, '.$state.' State</h5>';
 			}
 		?>
 	
@@ -314,12 +313,12 @@ function voteHandler(tag){
 	$(document).ready(function(){
 			$("#state").change(function(){
 				var sname = $("#state").val();
-				var need = $("#need").val();
+				//var need = $("#need").val();
 				$.ajax({
 					url: 'filter_config.php',
 					method: 'post',
-					//data: 'sname=' + sname,
-					data:{sname:sname,need:need}
+					data: 'sname=' + sname,
+					//data:{sname:sname,need:need}
 				}).done(function(city){
 					console.log(city);
 					city = JSON.parse(city);
