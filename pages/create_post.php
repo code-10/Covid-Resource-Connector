@@ -114,16 +114,17 @@
 									
 							<div class="form-group">
 								<label for="inputuser">city</label>
-    					<!--<select class="form-control" id="city" name="city">
+    					<select class="form-control" id="city" name="city">
                               				<?php for($j=0;$j<$city_count;$j++) { ?>
+								<option selected disabled>select need</option>
 					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
 							<?php } ?>
-    					</select>-->
-								<select class="form-control" id="city" name="city">
+    					</select>
+								<!--<select class="form-control" id="city" name="city">
 									<?php for($j=0;$j<$fc;$j++) { ?>
 					      					<option value="<?=$first_state_city_name[$j]?>"><?=$first_state_city_name[$j]?></option>
 									<?php } ?>
-    							</select>
+    							</select>-->
 								
 									</div>
 								
