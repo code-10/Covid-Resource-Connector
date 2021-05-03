@@ -1,7 +1,8 @@
 <?php
 
   include_once '../libraries/shield.php';
-  
+  session_start();
+
   $con = getCon();
 
   /*if(isset($_POST['sid'])) {
