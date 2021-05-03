@@ -82,7 +82,7 @@
    					<div class="row d-flex justify-content-center">
 							<div class="col-lg-12">
 								
-								<form id="login-form" method="POST" action="verify_post.php" style="display: block;" onsubmit="document.getElementById('createdisable').disabled=true;>
+								<form id="login-form" method="POST" action="verify_post.php" style="display: block;" onsubmit="document.getElementById('createdisable').disabled=true;">
 								<div class="form-group">
 					          <label for="inputuser">First Name</label>
 					            <input type="text" class="form-control" id="inputfirst_name" placeholder="firstname" name="first_name" required>
