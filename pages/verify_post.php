@@ -13,7 +13,7 @@
 
     $con = getCon();
 
-    if(isset($_POST['create_post'])){
+    //if(isset($_POST['create_post'])){
 
         $email =  mysqli_real_escape_string($con,$_POST['email']);
         $state = mysqli_real_escape_string($con,$_POST['state']);
@@ -34,5 +34,5 @@
         }
         header("Location:view_posts.php");
         die();
-    }
+    //}
 ?>
