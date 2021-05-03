@@ -74,11 +74,11 @@
 								<form id="createPost" method="POST" action="verify_post.php" style="display:block;" onsubmit="document.getElementById('createdisable').disabled=true;document.getElementById('createdisable').innerText = 'Saving....';">
 								<div class="form-group">
 					          <label for="inputuser">First Name</label>
-					            <input type="text" class="form-control" id="inputfirst_name" placeholder="FIRST NAME" name="first_name" required>
+					            <input type="text" class="form-control" id="inputfirst_name" placeholder="Enter your First Name" name="first_name" required>
 				          </div>
 								<div class="form-group">
 									<label for="inputuser">Last Name</label>
-					            <input type="text" class="form-control" id="inputfirst_name" placeholder="LAST NAME" name="last_name" required>
+					            <input type="text" class="form-control" id="inputfirst_name" placeholder="Enter your Last Name" name="last_name" required>
 				          </div>
 						  <div class='form-group'>
 			   					<label for="request_resource">
@@ -146,7 +146,7 @@
                                 
                                  <div class="form-group">
 					          <label for="inputphonenumber">Phone Number</label>
-					            <input type="number" class="form-control" id="inputphonenumber" placeholder="PHONE NUMBER" name="phonenumber" required>
+					            <input type="number" class="form-control" id="inputphonenumber" placeholder="Enter your Phone Number" name="phonenumber" required>
 				          </div>
                                 <?php $email = $_SESSION['email']; ?>
                                 <div class="form-group m-2 col-12">
