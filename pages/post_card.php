@@ -64,6 +64,18 @@ function renderUserPost($data, $type, $user_email=NULL){
         $comment_id = $data['comment_id'];
         $commentList .= renderComment($user_email,$email,$comment_id,$comment, $time);
     }
+    
+    
+    
+    $needs_display=Array();
+    $needs_res = $con->query("select t.tag_name from tag as t, needs as n, post as p where n.tag_id=t.tag_id and p.post_id='$post_id'");
+    while($needs_ele = $needs_res->fetch_assoc())
+    {
+        $needs_display[] = $needs_ele['tag_name']; 
+    }   
+    $nd = count($needs_display);
+    
+    
 
     $html=<<<START
     <div class="col-12 col-sm-4 m-2">
@@ -72,6 +84,10 @@ function renderUserPost($data, $type, $user_email=NULL){
         $first_name&nbsp<?=$last_name?>&nbsp
         $postOptions
         <span class="badge badge-pill badge-info">$tag_name</span>
+        for($z=0;$z<$nd;$z++)
+        {
+            <span class="badge badge-pill badge-info">$needs_display[$z]</span>              
+        }
         </h5>
         <div class="card-body p-3">
             <h5 class="card-title">$city, $state</h5>
