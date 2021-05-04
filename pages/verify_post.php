@@ -13,8 +13,15 @@ authentication_required();
 
     $con = getCon();
 
+         
+        if(!empty($_POST['needs'])){
+         foreach($_POST['needs'] as $n){
+            echo $n."</br>";
+         }
+      }
+      
 
-        $email =  mysqli_real_escape_string($con,$_POST['email']);
+        /*$email =  mysqli_real_escape_string($con,$_POST['email']);
         $state = mysqli_real_escape_string($con,$_POST['state']);
         $city = mysqli_real_escape_string($con,$_POST['city']);
         $description = mysqli_real_escape_string($con,$_POST['description']);
@@ -33,5 +40,5 @@ authentication_required();
         }
         $type = $request_resource === "0" ? "type=request" : "type=resource";
         header("Location:view_posts.php?".$type);
-        die();
+        die();*/
 ?>
