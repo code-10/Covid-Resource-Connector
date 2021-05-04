@@ -91,9 +91,8 @@
     			</select>
 		</div>		
 		
-		<div class="m-2">
-			<button class="btn btn-primary btn-sm" name="filter" type="submit">filter</button>
-		</div>
+		<h5><button class="btn btn-primary btn-sm" name="filter" type="submit">filter</button></h5>
+		
 	</form>
 	</div>
 	
