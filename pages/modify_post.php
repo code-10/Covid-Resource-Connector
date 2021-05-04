@@ -134,7 +134,7 @@ if($post_details === NULL)
 				
 						<div class="form-group">
 							<?php for($k=0;$k<$tag_count;$k++) { ?>
-								<label class="p-2"><input type="checkbox" class="m-2" name="needs[]" value="<?=$tag_id[$k]?>" <?php if(in_array(<?=$tag_id[$k]?>, $needs_mod)) { ?> checked <?php } ?>><?=$tag_name[$k]?></label>
+								<label class="p-2"><input type="checkbox" class="m-2" name="needs[]" value="<?=$tag_id[$k]?>" <?php if(in_array($tag_id[$k], $needs_mod)) { ?> checked <?php } ?>><?=$tag_name[$k]?></label>
 							<?php } ?>
 						</div>		
 				
