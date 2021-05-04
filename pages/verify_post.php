@@ -45,6 +45,9 @@ authentication_required();
                }
             }
            
+            echo $latest_id;echo "<br>";
+            print_r($needs);
+           
             $nc = count($needs);
             for($i=0;$i<$nc;$i++)
             {
@@ -52,6 +55,6 @@ authentication_required();
             }
         }
         $type = $request_resource === "0" ? "type=request" : "type=resource";
-        header("Location:view_posts.php?".$type);
-        die();
+        //header("Location:view_posts.php?".$type);
+        //die();
 ?>
