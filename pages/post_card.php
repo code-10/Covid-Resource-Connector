@@ -91,7 +91,7 @@ function renderUserPost($data, $type, $user_email=NULL){
         <h5 class="card-header p-3">
         $first_name&nbsp<?=$last_name?>&nbsp
         $postOptions
-        <div class="m-2">$needs_display</div>
+        $needs_display
         </h5>
         <div class="card-body p-3">
             <h5 class="card-title">$city, $state</h5>
