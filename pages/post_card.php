@@ -10,6 +10,14 @@ function getUserOptions($post_id){
     EOD;
     return $html;
 }
+
+function renderNeeds($get_need)
+{
+    return <<<EOD
+            <span class="badge badge-pill badge-info">$get_need</span>
+        EOD;
+}
+
 function renderComment($user_email,$email,$comment_id,$comment,$time){
     $deleteOption = "";
     if ($user_email === $email)
@@ -44,7 +52,7 @@ function renderUserPost($data, $type, $user_email=NULL){
     $email = $data['email'];
 
     $time = $data['time'];
-    
+       
     //trying
     $post_id = $data['post_id'];
     
@@ -71,9 +79,9 @@ function renderUserPost($data, $type, $user_email=NULL){
     $needs_res = $con->query("select t.tag_name from tag as t, needs as n, post as p where n.tag_id=t.tag_id and p.post_id='$post_id'");
     while($needs_ele = $needs_res->fetch_assoc())
     {
-        $needs_display[] = $needs_ele['tag_name']; 
+        $get_need = $needs_ele['tag_name'];
+        $needs_display .= renderNeeds($get_need);
     }   
-    $nd = count($needs_display);
     
     
 
@@ -83,7 +91,7 @@ function renderUserPost($data, $type, $user_email=NULL){
         <h5 class="card-header p-3">
         $first_name&nbsp<?=$last_name?>&nbsp
         $postOptions
-        <span class="badge badge-pill badge-info">$tag_name</span>
+        <span class="badge badge-pill badge-info">$needs_display</span>
         </h5>
         <div class="card-body p-3">
             <h5 class="card-title">$city, $state</h5>
