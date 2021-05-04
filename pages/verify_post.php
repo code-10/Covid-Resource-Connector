@@ -32,6 +32,8 @@ authentication_required();
             
             $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource,tag_id,first_name,last_name) values('$email','$state','$city','$description','$phone_number','$request_resource','$tag_id','$first_name','$last_name')");    
         
+            $latest_id = $con->insert_id;
+           
         }
         else
         {
