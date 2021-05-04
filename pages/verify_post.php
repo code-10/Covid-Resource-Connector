@@ -46,7 +46,7 @@ authentication_required();
             $nc = count($needs);
             for($i=0;$i<$nc;$i++)
             {
-               $con->query("insert into needs(post_id,tag_id) values('$latest_id','$needs[$i]')");
+               $con->query("insert into needs(post_id,tag_id) values("$latest_id['id']",'$needs[$i]')");
             }
         }
         $type = $request_resource === "0" ? "type=request" : "type=resource";
