@@ -28,13 +28,10 @@ authentication_required();
 
       
 
-        if(!isset($_POST['modify']))
+        if(!isset($_POST['modify'])){
             $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource,tag_id,first_name,last_name) values('$email','$state','$city','$description','$phone_number','$request_resource','$tag_id','$first_name','$last_name')");    
-        else
-        {
-            $res = $con->query("update post set state='$state',tag_id='$tag_id',city='$city',description='$description',ph_no='$phone_number',request_resource='$request_resource' where post_id='$post_id'"); 
            
-            $latest_id = $con->insert_id;
+             $latest_id = $con->insert_id;
            
             $needs = Array();      
             if(!empty($_POST['needs'])){
@@ -51,6 +48,10 @@ authentication_required();
             {
                $con->query("insert into needs(post_id,tag_id) values('$latest_id','$needs[$i]')");
             }
+        }
+        else
+        {
+            $res = $con->query("update post set state='$state',tag_id='$tag_id',city='$city',description='$description',ph_no='$phone_number',request_resource='$request_resource' where post_id='$post_id'"); 
         }
         $type = $request_resource === "0" ? "type=request" : "type=resource";
         //header("Location:view_posts.php?".$type);
