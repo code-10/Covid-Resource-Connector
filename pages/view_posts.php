@@ -91,7 +91,7 @@
     			</select>
 		</div>		
 		
-		<div class="col-12 col-sm-3 text-center"><button class="btn btn-primary btn-sm" name="filter" type="submit">filter</button></div>
+		<div class="col-12 col-sm-3 text-center p-4"><button class="btn btn-primary" name="filter" type="submit">filter</button></div>
 		
 	</form>
 	</div>
