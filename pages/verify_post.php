@@ -34,7 +34,7 @@ authentication_required();
         {
             $res = $con->query("update post set state='$state',tag_id='$tag_id',city='$city',description='$description',ph_no='$phone_number',request_resource='$request_resource' where post_id='$post_id'"); 
             
-            $needs = Array();      
+            /*$needs = Array();      
             if(!empty($_POST['needs'])){
                foreach($_POST['needs'] as $n){
                   $needs[] = $n;
@@ -45,7 +45,7 @@ authentication_required();
             for($i=0;$i<$nc;$i++)
             {
                $con->query("insert into needs(post_id,tag_id) values('$post_id','$needs[$i]')");
-            }
+            }*/
         }
         $type = $request_resource === "0" ? "type=request" : "type=resource";
         header("Location:view_posts.php?".$type);
