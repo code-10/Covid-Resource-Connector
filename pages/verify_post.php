@@ -33,10 +33,8 @@ authentication_required();
         else
         {
             $res = $con->query("update post set state='$state',tag_id='$tag_id',city='$city',description='$description',ph_no='$phone_number',request_resource='$request_resource' where post_id='$post_id'"); 
-            
-            $latest_id = ['id'=>$con->insert_id];
            
-            $latest_id = $latest_id['id'];
+            $latest_id = $con->insert_id;
            
             $needs = Array();      
             if(!empty($_POST['needs'])){
