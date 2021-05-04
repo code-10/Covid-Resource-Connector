@@ -90,7 +90,10 @@
 				<?php } ?>
     			</select>
 		</div>		
-		<button class="btn btn-primary btn-sm" name="filter" type="submit">filter</button>
+		
+		<div class="m-2">
+			<button class="btn btn-primary btn-sm" name="filter" type="submit">filter</button>
+		</div>
 	</form>
 	</div>
 	
