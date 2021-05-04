@@ -14,7 +14,7 @@ function getUserOptions($post_id){
 function renderNeeds($get_need)
 {
     return <<<EOD
-            <span class="badge badge-pill badge-info">$get_need</span>
+            <span class="badge badge-pill badge-info m-2">$get_need</span>
         EOD;
 }
 
