@@ -21,10 +21,8 @@ authentication_required();
          }
         }
          
-        print_r($needs);
-      
 
-        /*$email =  mysqli_real_escape_string($con,$_POST['email']);
+        $email =  mysqli_real_escape_string($con,$_POST['email']);
         $state = mysqli_real_escape_string($con,$_POST['state']);
         $city = mysqli_real_escape_string($con,$_POST['city']);
         $description = mysqli_real_escape_string($con,$_POST['description']);
@@ -35,7 +33,16 @@ authentication_required();
         $post_id = $_POST['post_id'];
         $tag_id = $_POST['tag_id'];
 
-        if(!isset($_POST['modify']))
+
+         $nc = count($needs);
+         for($i=0;$i<$nc;$i++)
+         {
+            $con->query("insert into needs(post_id,tag_id) values('$post_id','$needs[$i]')");
+         }
+      
+      
+
+        /*if(!isset($_POST['modify']))
             $res = $con->query("insert into post(email,state,city,description,ph_no,request_resource,tag_id,first_name,last_name) values('$email','$state','$city','$description','$phone_number','$request_resource','$tag_id','$first_name','$last_name')");    
         else
         {
