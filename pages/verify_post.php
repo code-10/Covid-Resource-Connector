@@ -13,12 +13,15 @@ authentication_required();
 
     $con = getCon();
 
-         
+   
+      $needs = Array();      
         if(!empty($_POST['needs'])){
          foreach($_POST['needs'] as $n){
-            echo $n."</br>";
+            $needs[] = $n;
          }
-      }
+        }
+         
+        print_r($needs);
       
 
         /*$email =  mysqli_real_escape_string($con,$_POST['email']);
