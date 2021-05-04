@@ -36,6 +36,8 @@ authentication_required();
             
             $latest_id = ['id'=>$con->insert_id];
            
+            $latest_id = $latest_id['id'];
+           
             $needs = Array();      
             if(!empty($_POST['needs'])){
                foreach($_POST['needs'] as $n){
@@ -46,7 +48,7 @@ authentication_required();
             $nc = count($needs);
             for($i=0;$i<$nc;$i++)
             {
-               $con->query("insert into needs(post_id,tag_id) values("$latest_id['id']",'$needs[$i]')");
+               $con->query("insert into needs(post_id,tag_id) values('$latest_id','$needs[$i]')");
             }
         }
         $type = $request_resource === "0" ? "type=request" : "type=resource";
