@@ -54,6 +54,6 @@ authentication_required();
             $res = $con->query("update post set state='$state',tag_id='$tag_id',city='$city',description='$description',ph_no='$phone_number',request_resource='$request_resource' where post_id='$post_id'"); 
         }
         $type = $request_resource === "0" ? "type=request" : "type=resource";
-        //header("Location:view_posts.php?".$type);
-        //die();
+        header("Location:view_posts.php?".$type);
+        die();
 ?>
