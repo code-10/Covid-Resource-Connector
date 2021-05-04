@@ -83,7 +83,11 @@ function renderUserPost($data, $type, $user_email=NULL){
         <h5 class="card-header p-3">
         $first_name&nbsp<?=$last_name?>&nbsp
         $postOptions
-        <span class="badge badge-pill badge-info">$needs_display</span>
+        <?php 
+            for($z=0;$z<$nd;$z++) { 
+                echo '<span class="badge badge-pill badge-info">'.$needs_display[$z].'</span> ';
+            }
+        ?>
         </h5>
         <div class="card-body p-3">
             <h5 class="card-title">$city, $state</h5>
