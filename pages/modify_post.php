@@ -137,8 +137,8 @@ if($post_details === NULL)
 
                             <div class="form-group">
                                 <label for="inputdescription">Description</label>
-				<textarea maxlength="256" class="form-control" id="exampleFormControlTextarea" rows="4" name="description" value="<?= $post_details['description'] ?>" required></textarea>
-                                <!--<input type="text" class="form-control" id="inputdescription" placeholder="description" name="description" value="<?= $post_details['description'] ?>" required>-->
+				<!--<textarea maxlength="256" class="form-control" id="exampleFormControlTextarea" rows="4" name="description" required></textarea>-->
+                                <input type="text" class="form-control" id="inputdescription" placeholder="description" name="description" value="<?= $post_details['description'] ?>" required>
                             </div>
 
                             <div class="form-group">
