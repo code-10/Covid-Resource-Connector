@@ -95,7 +95,9 @@
     					<select class="form-control" id="state" name="state" required="required">
 							<option selected disabled value="">select state</option>
                               				<?php for($j=0;$j<$state_count;$j++) { ?>
-					      			<option value="<?=$state[$j]?>"><?=$state[$j]?></option>
+								<?php if($state[$j]!="All") { ?>
+					      				<option value="<?=$state[$j]?>"><?=$state[$j]?></option>
+								<?php } ?>
 							<?php } ?>
     					</select>
 									</div>
@@ -107,7 +109,9 @@
     					<select class="form-control" id="city" name="city" required="required">
 							<option selected disabled value="">select city</option>
                               				<?php for($j=0;$j<$city_count;$j++) { ?>
-					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
+								<?php if($city[$j]!="All") { ?>
+					      				<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
+								<?php } ?>
 							<?php } ?>
     					</select>
 									</div>
