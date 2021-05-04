@@ -120,11 +120,11 @@ if($post_details === NULL)
                             
                             <div class="form-group">
 								<label for="inputuser">Need</label>
-    					        <select class="form-control" id="tag" name="tag_id">
+    					        <!--<select class="form-control" id="tag" name="tag_id">
                               	    <?php for($k=0;$k<$tag_count;$k++) { ?>
 					      			    <option value="<?=$tag_id[$k]?>"><?=$tag_name[$k]?></option>
 							        <?php } ?>
-    					        </select>
+    					        </select>-->
 							</div>
 				
 				
