@@ -120,36 +120,42 @@
 		<div class="row m-4 d-flex justify-content-center">
 			<?php 
 				$con = getCon();
-	      			/*if(isset($_POST['need'])&&$state=="All"&&$city=="All"&&$need=="All")
+	      			if(isset($_POST['need'])&&$state=="All"&&$city=="All"&&$need=="All")
 				{
-					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
-				}
-	      			else if(isset($_POST['need'])&&$state=="All"&&$city=="All")
-				{
-					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
-				}
-	      			else if(isset($_POST['need'])&&$state=="All"&&$need=="All")
-				{
-					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.city='$city' ORDER BY time ASC, upvotes desc, downvotes asc");
-				}
-	      			else if(isset($_POST['need'])&&$city=="All"&&$need=="All")
-				{
-					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.state='$state' ORDER BY time ASC, upvotes desc, downvotes asc");
-				}
-	      			else if(isset($_POST['need'])&&$need=="All")
-				{
-					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
-				}
-	      			else if(isset($_POST['need']))
-				{
-					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.state='$state' and p.city='$city' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
-				}
-	      			else
-				{*/
 					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
 					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
 				
-	      			//}
+				}
+	      			else if(isset($_POST['need'])&&$state!="All"&&$city!="All"&&$need=="All")
+				{
+					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
+					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.city='$city' and p.state='$state' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
+				
+				}////below two are not working////
+	      			else if(isset($_POST['need'])&&$state=="All"&&$city=="All"&&$need!="All")
+				{
+					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.city='$city' ORDER BY time ASC, upvotes desc, downvotes asc");
+					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
+				
+				}
+	      			else if(isset($_POST['need'])&&$state!="All"&&$city!="All"&&$need!="All")
+				{
+					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.state='$state' ORDER BY time ASC, upvotes desc, downvotes asc");
+					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
+				
+				}
+	      			else if(isset($_POST['need']))
+				{
+					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.state='$state' and p.city='$city' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
+					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
+				
+				}
+	      			else
+				{
+					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
+					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
+				
+	      			}
 				$postComp = "";
 				while($data = $my_posts_res->fetch_assoc()) {
 					$postComp = renderUserPost($data, 'user', $email); 
