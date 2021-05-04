@@ -76,7 +76,7 @@ function renderUserPost($data, $type, $user_email=NULL){
     
     
     $needs_display="";
-    $needs_res = $con->query("select t.tag_name from tag as t, needs as n, post as p where n.tag_id=t.tag_id and n.post_id=p.post_id and p.post_id='$post_id'");
+    $needs_res = $con->query("select t.tag_name from tag as t, needs as n, post as p where n.tag_id=t.tag_id and n.post_id=p.post_id");
     while($needs_ele = $needs_res->fetch_assoc())
     {
         $get_need = $needs_ele['tag_name'];
