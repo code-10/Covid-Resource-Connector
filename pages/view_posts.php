@@ -49,7 +49,15 @@
 		}
 	
 		$tt = count($tag_id);
-	
+
+		if(isset($_POST['need']))
+		{
+			$state = $_POST['state'];
+			$city = $_POST['city'];
+			$need = $_POST['need'];
+			
+		}
+		var_dump($_POST);
 	?>
 	
 	
@@ -60,7 +68,7 @@
     			<select class="form-control" id="state" name="state" required>
 				<!--<option value="All" selected>All</option>-->
 				<?php for($i=0;$i<$cc;$i++) { ?>
-					<option value="<?=$state_name[$i]?>"><?=$state_name[$i]?></option>
+					<option value="<?=$state_name[$i]?>" <?php echo strval($state_name[$i])===strval($state) ? "selected" : "" ; ?>><?=$state_name[$i]?></option>
 				<?php } ?>
     			</select>
 		</div>	
@@ -78,7 +86,7 @@
 				<option selected disabled>select need</option>
 				<option value="All">All</option>
 				<?php for($i=0;$i<$tt;$i++) { ?>
-					<option value="<?=$tag_id[$i]?>"><?=$tag_name[$i]?></option>
+					<option value="<?=$tag_id[$i]?>" <?php echo  (strval($tag_id[$i]) == strval($need)) ? "selected" :"" ;?>><?=$tag_name[$i]?></option>
 				<?php } ?>
     			</select>
 		</div>		
@@ -91,13 +99,7 @@
 	
 <?php 
 
-	if(isset($_POST['need']))
-	{
-		$state = $_POST['state'];
-		$city = $_POST['city'];
-		$need = $_POST['need'];
-		
-	}
+
 		
 		
 ?>
@@ -122,12 +124,14 @@
 				$con = getCon();
 	      			if(isset($_POST['need'])&&$state=="All"&&$city=="All"&&$need=="All")
 				{
+
 					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
 					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
 				
 				}
 	      			else if(isset($_POST['need'])&&$state!="All"&&$city!="All"&&$need=="All")
 				{
+
 					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
 					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.city='$city' and p.state='$state' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
 				
@@ -135,23 +139,25 @@
 	      			else if(isset($_POST['need'])&&$state=="All"&&$city=="All"&&$need!="All")
 				{
 					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.city='$city' ORDER BY time ASC, upvotes desc, downvotes asc");
-					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
+					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' and $need in (select tag_id from needs where post_id=p.post_id) order by time asc,upvotes asc,downvotes desc;");
 				
 				}
 	      			else if(isset($_POST['need'])&&$state!="All"&&$city!="All"&&$need!="All")
 				{
+
 					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.state='$state' ORDER BY time ASC, upvotes desc, downvotes asc");
-					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
-				
+					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.state='$state' and p.city='$city' and p.request_resource='$request_resource' and $need in (select tag_id from needs where post_id=p.post_id)  order by time asc,upvotes asc,downvotes desc;");
 				}
 	      			else if(isset($_POST['need']))
 				{
+
 					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' and p.state='$state' and p.city='$city' and p.tag_id='$need' ORDER BY time ASC, upvotes desc, downvotes asc");
 					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
 				
 				}
 	      			else
 				{
+
 					//$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,t.tag_name,p.email from post as p,tag as t where t.tag_id=p.tag_id and p.email='$email' and p.request_resource='$request_resource' ORDER BY time ASC, upvotes desc, downvotes asc");
 					$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email='$email' and p.request_resource='$request_resource' order by time asc,upvotes asc,downvotes desc;");
 				
@@ -318,26 +324,30 @@ function voteHandler(tag){
 </script>
 
 <script type="text/javascript">
-
+	const current_city = "<?=$city?>"
+	function stateChange(){
+					var sname = $("#state").val();
+					if(sname === "All")
+						return;
+					//var need = $("#need").val();
+					$.ajax({
+						url: 'filter_config.php',
+						method: 'post',
+						data: 'sname=' + sname,
+						//data:{sname:sname,need:need}
+					}).done(function(city){
+						console.log(city);
+						city = JSON.parse(city);
+						$('#city').empty();
+						city.forEach(function(c){
+							$('#city').append(`<option ${c === current_city ? 'selected' : ''}>` + c + '</option>')
+						})
+					})
+				}
 
 	$(document).ready(function(){
-			$("#state").change(function(){
-				var sname = $("#state").val();
-				//var need = $("#need").val();
-				$.ajax({
-					url: 'filter_config.php',
-					method: 'post',
-					data: 'sname=' + sname,
-					//data:{sname:sname,need:need}
-				}).done(function(city){
-					console.log(city);
-					city = JSON.parse(city);
-					$('#city').empty();
-					city.forEach(function(c){
-						$('#city').append('<option>' + c + '</option>')
-					})
-				})
-			})
+			$("#state").change(stateChange)
+			stateChange()
 		})
 
 </script>
