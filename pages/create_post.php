@@ -93,7 +93,7 @@
 						<div class="form-group">
 							<label for="inputuser">State</label>
     					<select class="form-control" id="state" name="state" required="required">
-							<option selected disabled>select state</option>
+							<!--<option selected disabled>select state</option>-->
                               				<?php for($j=0;$j<$state_count;$j++) { ?>
 					      			<option value="<?=$state[$j]?>"><?=$state[$j]?></option>
 							<?php } ?>
@@ -105,7 +105,7 @@
 							<div class="form-group">
 								<label for="inputuser">city</label>
     					<select class="form-control" id="city" name="city" required="required">
-							<option selected disabled>select city</option>
+							<!--<option selected disabled>select city</option>-->
                               				<?php for($j=0;$j<$city_count;$j++) { ?>
 					      			<option value="<?=$city[$j]?>"><?=$city[$j]?></option>
 							<?php } ?>
