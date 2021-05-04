@@ -83,7 +83,7 @@
 		<div class="col-12 col-sm-3 text-center">
 			<label for="inputuser">Need</label>
     			<select class="form-control" id="need" name="need"> <!-- onchange='this.form.submit()'-->
-				<option selected disabled>select need</option>
+				<!--<option selected disabled>select need</option>-->
 				<option value="All">All</option>
 				<?php for($i=0;$i<$tt;$i++) { ?>
 					<option value="<?=$tag_id[$i]?>" <?php echo  (strval($tag_id[$i]) == strval($need)) ? "selected" :"" ;?>><?=$tag_name[$i]?></option>
