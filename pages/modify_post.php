@@ -117,6 +117,23 @@ if($post_details === NULL)
 							        <?php } ?>
     					        </select>
 							</div>
+				
+				
+				
+				
+				
+				
+						<div class="form-group">
+							<?php for($k=0;$k<$tag_count;$k++) { ?>
+								<label class="p-2"><input type="checkbox" class="m-2" name="needs[]" value="<?=$tag_id[$k]?>"><?=$tag_name[$k]?></label>
+							<?php } ?>
+						</div>		
+				
+				
+				
+				
+				
+				
 
                             <div class="form-group">
                                 <label for="inputdescription">Description</label>
