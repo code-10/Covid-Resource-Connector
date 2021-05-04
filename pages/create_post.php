@@ -145,8 +145,7 @@
                                 <div class="form-group">
 					          <label for="inputdescription">Description</label>
 								<textarea maxlength="256" class="form-control" id="exampleFormControlTextarea" rows="4" name="description"></textarea>
-					            <!--<input type="text" class="form-control" id="inputdescription" placeholder="description" name="description" required>-->
-				          </div>
+					           </div>
                                 
                                  <div class="form-group">
 					          <label for="inputphonenumber">Phone Number</label>
