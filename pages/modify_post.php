@@ -15,7 +15,14 @@ if(!$post_id)
     die("No post id given");
 
 $con = getCon();
-$post_details = $con->query("select * from post where post_id='$post_id' and email='$email'")->fetch_assoc();
+
+	if($email === 'groot@gmail.com')
+            $post_details = $con->query("select * from post where post_id='$post_id'")->fetch_assoc(); // if admin, ignore email
+        else
+            $post_details = $con->query("select * from post where post_id='$post_id' and email='$email'")->fetch_assoc(); // if not admin, check if owner of post is modifying
+
+
+//$post_details = $con->query("select * from post where post_id='$post_id' and email='$email'")->fetch_assoc();
 
 if($post_details === NULL)
     die("Problem With Post Id")
