@@ -61,7 +61,7 @@
 	?>
 	
 	
-	<h5><i class="fa fa-exclamation-triangle m-2"></i>BEWARE OF FRAUDSTERS<i class="fa fa-exclamation-triangle m-2"></i></h5>
+	<h5 class="text-center m-2" style="font-size:16px;"><i class="fa fa-exclamation-triangle m-2 text-danger"></i>BEWARE OF FRAUDSTERS<i class="fa fa-exclamation-triangle m-2 text-danger"></i></h5>
 	
 	<div class="container">
 	<form class="row d-flex justify-content-center p-4" method="POST" action="view_posts.php">
