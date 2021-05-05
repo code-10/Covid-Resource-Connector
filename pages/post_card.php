@@ -40,6 +40,7 @@ function renderComment($user_email,$email,$comment_id,$comment,$time){
 }
 function renderUserPost($data, $type, $user_email=NULL){
     $con = getCon();
+    global $cc;
     $first_name = $data['first_name'];
     $last_name = $data['last_name'];
     $upvotes = $data['upvotes'];
@@ -92,7 +93,7 @@ function renderUserPost($data, $type, $user_email=NULL){
         <h5 class="card-header p-3" type="button" data-toggle="collapse" data-target="#collapse_m$cc" aria-expanded="false" aria-controls="collapseExample">
         $first_name&nbsp<?=$last_name?>&nbsp
         $postOptions
-        <!--<span class="badge badge-pill badge-info m-1">$tag_name</span>-->
+        <!--<span class="badge badge-pill badge-info m-1"></span>-->
         $needs_display
         </h5>
         <div class="collapse m-2" id="collapse_m$cc?">
@@ -169,8 +170,8 @@ function renderUserPost($data, $type, $user_email=NULL){
     </div>
 
     </div>
-    $cc++;
     START;
+    $cc++;
     return $html;
 }
 ?>
