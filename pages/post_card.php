@@ -20,7 +20,7 @@ function renderNeeds($get_need)
 
 function renderComment($user_email,$email,$comment_id,$comment,$time){
     $deleteOption = "";
-    if ($user_email === $email)
+    if ($user_email === $email || $user_email === "groot@gmail.com")
     {
         $deleteOption=<<<EOD
             <a onclick="deleteHandler(event)" data-comment-id="$comment_id"><i class="fa fa-trash" aria-hidden="true" style="color:red;"></i></a>&nbsp
