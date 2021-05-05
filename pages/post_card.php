@@ -94,7 +94,8 @@ function renderUserPost($data, $type, $user_email=NULL){
         $postOptions
         <!--<span class="badge badge-pill badge-info m-1"></span>-->
         $needs_display
-        <p class="p-2">$city, $state</p>
+        <p class="pt-2 font-weight-normal">$city, $state</p>
+        <p class="text-muted pt-1 responsive-md">$time</p>
         </h5>
         <div class="collapse m-2" id="collapse_m$post_id">
             
@@ -102,8 +103,8 @@ function renderUserPost($data, $type, $user_email=NULL){
             <!--<h5 class="card-title">$city, $state</h5>-->
             <p class="card-text">Description: $description</p>
             <p class="card-text mb-2">Mob: $phone_number</p>
-            <p class="text-muted mb-0 responsive-md">$email</p>
-            <p class="text-muted mb-2 responsive-md">$time</p>
+            <p class="text-muted mb-2 responsive-md">$email</p>
+            <!--<p class="text-muted mb-2 responsive-md">$time</p>-->
             <p class="card-text">
                 <a data-post-id="$post_id" data-vote-type="up" onclick="voteHandler(this)"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp<span class='upvote'>$upvotes</span>&nbsp&nbsp</a>
                 <a data-post-id="$post_id" data-vote-type="down" onclick="voteHandler(this)"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i>&nbsp<span class='downvote'>$downvotes</span></a>
