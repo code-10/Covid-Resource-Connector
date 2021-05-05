@@ -13,7 +13,7 @@
   
     
     <div class="text-center">
-      <h4 class="m-4">Donate if you want to support the developers and people in need of covid resources</h4>
+      <h4 class="m-4">Donate if you want to support people in need of covid resource and the developers</h4>
       <img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">
     </div>
   
