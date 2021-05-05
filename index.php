@@ -46,6 +46,12 @@
 </body>
 
 
+<br><br><br><br><br><br><br><br>
+
+<div class="text-center">
+	<a href="pages/donate.php"><button type="button" class="btn btn-dark" style="background-color:purple;"><i class="fa fa-hand-holding-heart mr-2"></i>Donate</button></a>
+</div>
+
 <style>
     /*Media Queries*/
 	@media (min-width:320px)  { .responsive-md{font-size:24px;} .responsive-lg{font-size:32px;} /* smartphones, iPhone, portrait 480x320 phones */ }
