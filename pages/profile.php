@@ -2,6 +2,7 @@
 <?php include_once '../libraries/shield.php'; ?>
 <?php session_start(); ?>
 <?php $email = $_SESSION['email']; ?>
+<?php $con = getCon(); ?>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
