@@ -88,12 +88,14 @@ function renderUserPost($data, $type, $user_email=NULL){
     $html=<<<START
     <div class="col-12 col-sm-4 m-2">
     <div class="card">
-        <h5 class="card-header p-3">
+        <h5 class="card-header p-3" type="button" data-toggle="collapse" data-target="#collapse_m<?=$cc?>" aria-expanded="false" aria-controls="collapseExample">
         $first_name&nbsp<?=$last_name?>&nbsp
         $postOptions
         <!--<span class="badge badge-pill badge-info m-1">$tag_name</span>-->
         $needs_display
         </h5>
+        <div class="collapse m-2" id="collapse_m<?=$cc?>">
+            
         <div class="card-body p-3">
             <h5 class="card-title">$city, $state</h5>
                 <p class="card-text">Description: $description</p>
@@ -163,6 +165,8 @@ function renderUserPost($data, $type, $user_email=NULL){
             </div>
         </div>	
     </div>
+    </div>
+
     </div>
     START;
     return $html;
