@@ -94,8 +94,8 @@ function renderUserPost($data, $type, $user_email=NULL){
         $postOptions
         <!--<span class="badge badge-pill badge-info m-1"></span>-->
         $needs_display
-        <p class="pt-2 font-weight-normal">$city, $state</p>
-        <p class="text-muted pt-1 responsive-md">$time</p>
+        <p class="pt-2 font-weight-normal mb-0">$city, $state</p>
+        <p class="text-muted pt-1 mb-0 responsive-md">$time</p>
         </h5>
         <div class="collapse m-2" id="collapse_m$post_id">
             
