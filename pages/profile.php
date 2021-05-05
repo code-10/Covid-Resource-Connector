@@ -32,8 +32,8 @@
     
     
   <!--profile-->
-    <div class="p-4" style="background-color:black;">
-        <div class="text-center">
+    <div class="p-4">
+		<div class="row m-4 d-flex justify-content-center">
             <?php 
 		     if(isset($_SESSION['email'])&&($email=="groot@gmail.com")){
                       
@@ -52,8 +52,8 @@
                         $last_name=$_SESSION['last_name'];
                         $last_name[0]=strtoupper($last_name[0]);
                         
-                        echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' '.$last_name.' </h1>';
-                        echo '<a href="#" class="nav-item nav-link active" style="color:white;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a>';
+                        echo '<h1 class="display-6 mb-2"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' '.$last_name.' </h1>';
+                        echo '<a href="#" class="nav-item nav-link active" style="color:black;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a>';
                     }
                     else if(isset($_SESSION['email'])&&(isset($_SESSION['simple']))){ 
                         
@@ -75,8 +75,8 @@
                         $d_last_name = $last_name[0];
                         $d_last_name[0]=strtoupper($d_last_name[0]);
                       
-                        echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$d_first_name.' '.$d_last_name.' </h1>';
-                        echo '<a href="#" class="nav-item nav-link active" style="color:white;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a>';
+                        echo '<h1 class="display-6 mb-2"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$d_first_name.' '.$d_last_name.' </h1>';
+                        echo '<a href="#" class="nav-item nav-link active" style="color:black;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a>';
                     }
                     else
                     {
@@ -84,4 +84,5 @@
                         die();
                     }
             ?>
+		</div>	
         </div>
