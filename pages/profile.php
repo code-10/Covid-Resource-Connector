@@ -35,11 +35,39 @@
     <div class="p-4">
 		<div class="row m-4 d-flex justify-content-center">
             <?php 
+			
+			$filter_post_id = $_GET['post_id'];
+			
 		     if(isset($_SESSION['email'])&&($email=="groot@gmail.com")){
-                      
-                        //$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email!='$email' order by time asc,upvotes asc,downvotes desc;");
-                        $my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p order by time asc,upvotes asc,downvotes desc;");
-                        
+                      ?>
+			
+			
+			<div class="container">
+				<form class="row d-flex justify-content-center p-4" method="GET" action="profile.php">
+  					<div class="col-12 col-sm-6 text-center">
+						<label for="inputuser">Post ID</label>
+						<input type="number" id="post_id" name="post_id">
+					</div>	
+
+				<div class="col-12 col-sm-6 text-center p-4"><button class="btn btn-primary" name="filter" type="submit">filter</button></div>
+		
+				</form>
+			</div>
+			
+			
+			
+			
+                         <?php 
+			     
+			     if(isset($_GET['filter']))
+			     {
+				$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.post_id='$filter_post_id' order by time asc,upvotes asc,downvotes desc;");  
+			     }
+			     else{
+			     //$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email!='$email' order by time asc,upvotes asc,downvotes desc;");
+			     	$my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p order by time asc,upvotes asc,downvotes desc;");
+			     }
+			     
 			$postComp = "";
 			while($data = $my_posts_res->fetch_assoc()) {
 				$postComp = renderUserPost($data, 'admin',$email); 
