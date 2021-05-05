@@ -49,7 +49,7 @@
 <br><br><br><br><br><br><br><br>
 
 <div class="text-center">
-	<button type="button" class="btn btn-light" style="background-color:purple;"><i class="fa fa-hand-holding-heart mr-2"></i>Donate</button>
+	<button type="button" class="btn btn-dark" style="background-color:purple;"><i class="fa fa-hand-holding-heart mr-2"></i>Donate</button>
 </div>
 
 <style>
