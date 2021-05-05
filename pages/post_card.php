@@ -169,6 +169,7 @@ function renderUserPost($data, $type, $user_email=NULL){
     </div>
 
     </div>
+    $cc++;
     START;
     return $html;
 }
