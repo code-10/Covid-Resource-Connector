@@ -58,7 +58,10 @@
 			
 		}
 		//var_dump($_POST);
-		echo $need;
+		if($need!="All")
+		{
+			$need = $con->query("select * from tag where tag_id='$need'")->fetch_assoc()['tag_name'];	
+		}
 	
 	?>
 	
@@ -116,7 +119,7 @@
 		<?php
 			if(isset($_POST['need']))
 			{	
-				echo '<h5 class="m-2 text-center">Displaying results for '.$city.' City, '.$state.' State</h5>';
+				echo '<h5 class="m-2 text-center">Displaying results for '.$city.' City, '.$state.' State and '.$need.'</h5>';
 			}
 		?>
 	
