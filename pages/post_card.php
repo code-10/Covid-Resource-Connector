@@ -60,7 +60,7 @@ function renderUserPost($data, $type, $user_email=NULL){
     $l10nDate->setTimeZone(new DateTimeZone('Asia/Kolkata'));
     $time = $l10nDate->format('Y-m-d H:i:s');
     
-    $postOptions = $type==='user' ? getUserOptions($post_id) : "";
+    $postOptions = ($type==='user' || $type==='admin') ? getUserOptions($post_id) : "";
     $commentList = "";
     $comment_res = $con->query("select * from comment where post_id='$post_id'");
 
