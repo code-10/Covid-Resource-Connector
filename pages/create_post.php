@@ -144,7 +144,7 @@
                                 
                                 <div class="form-group">
 					          <label for="inputdescription">Description</label>
-								<textarea maxlength="1000" class="form-control" id="exampleFormControlTextarea" rows="4" name="description" required></textarea>
+								<textarea maxlength="1500" class="form-control" id="exampleFormControlTextarea" rows="4" name="description" required></textarea>
 					           </div>
                                 
                                  <div class="form-group">
