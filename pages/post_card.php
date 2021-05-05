@@ -95,7 +95,7 @@ function renderUserPost($data, $type, $user_email=NULL){
         <!--<span class="badge badge-pill badge-info m-1"></span>-->
         $needs_display
         </h5>
-        <div class="collapse m-2" id="collapse_m$post_id?">
+        <div class="collapse m-2" id="collapse_m$post_id">
             
         <div class="card-body p-3">
             <h5 class="card-title">$city, $state</h5>
