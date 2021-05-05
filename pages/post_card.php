@@ -38,6 +38,7 @@ function renderComment($user_email,$email,$comment_id,$comment,$time){
         EOD;
 }
 function renderUserPost($data, $type, $user_email=NULL){
+    $description_head_length = 15;
     $con = getCon();
     global $cc;
     $first_name = $data['first_name'];
@@ -51,16 +52,12 @@ function renderUserPost($data, $type, $user_email=NULL){
     $description = $data['description'];
     $phone_number = $data['ph_no'];
     $email = $data['email'];
-
     $time = $data['time'];
-       
     //trying
     $post_id = $data['post_id'];
-    
     $l10nDate = new DateTime($time, new DateTimeZone('UTC'));
     $l10nDate->setTimeZone(new DateTimeZone('Asia/Kolkata'));
     $time = $l10nDate->format('Y-m-d H:i:s');
-    
     $postOptions = ($type==='user' || $type==='admin') ? getUserOptions($post_id) : "";
     $commentList = "";
     $comment_res = $con->query("select * from comment where post_id='$post_id'");
@@ -84,7 +81,17 @@ function renderUserPost($data, $type, $user_email=NULL){
         $needs_display .= renderNeeds($get_need);
     }   
     
+    $description_head = substr($description,0,$description_head_length);
+    $description_body = substr($description,$description_head_length);
     
+    if( $description_head === $description)
+        $see_more_code = "";
+    else
+        $see_more_code=<<<OMEGALOL
+            <a data-toggle="collapse" href="#desc$post_id" role="button" aria-expanded="false" aria-controls="collapseExample"> 
+                See More 
+            </a> 
+        OMEGALOL;
 
     $html=<<<START
     <div class="col-12 col-sm-4 m-2">
@@ -101,7 +108,10 @@ function renderUserPost($data, $type, $user_email=NULL){
             
         <div class="card-body p-3">
             <!--<h5 class="card-title">$city, $state</h5>-->
-            <p class="card-text">Description: $description</p>
+            <p class="card-text">Description: $description_head $see_more_code </p>
+            <div class="collapse" id="desc$post_id">
+                    $description_body
+            </div>
             <p class="card-text mb-2">Mob: $phone_number</p>
             <p class="text-muted mb-2 responsive-md">$email</p>
             <!--<p class="text-muted mb-2 responsive-md">$time</p>-->
@@ -109,9 +119,7 @@ function renderUserPost($data, $type, $user_email=NULL){
                 <a data-post-id="$post_id" data-vote-type="up" onclick="voteHandler(this)"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp<span class='upvote'>$upvotes</span>&nbsp&nbsp</a>
                 <a data-post-id="$post_id" data-vote-type="down" onclick="voteHandler(this)"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i>&nbsp<span class='downvote'>$downvotes</span></a>
             </p>
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalCenter$post_id">
-                Add a Comment
-            </button>
+            <button tydata-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong$post_id">
                 View Comments
             </button>
