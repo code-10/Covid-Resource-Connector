@@ -1,6 +1,7 @@
 <?php include_once '../header.php'; ?>
 <?php include_once '../libraries/shield.php'; ?>
 <?php session_start(); ?>
+<?php $email = $_SESSION['email']; ?>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -65,6 +66,15 @@
                       
                         echo '<h1 class="display-6 mb-2" style="color:white;"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$d_first_name.' '.$d_last_name.' </h1>';
                         echo '<a href="#" class="nav-item nav-link active" style="color:white;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a>';
+                    }
+                    else if(isset($_SESSION['email'])&&(isset($_SESSION['email']=="groot@gmail.com"))){
+                      
+                        $my_posts_res = $con->query("select p.post_id,p.upvotes,p.downvotes,p.ph_no,p.description,p.state,p.city,p.post_id,p.first_name,p.last_name,p.time,p.email from post as p where p.email!='$email' order by time asc,upvotes asc,downvotes desc;");
+                        $postComp = "";
+						            while($data = $my_posts_res->fetch_assoc()) {
+							              $postComp = renderUserPost($data, 'public',$email); 
+							              echo $postComp;
+						            }
                     }
                     else
                     {
