@@ -58,6 +58,8 @@
 			
 		}
 		//var_dump($_POST);
+		echo $need;
+	
 	?>
 	
 	
