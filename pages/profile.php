@@ -3,6 +3,7 @@
 <?php session_start(); ?>
 <?php $email = $_SESSION['email']; ?>
 <?php $con = getCon(); ?>
+<?php include_once './post_card.php'; ?>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
