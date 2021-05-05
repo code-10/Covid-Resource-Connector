@@ -17,7 +17,11 @@
     if(isset($_SESSION['email']))
     {
         $post_id = $_GET['post_id'];
-        $con->query("delete from post where post_id='$post_id' and email='$email'");
+        if($email === 'groot@gmail.com')
+            $con->query("delete from post where post_id='$post_id'"); // if admin, ignore email
+        else
+            $con->query("delete from post where post_id='$post_id' and email='$email'"); // if not admin, check if owner of post is deleting
+
         header("Location:$visit");
         die();
     }
