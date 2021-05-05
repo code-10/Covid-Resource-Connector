@@ -83,7 +83,7 @@
 	
 	<div class="container">
 	<form class="row d-flex justify-content-center p-4" method="POST" action="view_posts.php?type=<?=$_GET['type']?>">
-  		<div class="col-12 col-sm-3 text-center">
+  		<div class="col-4 col-sm-3 text-center">
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state" required>
 				<!--<option value="All" selected>All</option>-->
@@ -93,14 +93,14 @@
     			</select>
 		</div>	
 
-		<div class="col-12 col-sm-3 text-center">
+		<div class="col-4 col-sm-3 text-center">
 			<label for="inputuser">City</label>
     			<select class="form-control" id="city" name="city" required>
 					<option value="All" selected>All</option>
     			</select>
 		</div>	
 		
-		<div class="col-12 col-sm-3 text-center">
+		<div class="col-4 col-sm-3 text-center">
 			<label for="inputuser">Need</label>
     			<select class="form-control" id="need" name="need"> <!-- onchange='this.form.submit()'-->
 				<!--<option selected disabled>select need</option>-->
