@@ -77,7 +77,7 @@ if($post_details === NULL)
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-12">
 
-                        <form id="login-form" method="POST" action="verify_post.php" style="display: block;" onsubmit="document.getElementById('create_post').disabled=true;document.getElementById('create_post').innerText = 'Saving....';">
+                        <form id="login-form" method="POST" action="verify_post.php" style="display: block;" onsubmit="document.getElementById('modifydisable').disabled=true;document.getElementById('modifydisable').innerText = 'Saving....';">
                             <!-- <div class="form-group">
                                 <label for="inputuser">First Name</label>
                                 <input type="text" class="form-control" id="inputfirst_name" placeholder="firstname" name="first_name" required>
@@ -159,7 +159,7 @@ if($post_details === NULL)
                             <input type="hidden" name="post_id" value="<?= $post_id ?>">
 
                     </div>
-                    <button type="submit" name="create_post" class="btn btn-success m-2">Modify</button>
+                    <button type="submit" name="create_post" id="modifydisable" class="btn btn-success m-2">Modify</button>
                         <a class="btn btn-danger m-2" href="/" role="button">cancel</a>
                     </form>
 
