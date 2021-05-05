@@ -6,6 +6,7 @@
   	$visit1 = substr($visit,1);
 
   	$_SESSION['visit'] = $visit1;		
+    $email = $_SESSION['email'];
 
 ?>
 
@@ -16,7 +17,7 @@
     if(isset($_SESSION['email']))
     {
         $post_id = $_GET['post_id'];
-        $con->query("delete from post where post_id='$post_id'");
+        $con->query("delete from post where post_id='$post_id' and email='$email'");
         header("Location:$visit");
         die();
     }
