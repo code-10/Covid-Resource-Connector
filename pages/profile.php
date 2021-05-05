@@ -43,8 +43,8 @@
 			
 			
 			<div class="container">
-				<form class="row d-flex justify-content-center p-4" method="GET" action="profile.php">
-  					<div class="col-12 col-sm-6 text-center">
+				<form class="row d-flex justify-content-center m-2" method="GET" action="profile.php">
+  					<div class="col-12 col-sm-6 text-center p-4">
 						<label for="inputuser">Post ID</label>
 						<input type="number" id="post_id" name="post_id">
 					</div>	
