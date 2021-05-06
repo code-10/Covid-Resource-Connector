@@ -1,4 +1,4 @@
-<?php include_once '../header.php'; session_start(); ?>
+<?php include_once '../header.php'; session_start(); include_once '../libraries/shield.php'; ?>
 <?php
 
    $visit = $_SERVER['REQUEST_URI'];
@@ -6,16 +6,46 @@
 
   	$_SESSION['visit'] = $visit;
 
+	$anonymous = $_GET['anonymous'];
+
 ?>
 
 <body>
    <?php include_once "../navBar.php"; ?>
   
+	<?php
+	
+		$con = getCon();
+		
+		$donate_res = $con->query("select * from donations");
+		while($donate_ele = $donate_res->fetch_assoc())
+		{
+			$donation_name[] = $donate_ele['name'];
+			$donation_amount[] = $donate_ele['donation_amount'];
+		}
+	
+	?>
+	
+	<?php if($anonymous=="yes") { ?>
+		<div class="text-center">
+			<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">
+		</div>	
+	<?php } else if($anonymous=="no") { ?>
+		<div class="text-center">
+			<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">
+		</div>	
+	<?php } else { ?>
+		<div class="text-center">
+      		<h4 class="m-4">Donate if you want to support people in need of covid resource and to improve the website.</h4>
+      		<!--<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">-->
+	
+		<a class="btn btn-primary m-2" href="donate.php?anonymous=no" role="button">Donate</a>     
+     		<a class="btn btn-primary m-2" href="donate.php?anonymous=yes" role="button">Donate Anonymously</a>    
+		    
+    		</div>
+	<?php } ?>	
     
-    <div class="text-center">
-      <h4 class="m-4">Donate if you want to support people in need of covid resource and to improve the website.</h4>
-      <img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">
-    </div>
+    
   
 </body>
 
