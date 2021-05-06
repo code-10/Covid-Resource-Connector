@@ -84,7 +84,8 @@
 	<?php } else if($dev=="yes") { ?>
 		<div class="text-center">
       			<p class="mt-2">So we can continue improving this platform, in its reach, performance and usability.</p>
-			<h6 class="text-center">UPI ID: <span class="font-weight-bold">manoja279@upi</span></h6>
+			<h6 class="text-center">UPI ID</h6>
+			<h5><span class="font-weight-bold">manoja279@upi</span></h5>
 			<!--<a class="btn btn-primary m-2" href="donate.php?anonymous=no" role="button">Donate</a>     
      			<a class="btn btn-primary m-2" href="donate.php?anonymous=yes" role="button">Donate Anonymously</a>--> 
     		</div>
