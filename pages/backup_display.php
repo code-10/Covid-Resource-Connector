@@ -17,13 +17,13 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Backup Name</th>
+                    <th scope="col">Backup Date</th>
                     <th scope="col">Backup File</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Day 1 Backup</td>
+                    <td>2021/05/06 11:16:19</td>
                     <td><a href="/backups/2021-05-06_11-16-19.xlsx">Backup File</a></td>
                 </tr>
             </tbody>
