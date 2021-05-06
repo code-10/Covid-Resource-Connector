@@ -32,7 +32,29 @@
 		</div>	
 	<?php } else if($anonymous=="no") { ?>
 		<div class="text-center">
-			<h4 class="m-4">Include your name in the donation message.</h4>
+			<h4 class="m-4">Include the same name and code in the donation message for us to identify you.</h4>
+			
+			 <div class="container">
+    				<div class="row d-flex justify-content-center">
+					<div class="col-md-6 col-md-3">
+   						<div class="row d-flex justify-content-center">
+							<form id="createPost" method="POST" action="verify_post.php" style="display:block;" onsubmit="document.getElementById('donatedisable').disabled=true;document.getElementById('donatedisable').innerText = 'Saving....';">
+								<div class="form-group">
+					          			<label for="inputuser">Name</label>
+					            			<input type="text" class="form-control" id="inputname" placeholder="Enter your Name" name="name" required>
+				          			</div>
+								<div class="form-group">
+					          			<label for="inputcode">Code</label>
+					            			<input type="text" class="form-control" id="inputcode" placeholder="Enter any Random text, for us to identify you" name="code" required>
+				          			</div>
+								<button type="submit" id="donatedisable" name="donate" class="btn btn-success m-2">Save</button>
+								<a class="btn btn-danger m-2" href="../index.php" role="button">cancel</a>
+							</form>
+						</div>
+					</div>
+				 </div>
+			</div>
+			
 			<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">
 		</div>	
 	<?php } else { ?>
