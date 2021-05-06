@@ -24,7 +24,7 @@
             <tbody>
                 <tr>
                     <td><!--2021/05/06 11:16:19--></td>
-                    <td><!--<a href="/backups/sample.txt">Backup File</a>--></td>
+                    <td><!--<a href="../backups/sample.txt">Backup File</a>--></td>
                 </tr>
             </tbody>
         </table>
