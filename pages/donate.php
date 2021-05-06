@@ -69,7 +69,7 @@
       			<br>
 			<div class="row">
 				<div class="col-12 col-sm-6 text-center mb-4">
-					<a class="btn btn-dark m-4 res-mar res-pad rounded-pill" href="#" role="button" style="background-color:purple;"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to NGOs helping on the ground</a>  
+					<a class="btn btn-dark res-mar res-pad rounded-pill" href="#" role="button" style="background-color:purple;"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to NGOs helping on the ground</a>  
 					<p><i class="fa fa-grip-lines-vertical mt-1 mb-1"></i></p>
 					<p class="mt-2">All proceeds go towards helping anyone in need of financial help to fund thier covid medical expenses.</p>
 				</div>
