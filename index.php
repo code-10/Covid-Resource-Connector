@@ -23,11 +23,11 @@
 			<h2 class="responsive-md mb-4">Want to Help? <a class="btn btn-success btn-sm" href="pages/view_posts.php?type=request" role="button">View Requests & Respond</a></h2>
 			<h2 class="responsive-md mb-4">You Want to  Help? <a class="btn btn-success btn-sm" href="pages/create_post.php?resource=selected" role="button">Create a Resource</a></h2>
 			<h2 class="responsive-md mb-4">Want Help? <a class="btn btn-success btn-sm" href="pages/create_post.php?request=selected" role="button">Create a Request</a></h2>
+			
+			<h4 class="m-4">Welcome to Covid Resource Connector, A Non-profit Organization.</h4>
+      			<p class="m-2">Our Website connects the communication gap between people who want to help and people who want help regarding covid related queries.</p>
+      			<p class="m-2">We cannot guarantee the availability nor the validity of the post. Please be advised, verify the post before taking action.</p>
 		</div>
-		
-		<h4 class="m-4">Welcome to Covid Resource Connector, A Non-profit Organization.</h4>
-      		<p class="m-2">Our Website connects the communication gap between people who want to help and people who want help regarding covid related queries.</p>
-      		<p class="m-2">We cannot guarantee the availability nor the validity of the post. Please be advised, verify the post before taking action.</p>
   
 </body>
 
