@@ -47,7 +47,7 @@
 			<h2 class="responsive-md mb-4">Want Help? <a class="btn btn-success btn-sm" href="pages/create_post.php?request=selected" role="button">Create a Request</a></h2>-->
 		</div>
   
-<br>	
+<br><br>	
 	
 </body>
 
