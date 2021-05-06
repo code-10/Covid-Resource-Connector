@@ -21,7 +21,7 @@
 ?>
 
 
-<body>
+<body style="font-family:'Poppins', sans-serif;">
 	<?php include_once "../navBar.php"; ?>
 	
 	
@@ -80,10 +80,11 @@
 	
 	
 	<h5 class="text-center m-2" style="font-size:16px;"><i class="fa fa-exclamation-triangle m-2 text-danger"></i>BEWARE OF FRAUDSTERS<i class="fa fa-exclamation-triangle m-2 text-danger"></i></h5>
+	<p class="m-2 text-center">We cannot guarantee the availability nor the validity of the post. Please be advised, verify the post before taking action.</p>
 	
 	<div class="container">
 	<form class="row d-flex justify-content-center p-4" method="POST" action="view_posts.php?type=<?=$_GET['type']?>">
-  		<div class="col-12 col-sm-3 text-center">
+  		<div class="col-6 col-sm-3 text-center">
 			<label for="inputuser">State</label>
     			<select class="form-control" id="state" name="state" required>
 				<!--<option value="All" selected>All</option>-->
@@ -93,7 +94,7 @@
     			</select>
 		</div>	
 
-		<div class="col-12 col-sm-3 text-center">
+		<div class="col-6 col-sm-3 text-center">
 			<label for="inputuser">City</label>
     			<select class="form-control" id="city" name="city" required>
 					<option value="All" selected>All</option>
