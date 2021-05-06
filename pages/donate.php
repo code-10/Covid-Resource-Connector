@@ -29,11 +29,11 @@
 	?>
 	
 	<?php if($anonymous=="yes") { ?>
-		<div class="text-center">
+		<!--<div class="text-center">
 			<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">
-		</div>	
+		</div>	-->
 	<?php } else if($anonymous=="no") { ?>
-		<div class="text-center">
+		<!--<div class="text-center">
 			<h4 class="m-4">Include the same name and code in the donation message for us to identify you.</h4>
 			
 			 <div class="container">
@@ -60,7 +60,7 @@
 				 </div>
 			</div>
 
-		</div>	
+		</div>-->
 	<?php } else if($main=="yes") { ?>
 	
 		<div class="container">
@@ -81,16 +81,12 @@
 			</div>
 			
 		</div>
-	
-		<!--<div class="text-center">
-			<a class="btn btn-primary m-4" href="donate.php?dev=yes" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to Developers</a>     
-     			<a class="btn btn-primary m-4" href="#" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to Covid</a>    
-    		</div>-->
 	<?php } else if($dev=="yes") { ?>
 		<div class="text-center">
-      			<h4 class="m-4">Donate if you want to support people in need of covid resource and to improve the website.</h4>
-			<a class="btn btn-primary m-2" href="donate.php?anonymous=no" role="button">Donate</a>     
-     			<a class="btn btn-primary m-2" href="donate.php?anonymous=yes" role="button">Donate Anonymously</a>    
+      			<p class="mt-2">So we can continue improving this platform, in its reach, performance and usability.</p>
+			<h6 class="text-center">UPI ID: </h6>
+			<!--<a class="btn btn-primary m-2" href="donate.php?anonymous=no" role="button">Donate</a>     
+     			<a class="btn btn-primary m-2" href="donate.php?anonymous=yes" role="button">Donate Anonymously</a>--> 
     		</div>
 	<?php } ?>	
     
