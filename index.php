@@ -19,7 +19,7 @@
 	
 		<div class="container">
 			<!--<h1 class="mb-5 responsive-lg">Find Resources to Fight Covid</h1>-->
-			<h4 class="mt-4 responsive-md">Welcome to Covid Resource Connector, <span class="font-weight-bold">In association with ITT(In This Together)</span> 
+			<h4 class="mt-4 responsive-md font-weight-bold">Welcome to Covid Resource Connector, <span class="responsive-itt">In association with ITT(In This Together)</span> 
 				
 			</h4>
 			<h6 class="text-muted">A Non-profit Organization.</h6>
@@ -67,11 +67,11 @@
 
 <style>
     /*Media Queries*/
-	@media (min-width:320px)  { .responsive-md{font-size:24px;} .responsive-lg{font-size:32px;} .responsive-tx{font-size:12px;} .res-pad{padding:10px;} .res-mar{margin:8px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
-	@media (min-width:481px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
-    	@media (min-width:641px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;}  .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-	@media (min-width:961px)  { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-	@media (min-width:1025px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* big landscape tablets, laptops, and desktops */ }
-	@media (min-width:1281px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* hi-res laptops and desktops */ }
+	@media (min-width:320px)  { .responsive-md{font-size:24px;} .responsive-lg{font-size:32px;} .responsive-tx{font-size:12px;} .res-pad{padding:10px;} .res-mar{margin:8px;} .responsive-itt{font-size:12px;} /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} .responsive-itt{font-size:20px;}/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;}  .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} .responsive-itt{font-size:20px;}/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} .responsive-itt{font-size:20px;}/* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} .responsive-itt{font-size:20px;}/* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} .responsive-itt{font-size:20px;}/* hi-res laptops and desktops */ }
 	
 </style>
