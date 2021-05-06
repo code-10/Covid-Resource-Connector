@@ -119,10 +119,10 @@ function renderUserPost($data, $type, $user_email=NULL){
                 <a data-post-id="$post_id" data-vote-type="up" onclick="voteHandler(this)"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp<span class='upvote'>$upvotes</span>&nbsp&nbsp</a>
                 <a data-post-id="$post_id" data-vote-type="down" onclick="voteHandler(this)"><i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i>&nbsp<span class='downvote'>$downvotes</span></a>
             </p>
-            <button type="button" class="btn btn-primary btn-sm mt-2" data-toggle="modal" data-target="#exampleModalCenter$post_id">
+            <button type="button" class="btn btn-primary btn-sm mt-2 rounded-pill" data-toggle="modal" data-target="#exampleModalCenter$post_id">
                 Add a Comment
             </button>
-            <button type="button" class="btn btn-primary btn-sm mt-2" data-toggle="modal" data-target="#exampleModalLong$post_id">
+            <button type="button" class="btn btn-primary btn-sm mt-2 rounded-pill" data-toggle="modal" data-target="#exampleModalLong$post_id">
                 View Comments
             </button>
             <p class="text-muted m-2 responsive-md float-right">post id: $post_id</p>
