@@ -31,6 +31,8 @@
       			<p class="m-2">We cannot guarantee the availability nor the validity of the post. Please be advised, verify the post before taking action.</p>
 		</div>
   
+<br>	
+	
 </body>
 
 <div class="text-center">
