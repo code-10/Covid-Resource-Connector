@@ -19,9 +19,9 @@
 	
 		<div class="text-center m-2">
 			<!--<h1 class="mb-5 responsive-lg">Find Resources to Fight Covid</h1>-->
-			<h4 class="m-4 responsive-md">Welcome to Covid Resource Connector.</h4>
-			<h6 class="text-muted">A Non-profit Organization.</h6>
-      			<p class="m-2 responsive-tx">Our Website bridges the communication gap between people who want to help and people who want help regarding covid related queries.</p>
+			<h4 class="mt-4 responsive-md">Welcome to Covid Resource Connector.</h4>
+			<h6 class="text-muted float-left">A Non-profit Organization.</h6>
+      			<p class="m-2 responsive-tx float-left">Our Website bridges the communication gap between people who want to help and people who want help regarding covid related queries.</p>
 			<br><br>
 			
 			<div class="row d-flex justify-content-center">
