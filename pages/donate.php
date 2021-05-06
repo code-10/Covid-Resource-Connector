@@ -12,7 +12,7 @@
 	$dev = $_GET['dev'];
 ?>
 
-<body>
+<body style="font-family:'Poppins', sans-serif;">
    <?php include_once "../navBar.php"; ?>
   
 	<?php
@@ -62,10 +62,28 @@
 
 		</div>	
 	<?php } else if($main=="yes") { ?>
-		<div class="text-center">
+	
+		<div class="container">
+			<h4 class="mt-4 responsive-md">Lend a Helping Hand.</h4>
+			<h6 class="text-muted">A Non-profit Organization.</h6>
+      			<br>
+			<div class="row">
+				<div class="col-12 col-sm-6 text-center">
+					<a class="btn btn-primary m-4" href="#" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to NGOs helping on the ground</a>  
+					<p class="mt-2">All proceeds go towards helping anyone in need of financial help to fund thier covid medical expenses.</p>
+				</div>
+				<div class="col-12 col-sm-6 text-center">
+					<a class="btn btn-primary m-4" href="donate.php?dev=yes" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to the Developers</a>	
+					<p class="mt-2">So we can continue improving this platform, in its reach, performance and usability.</p>
+				</div>
+			</div>
+			
+		</div>
+	
+		<!--<div class="text-center">
 			<a class="btn btn-primary m-4" href="donate.php?dev=yes" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to Developers</a>     
      			<a class="btn btn-primary m-4" href="#" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to Covid</a>    
-    		</div>
+    		</div>-->
 	<?php } else if($dev=="yes") { ?>
 		<div class="text-center">
       			<h4 class="m-4">Donate if you want to support people in need of covid resource and to improve the website.</h4>
