@@ -23,6 +23,11 @@
       <p class="m-2">Our Website connects the communication gap between people who want to help and people who want help regarding covid related queries.</p>
       <p class="m-2">We cannot guarantee the availability nor the validity of the post. Please be advised, verify the post before taking action.</p>
    </div>
+	
+
+<div class="text-center">
+	<a href="donate.php?main=yes"><button type="button" class="btn btn-dark" style="background-color:purple;"><i class="fa fa-hand-holding-heart mr-2"></i>Donate</button></a>
+</div>
 </body>
   
 <style>
