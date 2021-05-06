@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			
-			<div class="m-2">
+			<div class="row">
 				<div class="col">
 					<a class="btn btn-success rounded-pill p-2 m-2" href="pages/create_post.php?resource=selected" role="button">Create a Resource</a>
 				</div>
