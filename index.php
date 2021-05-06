@@ -40,6 +40,12 @@
 					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?request=selected" role="button" style="background-color:#006E5F;">Create a Request</a>
 				</div>
 			</div>
+
+			<div class='row'>
+				<div class='col text-center'>
+						<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/backup_display.php" role="button" style="border:3px solid #006E5F;color:#006E5F;background:white">See Backup of Posts</a>
+				</div>
+			</div>
 			
 			<!--<h2 class="responsive-md mb-4">Find resources <a class="btn btn-info btn-sm" href="pages/view_posts.php?type=resource" role="button">View All Available Resources</a></h2>
 			<h2 class="responsive-md mb-4">Want to Help? <a class="btn btn-success btn-sm" href="pages/view_posts.php?type=request" role="button">View Requests & Respond</a></h2>
