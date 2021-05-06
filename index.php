@@ -20,24 +20,24 @@
 		<div class="container">
 			<!--<h1 class="mb-5 responsive-lg">Find Resources to Fight Covid</h1>-->
 			<h4 class="mt-4 responsive-md">Welcome to Covid Resource Connector.</h4>
-			<h6 class="text-muted float-left">A Non-profit Organization.</h6>
-      			<p class="mt-2 responsive-tx float-left">Our Website bridges the communication gap between people who want to help and people who want help regarding covid related queries.</p>
+			<h6 class="text-muted">A Non-profit Organization.</h6>
+      			<p class="mt-2 responsive-tx">Our Website bridges the communication gap between people who want to help and people who want help regarding covid related queries.</p>
 			<br><br>
 			
 			<div class="row">
-				<div class="col col-sm-6">
+				<div class="col col-sm-6 text-center">
 					<a class="btn btn-success rounded-pill p-2 m-2" href="pages/view_posts.php?type=resource" role="button">View All Resources</a>
 				</div>
-				<div class="col col-sm-6">
+				<div class="col col-sm-6 text-center">
 					<a class="btn btn-success rounded-pill p-2 m-2" href="pages/view_posts.php?type=request" role="button">View Requests & Respond</a>
 				</div>
 			</div>
 			
 			<div class="row">
-				<div class="col col-sm-6">
+				<div class="col col-sm-6 text-center">
 					<a class="btn btn-success rounded-pill p-2 m-2" href="pages/create_post.php?resource=selected" role="button">Create a Resource</a>
 				</div>
-				<div class="col col-sm-6">
+				<div class="col col-sm-6 text-center">
 					<a class="btn btn-success rounded-pill p-2 m-2" href="pages/create_post.php?request=selected" role="button">Create a Request</a>
 				</div>
 			</div>
