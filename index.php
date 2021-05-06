@@ -42,7 +42,7 @@
 				</div>
 			<?php } ?>
 		</div>-->
-  
+		<p class='fixed-bottom text-center mb-0'><span class='font-weight-bold'>Team 12</span> sends their &#128156; </p>
 </body>
 
 
