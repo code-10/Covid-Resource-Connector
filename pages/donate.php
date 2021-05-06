@@ -8,6 +8,8 @@
 
 	$anonymous = $_GET['anonymous'];
 
+	$main = $_GET['main'];
+	$dev = $_GET['dev'];
 ?>
 
 <body>
@@ -59,14 +61,18 @@
 			</div>
 
 		</div>	
-	<?php } else { ?>
+	<?php } else if($main=="yes") { ?>
 		<div class="text-center">
-      		<h4 class="m-4">Donate if you want to support people in need of covid resource and to improve the website.</h4>
-      		<!--<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">-->
+			<a class="btn btn-primary m-2" href="donate.php?dev=yes" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to Developers</a>     
+     			<a class="btn btn-primary m-2" href="#" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to Covid</a>    
+    		</div>
+	<?php } else if($dev=="yes") { ?>
+		<div class="text-center">
+      			<h4 class="m-4">Donate if you want to support people in need of covid resource and to improve the website.</h4>
+      			<!--<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">-->
 	
-		<a class="btn btn-primary m-2" href="donate.php?anonymous=no" role="button">Donate</a>     
-     		<a class="btn btn-primary m-2" href="donate.php?anonymous=yes" role="button">Donate Anonymously</a>    
-		    
+			<a class="btn btn-primary m-2" href="donate.php?anonymous=no" role="button">Donate</a>     
+     			<a class="btn btn-primary m-2" href="donate.php?anonymous=yes" role="button">Donate Anonymously</a>    
     		</div>
 	<?php } ?>	
     
