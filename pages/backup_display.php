@@ -7,7 +7,7 @@
     <title>Document</title>
     <?php include_once "../header.php"; ?>
 </head>
-<body>
+<body style="font-family:'Poppins', sans-serif;">
     <?php include_once "../navBar.php" ?>
     <div class='text-center my-5'>
         <h1>We Make Backups every day, and here they are.</h1>
