@@ -24,24 +24,10 @@
 			<h2 class="responsive-md mb-4">You Want to  Help? <a class="btn btn-success btn-sm" href="pages/create_post.php?resource=selected" role="button">Create a Resource</a></h2>
 			<h2 class="responsive-md mb-4">Want Help? <a class="btn btn-success btn-sm" href="pages/create_post.php?request=selected" role="button">Create a Request</a></h2>
 		</div>
-	
-		<!--<div class="row m-4 d-flex justify-content-center">
-			<?php for($i=0;$i<$c;$i++) { ?>
-				<div class="col12 col-sm-3 m-2">
-					<div class="card">
-  						<h5 class="card-header">Manoj&nbsp&nbsp<i class="fa fa-check-circle" aria-hidden="true" style="color:green;"></i></h5>
-  						<div class="card-body">
-    							<h5 class="card-title">Karnataka</h5>
-    							<p class="card-text">Oxygen Cylinder</p>
-							<p class="card-text">Area: Yelahanka</p>
-							<p class="card-text">Request Description: Blood Plasma O+ve</p>
-							<p class="card-text">Ph no: 9980712884</p>
-							<p class="card-text"><i class="fa fa-arrow-up" aria-hidden="true" style="color:green;font-size:24px;"></i>&nbsp&nbsp<i class="fa fa-arrow-down" aria-hidden="true" style="color:red;font-size:24px;"></i></p>
-  						</div>
-					</div>
-				</div>
-			<?php } ?>
-		</div>-->
+		
+		<h4 class="m-4">Welcome to Covid Resource Connector, A Non-profit Organization.</h4>
+      		<p class="m-2">Our Website connects the communication gap between people who want to help and people who want help regarding covid related queries.</p>
+      		<p class="m-2">We cannot guarantee the availability nor the validity of the post. Please be advised, verify the post before taking action.</p>
   
 </body>
 
