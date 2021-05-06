@@ -1,7 +1,7 @@
 <?php include_once '../header.php'; session_start(); include_once '../libraries/shield.php'; ?>
 <?php
 
-   $visit = $_SERVER['REQUEST_URI'];
+   	$visit = $_SERVER['REQUEST_URI'];
   	$visit = substr($visit,1);
 
   	$_SESSION['visit'] = $visit;
