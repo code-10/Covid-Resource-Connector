@@ -26,19 +26,19 @@
 			
 			<div class="row">
 				<div class="col col-sm-6 text-center">
-					<a class="btn btn-success rounded-pill m-2 res-pad" href="pages/view_posts.php?type=resource" role="button">View All Resources</a>
+					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/view_posts.php?type=resource" role="button" style="background-color:#006E5F;">View All Resources</a>
 				</div>
 				<div class="col col-sm-6 text-center">
-					<a class="btn btn-success rounded-pill m-2 res-pad" href="pages/view_posts.php?type=request" role="button">View Requests & Respond</a>
+					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/view_posts.php?type=request" role="button" style="background-color:#006E5F;">View Requests & Respond</a>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col col-sm-6 text-center">
-					<a class="btn btn-success rounded-pill m-2 res-pad" href="pages/create_post.php?resource=selected" role="button">Create a Resource</a>
+					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?resource=selected" role="button" style="background-color:#006E5F;">Create a Resource</a>
 				</div>
 				<div class="col col-sm-6 text-center">
-					<a class="btn btn-success rounded-pill m-2 res-pad" href="pages/create_post.php?request=selected" role="button">Create a Request</a>
+					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?request=selected" role="button" style="background-color:#006E5F;">Create a Request</a>
 				</div>
 			</div>
 			
@@ -60,11 +60,11 @@
 
 <style>
     /*Media Queries*/
-	@media (min-width:320px)  { .responsive-md{font-size:24px;} .responsive-lg{font-size:32px;} .responsive-tx{font-size:12px;} .res-pad{padding:12px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
-	@media (min-width:481px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
-    	@media (min-width:641px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;}  .responsive-tx{font-size:16px;} .res-pad{padding:20px;}/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-	@media (min-width:961px)  { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;}/* tablet, landscape iPad, lo-res laptops ands desktops */ }
-	@media (min-width:1025px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;}/* big landscape tablets, laptops, and desktops */ }
-	@media (min-width:1281px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;}/* hi-res laptops and desktops */ }
+	@media (min-width:320px)  { .responsive-md{font-size:24px;} .responsive-lg{font-size:32px;} .responsive-tx{font-size:12px;} .res-pad{padding:8px;} .res-pad{margin:8px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;}  .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* hi-res laptops and desktops */ }
 	
 </style>
