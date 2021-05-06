@@ -19,7 +19,7 @@
 	
 		<div class="container">
 			<!--<h1 class="mb-5 responsive-lg">Find Resources to Fight Covid</h1>-->
-			<h4 class="mt-4 responsive-md">Welcome to Covid Resource Connector, <h6>In association with ITT(In This Together)</h6> 
+			<h4 class="mt-4 responsive-md">Welcome to Covid Resource Connector, <span>In association with ITT(In This Together)</span> 
 				
 			</h4>
 			<h6 class="text-muted">A Non-profit Organization.</h6>
