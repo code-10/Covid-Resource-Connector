@@ -52,10 +52,12 @@
 							</form>
 						</div>
 					</div>
+					<div class="col-md-6 col-md-3">
+						<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">
+					</div>
 				 </div>
 			</div>
-			
-			<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">
+
 		</div>	
 	<?php } else { ?>
 		<div class="text-center">
