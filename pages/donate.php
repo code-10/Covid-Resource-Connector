@@ -32,6 +32,7 @@
 		</div>	
 	<?php } else if($anonymous=="no") { ?>
 		<div class="text-center">
+			<h4 class="m-4">Include your name in the donation message.</h4>
 			<img src="donate.jpg" class="res-img" alt="PHONE PE QR CODE">
 		</div>	
 	<?php } else { ?>
