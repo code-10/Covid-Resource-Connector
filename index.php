@@ -24,20 +24,20 @@
       			<p class="mt-2 responsive-tx float-left">Our Website bridges the communication gap between people who want to help and people who want help regarding covid related queries.</p>
 			<br><br>
 			
-			<div class="m-2">
-				<div class="col-6">
+			<div class="row">
+				<div class="col">
 					<a class="btn btn-success rounded-pill p-2 m-2" href="pages/view_posts.php?type=resource" role="button">View All Resources</a>
 				</div>
-				<div class="col-6">
+				<div class="col">
 					<a class="btn btn-success rounded-pill p-2 m-2" href="pages/view_posts.php?type=request" role="button">View Requests & Respond</a>
 				</div>
 			</div>
 			
 			<div class="m-2">
-				<div class="col-6">
+				<div class="col">
 					<a class="btn btn-success rounded-pill p-2 m-2" href="pages/create_post.php?resource=selected" role="button">Create a Resource</a>
 				</div>
-				<div class="col-6">
+				<div class="col">
 					<a class="btn btn-success rounded-pill p-2 m-2" href="pages/create_post.php?request=selected" role="button">Create a Request</a>
 				</div>
 			</div>
