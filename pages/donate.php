@@ -64,16 +64,16 @@
 	<?php } else if($main=="yes") { ?>
 	
 		<div class="container">
-			<h4 class="mt-4 responsive-md">Lend a Helping Hand.</h4>
-			<h6 class="text-muted">A Non-profit Organization.</h6>
+			<h4 class="mt-4 responsive-md text-center">Lend a Helping Hand.</h4>
+			<h6 class="text-muted text-center">A Non-profit Organization.</h6>
       			<br>
 			<div class="row">
 				<div class="col-12 col-sm-6 text-center">
-					<a class="btn btn-primary m-4" href="#" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to NGOs helping on the ground</a>  
+					<a class="btn btn-primary m-4 res-mar res-par rounded-pill" href="#" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to NGOs helping on the ground</a>  
 					<p class="mt-2">All proceeds go towards helping anyone in need of financial help to fund thier covid medical expenses.</p>
 				</div>
 				<div class="col-12 col-sm-6 text-center">
-					<a class="btn btn-primary m-4" href="donate.php?dev=yes" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to the Developers</a>	
+					<a class="btn btn-primary res-mar res-par rounded-pill" href="donate.php?dev=yes" role="button"><i class="fa fa-hand-holding-heart mr-2"></i>Donate to the Developers</a>	
 					<p class="mt-2">So we can continue improving this platform, in its reach, performance and usability.</p>
 				</div>
 			</div>
@@ -97,11 +97,12 @@
 </body>
 
 <style>
-    	/*Media Queries*/
-   	@media (min-width:320px)  { .res-img{width:100%;height:100%;} /* smartphones, iPhone, portrait 480x320 phones */ }
-	@media (min-width:481px)  { .res-img{width:50%;height:100%;} /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
-   	@media (min-width:641px)  { .res-img{width:50%;height:100%;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-	@media (min-width:961px)  { .res-img{width:50%;height:100%;} /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-	@media (min-width:1025px) { .res-img{width:50%;height:100%;} /* big landscape tablets, laptops, and desktops */ }
-	@media (min-width:1281px) { .res-img{width:50%;height:100%;} /* hi-res laptops and desktops */ }
+    /*Media Queries*/
+	@media (min-width:320px)  { .responsive-md{font-size:24px;} .responsive-lg{font-size:32px;} .responsive-tx{font-size:12px;} .res-pad{padding:10px;} .res-mar{margin:8px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;}  .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* hi-res laptops and desktops */ }
+	
 </style>
