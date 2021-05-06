@@ -102,7 +102,8 @@ function renderUserPost($data, $type, $user_email=NULL){
         <!--<span class="badge badge-pill badge-info m-1"></span>-->
         $needs_display
         <p class="pt-2 font-weight-normal mb-0">$city, $state</p>
-        <p class="text-muted pt-1 mb-0 responsive-md mr-4">$time <i class="fa fa-chevron-circle-down"></i></p>
+        <p class="text-muted pt-1 mb-0 responsive-md">$time</p>
+        <i class="fa fa-chevron-circle-down float-right"></i>
         </h5>
         <div class="collapse m-2" id="collapse_m$post_id">
             
