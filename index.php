@@ -22,8 +22,7 @@
 			<h4 class="mt-4 responsive-md">Welcome to Covid Resource Connector.</h4>
 			<h6 class="text-muted">A Non-profit Organization.</h6>
       			<p class="mt-2 responsive-tx">Our Website bridges the communication gap between people who want to help and people who want help regarding covid related queries.</p>
-			<br><br>
-			
+			<br>
 			<div class="row">
 				<div class="col col-sm-6 text-center">
 					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/view_posts.php?type=resource" role="button" style="background-color:#006E5F;">View All Resources</a>
@@ -60,11 +59,11 @@
 
 <style>
     /*Media Queries*/
-	@media (min-width:320px)  { .responsive-md{font-size:24px;} .responsive-lg{font-size:32px;} .responsive-tx{font-size:12px;} .res-pad{padding:8px;} .res-pad{margin:8px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
-	@media (min-width:481px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
-    	@media (min-width:641px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;}  .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-	@media (min-width:961px)  { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-	@media (min-width:1025px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* big landscape tablets, laptops, and desktops */ }
-	@media (min-width:1281px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-pad{margin:16px;} /* hi-res laptops and desktops */ }
+	@media (min-width:320px)  { .responsive-md{font-size:24px;} .responsive-lg{font-size:32px;} .responsive-tx{font-size:12px;} .res-pad{padding:8px;} .res-mar{margin:8px;}  /* smartphones, iPhone, portrait 480x320 phones */ }
+	@media (min-width:481px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+    	@media (min-width:641px)  { .responsive-md{font-size:32px;} .responsive-lg{font-size:64px;}  .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+	@media (min-width:961px)  { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+	@media (min-width:1025px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* big landscape tablets, laptops, and desktops */ }
+	@media (min-width:1281px) { .responsive-md{font-size:32px;}  .responsive-lg{font-size:64px;} .responsive-tx{font-size:16px;} .res-pad{padding:20px;} .res-mar{margin:16px;} /* hi-res laptops and desktops */ }
 	
 </style>
