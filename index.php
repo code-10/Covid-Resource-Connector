@@ -26,19 +26,19 @@
 			
 			<div class="row">
 				<div class="col col-sm-6 text-center">
-					<a class="btn btn-success rounded-pill p-2 m-2 res-pad" href="pages/view_posts.php?type=resource" role="button">View All Resources</a>
+					<a class="btn btn-success rounded-pill m-2 res-pad" href="pages/view_posts.php?type=resource" role="button">View All Resources</a>
 				</div>
 				<div class="col col-sm-6 text-center">
-					<a class="btn btn-success rounded-pill p-2 m-2 res-pad" href="pages/view_posts.php?type=request" role="button">View Requests & Respond</a>
+					<a class="btn btn-success rounded-pill m-2 res-pad" href="pages/view_posts.php?type=request" role="button">View Requests & Respond</a>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col col-sm-6 text-center">
-					<a class="btn btn-success rounded-pill p-2 m-2 res-pad" href="pages/create_post.php?resource=selected" role="button">Create a Resource</a>
+					<a class="btn btn-success rounded-pill m-2 res-pad" href="pages/create_post.php?resource=selected" role="button">Create a Resource</a>
 				</div>
 				<div class="col col-sm-6 text-center">
-					<a class="btn btn-success rounded-pill p-2 m-2 res-pad" href="pages/create_post.php?request=selected" role="button">Create a Request</a>
+					<a class="btn btn-success rounded-pill m-2 res-pad" href="pages/create_post.php?request=selected" role="button">Create a Request</a>
 				</div>
 			</div>
 			
