@@ -32,7 +32,7 @@
 </body>
 
 
-<br><br><br><br><br><br>
+<br><br><br><br>
 
 <div class="text-center">
 	<a href="pages/donate.php?main=yes"><button type="button" class="btn btn-dark" style="background-color:purple;"><i class="fa fa-hand-holding-heart mr-2"></i>Donate</button></a>
