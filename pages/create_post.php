@@ -17,7 +17,7 @@
 
 ?>
 
-<body>
+<body style="font-family:'Poppins', sans-serif;">
 
    
 	<?php include_once "../navBar.php"; ?>
