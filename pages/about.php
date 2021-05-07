@@ -15,9 +15,9 @@
    <div class="text-center">
       <h4 class="m-4">Welcome to Covid Resource Connector, A Non-profit Organization.
          <span class="responsive-itt">In association with ITT(In This Together)
-		<a href="https://www.instagram.com/inthistogethercovid/?hl=en">
+		<!--<a href="https://www.instagram.com/inthistogethercovid/?hl=en">
 			<i class="fab fa-instagram" style="color:black;font-size:24px"></i>
-		</a>
+		</a>-->
 	</span>
       </h4>
       <p class="m-2">Our Website connects the communication gap between people who want to help and people who want help regarding covid related queries.</p>
