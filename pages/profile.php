@@ -83,6 +83,7 @@
                         $last_name[0]=strtoupper($last_name[0]);
                         
                         echo '<h1 class="display-6 mb-2"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$user.' '.$last_name.' </h1>';
+			echo '<br>';
                         echo '<h4><a href="#" class="nav-item nav-link active" style="color:black;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a></h4>';
                     }
                     else if(isset($_SESSION['email'])&&(isset($_SESSION['simple']))){ 
@@ -106,6 +107,7 @@
                         $d_last_name[0]=strtoupper($d_last_name[0]);
                       
                         echo '<h1 class="display-6 mb-2"> <i class="fa fa-user-circle-o" style="color:white;"></i>  '.$d_first_name.' '.$d_last_name.' </h1>';
+			echo '<br>';
                         echo '<h4><a href="#" class="nav-item nav-link active" style="color:black;"><i class="fa fa-envelope"> '.$_SESSION['email'].'</i></a></h4>';
                     }
                     else
