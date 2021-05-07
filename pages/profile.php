@@ -5,7 +5,7 @@
 <?php $con = getCon(); ?>
 <?php include_once './post_card.php'; ?>
 
-<body>
+<body style="font-family:'Poppins', sans-serif;">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a href="../index.php" class="navbar-brand">CRC</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
