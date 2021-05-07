@@ -21,7 +21,7 @@
 			<!--<h1 class="mb-5 responsive-lg">Find Resources to Fight Covid</h1>-->
 			<h4 class="mt-4 responsive-md font-weight-bold">Welcome to Covid Resource Connector, 
 				<span class="responsive-itt">In association with ITT(In This Together)
-					<a href="https://www.instagram.com/inthistogethercovid/?hl=en">
+					<a href="https://www.instagram.com/inthistogethercovid/">
 						<i class="fab fa-instagram" style="color:black;font-size:24px"></i>
 					</a>
 				</span> 
