@@ -15,13 +15,14 @@
    <div class="text-center">
       <h4 class="m-4">Welcome to Covid Resource Connector, A Non-profit Organization.
          <span class="responsive-itt">In association with ITT(In This Together)
-		<!--<a href="https://www.instagram.com/inthistogethercovid/?hl=en">
-			<i class="fab fa-instagram" style="color:black;font-size:24px"></i>
-		</a>-->
 	</span>
       </h4>
-      <p class="m-2">Our Website connects the communication gap between people who want to help and people who want help regarding covid related queries.</p>
-      <p class="m-2">We cannot guarantee the availability nor the validity of the post. Please be advised, verify the post before taking action.</p>
+      	<p class="m-2">Our Website connects the communication gap between people who want to help and people who want help regarding covid related queries.</p>
+      	<p class="m-2">We try to add as many verified leads as possible, but We advise you to verify the Leads we provide before making any payments in advance.</p>
+	   <br>
+	   <h6>Who are we?</h6>
+	   <p class="m-2">We are a Group of Volunteers trying to save as many lives as possible.</p>
+	   <br>
    </div>
 	
 
