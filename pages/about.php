@@ -12,7 +12,7 @@
    <?php include_once "../navBar.php"; ?>
    
    
-   <div class="text-center">
+   <div class="container">
       <h4 class="m-4">Welcome to Covid Resource Connector, A Non-profit Organization.
          <span class="responsive-itt">In association with ITT(In This Together)
 	</span>
