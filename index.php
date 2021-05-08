@@ -39,14 +39,14 @@
 			</div>
 			
 			<div class="row">
-				<div class="col col-sm-6 text-center">
+				<!--<div class="col col-sm-6 text-center">
 					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?resource=selected" role="button" style="background-color:#006E5F;">Create a Resource</a>
 				</div>
 				<div class="col col-sm-6 text-center">
 					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?request=selected" role="button" style="background-color:#006E5F;">Create a Request</a>
-				</div>
+				</div>-->
 			</div>
-
+			<br>
 			<div class='row'>
 				<div class='col text-center'>
 						<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/backup_display.php" role="button" style="border:3px solid #006E5F;color:#006E5F;background:white">See Backup of Posts</a>
