@@ -42,7 +42,14 @@
                       ?>
 			
 			
+			
+			
 			<div class="container">
+				
+				<div class="text-center m-4">
+					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?resource=selected" role="button" style="background-color:#006E5F;">Create a Resource</a>
+				</div>
+				
 				<form class="row d-flex justify-content-center m-2" method="GET" action="profile.php">
   					<div class="col-12 col-sm-6 text-center p-4">
 						<label for="inputuser">Post ID</label>
