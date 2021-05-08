@@ -76,7 +76,7 @@ if($post_details === NULL)
     ?>
 
 
-    <h4 class="m-4 text-center">Creating a post to request for resource</h4>
+    <h4 class="m-4 text-center">Modifying a post</h4>
 
     <div class="container">
         <div class="row d-flex justify-content-center">
