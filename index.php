@@ -9,6 +9,8 @@
   	$_SESSION['visit'] = $visit;
 	
 	$email = $_SESSION['email'];
+	$con = getCon();
+	
 
 ?>
 
