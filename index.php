@@ -42,31 +42,42 @@
 				</div>
 			</div>
 			
+			
+			<div class="row">
+				<div class="col col-sm-6 text-center">
+					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?resource=selected" role="button" style="background-color:#006E5F;">Create a Resource</a>
+				</div>
+				<div class="col col-sm-6 text-center">
+					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?request=selected" role="button" style="background-color:#006E5F;">Create a Request</a>
+				</div>
+				</div>
+			
+			
 			<?php 
 			
-				$verified = $con->query("select * from user where email='$email'")->fetch_assoc()['verified'];
+				//$verified = $con->query("select * from user where email='$email'")->fetch_assoc()['verified'];
 			
 			?>
 			
-			<?php if($verified==1) { ?>
-				<div class="row">
+			<?php //if($verified==1) { ?>
+				<!--<div class="row">
 				<div class="col col-sm-6 text-center">
 					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?resource=selected" role="button" style="background-color:#006E5F;">Create a Resource</a>
 				</div>
 				<div class="col col-sm-6 text-center">
 					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?request=selected" role="button" style="background-color:#006E5F;">Create a Request</a>
 				</div>
-				</div>
-			<?php } else { ?>
-			<div class="row">
-				<!--<div class="col col-sm-6 text-center">
-					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?resource=selected" role="button" style="background-color:#006E5F;">Create a Resource</a>
 				</div>-->
+			<?php //} else { ?>
+			<!--<div class="row">
+				<div class="col col-sm-6 text-center">
+					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?resource=selected" role="button" style="background-color:#006E5F;">Create a Resource</a>
+				</div>
 				<div class="col text-center">
 					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?request=selected" role="button" style="background-color:#006E5F;">Create a Request</a>
 				</div>
-			</div>
-			<?php } ?>
+			</div>-->
+			<?php /} ?>
 			<br>
 			
 			<div class='row'>
