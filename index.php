@@ -77,7 +77,7 @@
 					<a class="btn btn-success rounded-pill res-mar res-pad" href="pages/create_post.php?request=selected" role="button" style="background-color:#006E5F;">Create a Request</a>
 				</div>
 			</div>-->
-			<?php /} ?>
+			<?php //} ?>
 			<br>
 			
 			<div class='row'>
