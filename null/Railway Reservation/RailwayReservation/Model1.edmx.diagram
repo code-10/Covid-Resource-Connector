@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2c802bed131b4a0281a4500b4209e5fb" Name="Diagram1">
+        <EntityTypeShape EntityType="RailwayReservationModel.ticket" Width="1.5" PointX="7.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RailwayReservationModel.Train" Width="1.5" PointX="9.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RailwayReservationModel.UserRole" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RailwayReservationModel.User" Width="1.5" PointX="4" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="RailwayReservationModel.dbo_Trains" ManuallyRouted="false" />
+        <AssociationConnector Association="RailwayReservationModel.dbo_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="RailwayReservationModel.dbo_Users_username" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RailwayReservationModel.LostFound" Width="1.5" PointX="9.875" PointY="3.125" />
+        <AssociationConnector Association="RailwayReservationModel.dbo_train" />
+        <EntityTypeShape EntityType="RailwayReservationModel.Service" Width="1.5" PointX="4.875" PointY="3.25" />
+        <AssociationConnector Association="RailwayReservationModel.fk_dbo_ticket" />
+        <EntityTypeShape EntityType="RailwayReservationModel.Feedback" Width="1.5" PointX="2.625" PointY="2.75" />
+        <AssociationConnector Association="RailwayReservationModel.fk_ticket" />
+        <AssociationConnector Association="RailwayReservationModel.fk_username" />
+        <EntityTypeShape EntityType="RailwayReservationModel.visitor_count" Width="1.5" PointX="0.5" PointY="3.25" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

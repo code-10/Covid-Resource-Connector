@@ -1,0 +1,84 @@
+﻿@model IEnumerable<RailwayReservation.ticket>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h4>
+   
+        @Html.ActionLink("Service Status", "Status","",new { @style ="color:lightblue;font-size:20px;"})
+    
+</h4>
+<center><h3 style="color:white">Ongoing Journeys</h3></center>
+<table class="table">
+    <tr>
+        <th>
+            PNR Number
+        </th>
+        <th>
+            Train ID
+        </th>
+        <th>
+            Passenger Name
+        </th>
+        <th>
+            Source
+        </th>
+        <th>
+            Destination
+        </th>
+        <th>
+            Date (MM/DD/YYYY)
+        </th>
+        <th>
+            Class
+        </th>
+        <th>
+            Fare
+        </th>
+
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.date == DateTime.Today.Date)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pnr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.train_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.source)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.destination)
+                </td>
+                <td>
+                    @item.date.ToString("MM/dd/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.@class)
+                </td>
+                <td>
+                    &#8377 @Html.DisplayFor(modelItem => item.fare)
+                </td>
+
+
+                <td>
+
+
+                    @Html.ActionLink("Services", "Create", new { id = item.pnr })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+

@@ -1,0 +1,53 @@
+﻿@model  IEnumerable<RailwayReservation.Train>
+
+@{
+    ViewBag.Title = "SeeTrains";
+}
+
+<h2 style="text-align: center">See Trains</h2>
+<p>
+    @Html.ActionLink("Add New Train", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.source).ToString().ToUpper()
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.destination).ToString().ToUpper()
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fare).ToString().ToUpper() (For Sleeper Class)
+        </th>
+        <th></th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fare)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.train_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.train_id }) |
+                @Html.ActionLink("Remove train", "Delete", new { id = item.train_id })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to Home Page", "Index")
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

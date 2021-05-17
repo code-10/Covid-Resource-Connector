@@ -1,0 +1,97 @@
+﻿@model RailwayReservation.ticket
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h1  style="color:white;">Book Ticket</h1>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger", @style = "color:#f59e42;font-weight:bold; font-size:20px;" })
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.name,"Name", htmlAttributes: new { @class = "control-label col-md-2", @style = "color:white;" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger", @style = "color:#f59e42;font-weight:bold; font-size:20px;" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.source,"Source", htmlAttributes: new { @class = "control-label col-md-2", @style = "color:white;" })
+        <div class="col-md-10">
+            <select class="form-control" name="source">
+                <option>Bangalore</option>
+                <option>Bidar</option>
+                <option>Delhi</option>
+                <option>Kanpur</option>
+                <option>Mysore</option>
+            </select>
+
+            @Html.ValidationMessageFor(model => model.source, "", new { @class = "text-danger", @style = "color:#f59e42;font-weight:bold; font-size:20px;" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.destination,"Destination", htmlAttributes: new { @class = "control-label col-md-2", @style = "color:white;" })
+        <div class="col-md-10">
+            <select class="form-control" name="destination">
+                <option>Bangalore</option>
+                <option>Bidar</option>
+                <option>Delhi</option>
+                <option>Kanpur</option>
+                <option>Mysore</option>
+            </select>
+
+            @Html.ValidationMessageFor(model => model.destination, "", new { @class = "text-danger", @style = "color:#f59e42;font-weight:bold; font-size:20px;" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.date,"Date Of Journey", htmlAttributes: new { @class = "control-label col-md-2", @style = "color:white;" })
+        <div class="col-md-10">
+            
+            <input type="date" class="form-control" name="date"/>
+            <label  style = "color:#12e2e6;font-size:15px">Please enter a date on or after @DateTime.Today.Date.ToString("MM/dd/yyyy")</label>
+            @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger", @style = "color:#f59e42;font-weight:bold; font-size:20px;" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.@class, "Class",htmlAttributes: new { @class = "control-label col-md-2", @style = "color:white;" })
+        <div class="col-md-10">
+            <select class="form-control" name="class">
+                <option>Sleeper</option>
+                <option>AC 3 Tier</option>
+                <option>AC 1st Class</option>
+
+
+            </select>
+
+            @Html.ValidationMessageFor(model => model.@class, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Book Ticket" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to Ticket History", "Index","",new { @style = "color:#000aaa; font-size:20px;" })
+    <br />
+    @if (!User.IsInRole("admin"))
+    {
+        @Html.ActionLink("Back to Home", "Index", "Users", "", new { @style = "color:#000aaa; font-size:20px;" })
+    }
+    
+</div>

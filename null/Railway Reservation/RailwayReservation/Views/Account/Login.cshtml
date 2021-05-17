@@ -1,0 +1,64 @@
+﻿@model RailwayReservation.Models.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+<br />
+<br />
+<h2 style="text-align:center;color:white">Login</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+
+    <center><b>@Html.ValidationSummary(true, "", new { @class = "text-danger", @style = "color:red;font-size:20px;" })</b></center>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <table>
+        <tr>
+            <td style="color:#ffffff; padding-left :370px;font-size:20px"> Username </td>
+            <td><input type="text" name="username" class="form-control" placeholder="username" /></td>
+        </tr>
+        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        <tr>
+            <td style="color:#ffffff; padding-left :370px;font-size:20px;"> Password </td>
+            <td><input type="password" name="password" class="form-control" placeholder="password" /></td>
+        </tr>
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        <tr>
+            <td style=" padding-left :370px;">
+            </td>
+            <td>
+                <input type="submit" value="Login" class="btn btn-default" />
+            </td>
+
+        </tr>
+        <tr>
+            <td style=" padding-left :300px;">
+            </td>
+            <td>
+                <a href="Signup" style="color:#ffffff">Dont have an Account?</a>
+            </td>
+
+        </tr>
+    </table>
+    <br />
+    <br />
+
+
+
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

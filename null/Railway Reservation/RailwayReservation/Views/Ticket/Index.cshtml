@@ -1,0 +1,510 @@
+﻿@model IEnumerable<RailwayReservation.ticket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<h2 style = "color:wheat;">Hello @User.Identity.Name, here is your Booking History</h2>
+<style>
+    h4 {
+        color:#ffffff;
+    }
+</style>
+<p>
+    @Html.ActionLink("Book A Ticket", "Create", "", new { @style = "color:turquoise; font-size:20px;" })
+</p>
+@if (User.IsInRole("admin"))
+{
+    <center><h4>Previous Journeys</h4></center>
+    <table class="table">
+        <tr>
+            <th>
+                PNR Number
+            </th>
+            <th>
+                Train ID
+            </th>
+            <th>
+                Passenger Name
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                Destination
+            </th>
+            <th>
+                Date (MM/DD/YYYY)
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                Fare
+            </th>
+            @if (User.IsInRole("admin"))
+            {
+                <th>
+                    Username
+                </th>
+            }
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.date < DateTime.Today.Date)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.pnr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.train_id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.source)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.destination)
+                    </td>
+                    <td>
+                        @item.date.ToString("MM/dd/yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.@class)
+                    </td>
+                    <td>
+                        &#8377 @Html.DisplayFor(modelItem => item.fare)
+                    </td>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.username)
+                        </td>
+                    }
+                <td>
+                    
+                    @if(item.username.CompareTo(User.Identity.Name)==0)
+                    {
+                    @Html.ActionLink("Feedback |", "Create", "Feedbacks", new { id = item.pnr }, ""); 
+                        
+                    }
+
+                     @Html.ActionLink("Details", "Details", new { id = item.pnr })
+
+                </td>
+                </tr>
+            }
+        }
+
+    </table>
+
+
+
+    <center><h4>Ongoing Journeys</h4></center>
+    <table class="table">
+        <tr>
+            <th>
+                PNR Number
+            </th>
+            <th>
+                Train ID
+            </th>
+            <th>
+                Passenger Name
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                Destination
+            </th>
+            <th>
+                Date (MM/DD/YYYY)
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                Fare
+            </th>
+            @if (User.IsInRole("admin"))
+            {
+                <th>
+                    Username
+                </th>
+            }
+
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.date == DateTime.Today.Date)
+            {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pnr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.train_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.source)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.destination)
+        </td>
+        <td>
+            @item.date.ToString("MM/dd/yyyy")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.@class)
+        </td>
+        <td>
+            &#8377 @Html.DisplayFor(modelItem => item.fare)
+        </td>
+
+        @if (User.IsInRole("admin"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+        }
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.pnr })
+        </td>
+    </tr>
+            }
+        }
+
+    </table>
+
+
+
+
+
+    <center><h4>Upcoming Journeys</h4></center>
+    <table class="table">
+        <tr>
+            <th>
+                PNR Number
+            </th>
+            <th>
+                Train ID
+            </th>
+            <th>
+                Passenger Name
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                Destination
+            </th>
+            <th>
+                Date (MM/DD/YYYY)
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                Fare
+            </th>
+            @if (User.IsInRole("admin"))
+            {
+                <th>
+                    Username
+                </th>
+            }
+            <!-- <th>
+        @Html.DisplayNameFor(model => model.Train.source)
+    </th> -->
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.date > DateTime.Today.Date)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.pnr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.train_id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.source)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.destination)
+                    </td>
+                    <td>
+                        @item.date.ToString("MM/dd/yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.@class)
+                    </td>
+                    <td>
+                        &#8377 @Html.DisplayFor(modelItem => item.fare)
+                    </td>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => item.username)
+                        </td>
+                    }
+
+                    <!--
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Train.source)
+                            </td>
+                        -->
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.pnr }) |
+                        @Html.ActionLink("Cancel Ticket", "Delete", new { id = item.pnr })
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+}
+
+
+
+//------------------------------------------USER SIDE STARTS HERE--------------------------------------------------------------------
+
+
+
+
+else
+{
+    <center><h4>Previous Journeys</h4></center>
+    <table class="table">
+        <tr>
+            <th>
+                PNR Number
+            </th>
+            <th>
+                Train ID
+            </th>
+            <th>
+                Passenger Name
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                Destination
+            </th>
+            <th>
+                Date (MM/DD/YYYY)
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                Fare
+            </th>
+
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.date < DateTime.Today.Date)
+            {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pnr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.train_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.source)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.destination)
+        </td>
+        <td>
+            @item.date.ToString("MM/dd/yyyy")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.@class)
+        </td>
+        <td>
+            &#8377 @Html.DisplayFor(modelItem => item.fare)
+        </td>
+        <td>
+
+            @Html.ActionLink("Details", "Details", new { id = item.pnr }) |
+            @Html.ActionLink("Feedback", "Create", "Feedbacks", new { id = item.pnr, username = item.username }, "")
+        </td>
+    </tr>
+            }
+        }
+
+    </table>
+
+
+
+    <center><h4>Ongoing Journeys</h4></center>
+    <table class="table">
+        <tr>
+            <th>
+                PNR Number
+            </th>
+            <th>
+                Train ID
+            </th>
+            <th>
+                Passenger Name
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                Destination
+            </th>
+            <th>
+                Date (MM/DD/YYYY)
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                Fare
+            </th>
+
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.date == DateTime.Today.Date)
+            {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pnr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.train_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.source)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.destination)
+        </td>
+        <td>
+            @item.date.ToString("MM/dd/yyyy")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.@class)
+        </td>
+        <td>
+            &#8377 @Html.DisplayFor(modelItem => item.fare)
+        </td>
+
+
+        <td>
+
+            @Html.ActionLink("Details", "Details", new { id = item.pnr }) |
+            @Html.ActionLink("Feedback", "Create", "Feedbacks", new { id = item.pnr, username = item.username }, "")
+        </td>
+    </tr>
+            }
+        }
+
+    </table>
+
+
+
+
+
+    <center><h4>Upcoming Journeys</h4></center>
+    <table class="table">
+        <tr>
+            <th>
+                PNR Number
+            </th>
+            <th>
+                Passenger Name
+            </th>
+            <th>
+                Source
+            </th>
+            <th>
+                Destination
+            </th>
+            <th>
+                Date (MM/DD/YYYY)
+            </th>
+            <th>
+                Class
+            </th>
+            <th>
+                Fare
+            </th>
+
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.date > DateTime.Today.Date)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.pnr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.source)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.destination)
+                    </td>
+                    <td>
+                        @item.date.ToString("MM/dd/yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.@class)
+                    </td>
+                    <td>
+                        &#8377 @Html.DisplayFor(modelItem => item.fare)
+                    </td>
+                    <td>
+
+                        @Html.ActionLink("Details", "Details", new { id = item.pnr }) |
+                        @Html.ActionLink("Cancel Ticket", "Delete", new { id = item.pnr })
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+}

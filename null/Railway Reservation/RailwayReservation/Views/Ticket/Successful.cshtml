@@ -1,0 +1,45 @@
+﻿<div onkeydown="return (event.keyCode == 154)">
+@model RailwayReservation.ticket
+@{
+    ViewBag.Title = "Successful";
+}
+
+<div><h3 style="color:white;">Your ticket has been booked successfully!!!</h3></div>
+<div><h3 style="color:white;"><b>Please pay the amount Offline</b></h3></div>
+    <div><marquee><h4 style="color:turquoise;">Have a Great Journey!!</h4></marquee></div>
+
+<table>
+    <tr>
+        <th>PNR Number</th>
+        <td> @Html.DisplayFor(model => model.pnr)</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td> @Html.DisplayFor(model => model.name)</td>
+    </tr>
+    <tr>
+        <th>Source</th>
+        <td> @Html.DisplayFor(model => model.source)</td>
+    </tr>
+    <tr>
+        <th>Destination</th>
+        <td> @Html.DisplayFor(model => model.destination)</td>
+    </tr>
+    <tr>
+        <th>Date of Journey</th>
+        <td>@Model.date.ToString("MM/dd/yyyy")</td>
+    </tr>
+    <tr>
+        <th>Class</th>
+        <td> @Html.DisplayFor(model => model.@class)</td>
+    </tr>
+    <tr>
+        <th>Fare</th>
+        <td>&#8377 @Html.DisplayFor(model => model.fare)</td>
+    </tr>
+</table>
+<div></div>
+<div>
+    @Html.ActionLink("Booking History", "Index", "", new { @style = "color:#000aaa; font-size:20px;" })
+</div>
+</div>

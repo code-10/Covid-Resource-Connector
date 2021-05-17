@@ -1,0 +1,64 @@
+﻿@model RailwayReservation.Service
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 style="color:white;">Service Action</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ServiceId)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" style="color:white">PNR</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pnr, new { htmlAttributes = new { @Readonly = "true", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pnr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" style="color:white">Service Type</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Service1, new { htmlAttributes = new { @Readonly = "true", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Service1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" style="color:white">User Remark</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @Readonly = "true", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" style="color:white">Status</label>
+            <div class="col-md-10">
+                <select class=" form-control" name="Status">
+                    <option>Accepted</option>
+                    <option>Rejected</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index","",new { @style="color:#000bbb;font-size:20px;"})
+</div>

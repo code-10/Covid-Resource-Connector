@@ -1,0 +1,63 @@
+﻿@model IEnumerable<RailwayReservation.Feedback>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 style="color:white;">Feedbacks</h1>
+
+<p>
+    @Html.ActionLink("Provide Feedback", "Index", "Ticket", "", new { @style = "color:turquoise; font-size:20px;" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Feedback Message
+        </th>
+        <th>
+            Username
+        </th>
+        <th>
+            PNR Number
+        </th>
+        <th>
+            Admin Reply
+        </th>
+        @if (User.IsInRole("admin"))
+        {
+            <th>
+                Action
+            </th>
+        }
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.feedback_msg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ticket.pnr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.admin_reply)
+            </td>
+
+            @if (User.IsInRole("admin"))
+            {
+                <td>
+                    <div>
+                        @Html.ActionLink("Reply", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </div>
+                </td>
+            }
+
+        </tr>
+    }
+
+</table>

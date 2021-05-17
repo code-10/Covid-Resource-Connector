@@ -1,0 +1,70 @@
+﻿@model RailwayReservation.Train
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="color:white">Add new Train</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger", @style = "color:orange;font-size:20px" })
+
+
+    <div class="form-group">
+        <label style="color:white;" class="control-label col-md-2">Source</label>
+        <div class="col-md-10">
+            <select class="form-control" name="source">
+                <option>Bangalore</option>
+                <option>Bidar</option>
+                <option>Delhi</option>
+                <option>Kanpur</option>
+                <option>Mysore</option>
+            </select>
+
+            @Html.ValidationMessageFor(model => model.source, "", new { @class = "text-danger", @style = "color:orange;font-size:15px" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label style="color:white;" class="control-label col-md-2">Destination</label>
+        <div class="col-md-10">
+            <select class="form-control" name="destination">
+                <option>Bangalore</option>
+                <option>Bidar</option>
+                <option>Delhi</option>
+                <option>Kanpur</option>
+                <option>Mysore</option>
+            </select>
+
+            @Html.ValidationMessageFor(model => model.destination, "", new { @class = "text-danger", @style = "color:orange;font-size:15px" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label style="color:white;" class="control-label col-md-2">Fare </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.fare, new { required="required" ,type = "number", htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.fare, "", new { @class = "text-danger", @style = "color:orange;font-size:15px" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Add Train" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "", new { @style = "color:#000aaa;font-size:20px" })
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

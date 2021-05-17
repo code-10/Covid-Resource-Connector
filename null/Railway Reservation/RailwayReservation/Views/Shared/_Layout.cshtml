@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+       
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #cccccc;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1d6ab;
+        }
+        tr:nth-child(odd) {
+            background-color: #e3b04b;
+        }
+        body {
+          
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body >
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Railway Reservation System", "Index", "Users", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="float: right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+
+                        if (User.IsInRole("admin"))
+                        {
+                            <li>@Html.ActionLink("Admin Home", "Index", "Admin")</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Home", "Index", "Users")</li>
+                        }
+                        <li>@Html.ActionLink("About", "About", "Users")</li>
+                        <li>@Html.ActionLink("Dear - " + User.Identity.Name.ToUpper(), "Details/" + User.Identity.Name, "Users")</li>
+
+                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    }
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+      
+        @RenderBody()
+        <hr />
+        <footer>
+            <center>
+                <p style=" font-size:20px; color:yellow"><u>&copy; @DateTime.Now.Year - Railway Reservation System</u></p>
+                <p style="font-size:17px; color:yellow">C# .NET LAB MINIPROJECT</p>
+            </center>
+            <p style="float:right;color:mediumvioletred" >
+                You are Visitor No. -
+                
+                @using (var context = new RailwayReservationEntities1())
+                {
+                    var user_count = context.visitor_count.Find(101).visitor_no;
+                    @user_count
+
+                }
+            </p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

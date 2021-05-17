@@ -1,0 +1,50 @@
+﻿@model RailwayReservation.ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:white">Details</h2>
+
+<div>
+    <h4 style="color:white">Ticket No. @Html.DisplayFor(model => model.pnr)</h4>
+    <hr />
+    <table>
+        <tr>
+            <th>PNR Number</th>
+            <td> @Html.DisplayFor(model => model.pnr)</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td> @Html.DisplayFor(model => model.name)</td>
+        </tr>
+        <tr>
+            <th>Source</th>
+            <td> @Html.DisplayFor(model => model.source)</td>
+        </tr>
+        <tr>
+            <th>Destination</th>
+            <td> @Html.DisplayFor(model => model.destination)</td>
+        </tr>
+        <tr>
+            <th>Date of Journey</th>
+            <td> @Html.DisplayFor(model => model.date).ToString().Substring(0, 10)</td>
+        </tr>
+        <tr>
+            <th>Class</th>
+            <td> @Html.DisplayFor(model => model.@class)</td>
+        </tr>
+        <tr>
+            <th>Fare</th>
+            <td>&#8377 @Html.DisplayFor(model => model.fare)</td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td> @Html.DisplayFor(model => model.User.username)</td>
+        </tr>
+    </table>
+</div>
+<br />
+<p>
+    @Html.ActionLink("Back to List", "Index", "", new { @style = "color:#000bbb;font-size:20px;" })
+</p>

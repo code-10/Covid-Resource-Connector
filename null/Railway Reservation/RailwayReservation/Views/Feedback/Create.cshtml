@@ -1,0 +1,59 @@
+﻿@model RailwayReservation.Feedback
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h1 style="color:white">Add A new Feedback Message</h1>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger", @style = "color:#000aaa; font-size:20px;" })
+
+
+    <div class="form-group">
+        <label class="control-label col-md-2" style="color:whitesmoke">Username</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.username, new { @Value = User.Identity.Name, disabled = "disabled", @readonly = "readonly", @class = "form-control"  })
+            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+        </div>
+    </div>
+     
+    <div class="form-group">
+        <label class="control-label col-md-2" style="color:whitesmoke">PNR Number</label>
+        <div class="col-md-10">
+            <input type="number" value="@ViewContext.RouteData.Values["id"]" name="pnr" disabled="disabled" class="form-control"/>
+
+            
+            @Html.ValidationMessageFor(model => model.pnr, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" style="color:whitesmoke">Feedback Message</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.feedback_msg, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.feedback_msg,"", new { @class = "text-danger" ,@style = "color:#f59e42; font-size:20px;" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div>
+    @Html.ActionLink("Journey History", "Index","Ticket","", new { @style = "color:#000aaa; font-size:20px;" })
+</div>
+<div>
+    @Html.ActionLink("Back to List", "Index","", new { @style = "color:#000aaa; font-size:20px;" })
+</div>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RailwayReservation.LostFound>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 style = "color:White; text-align:center;font-size:50px;">Lost and Found Database</h1>
+
+<p>
+    @Html.ActionLink("Add New Item", "Create", "", new { @style = "color:orange; font-size:20px;" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Item ID
+        </th>
+        <th>
+           Item Type
+        </th>
+        <th>
+            Brand / Document Name
+        </th>
+        <th>
+            Colour
+        </th>
+        <th>
+            Train Number
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modeItem=>item.ItemId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Colour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.train_id)
+        </td>
+        <td>
+           
+            @Html.ActionLink("Delete", "Delete", new { id=item.ItemId })
+        </td>
+    </tr>
+}
+
+</table>

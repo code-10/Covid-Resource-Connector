@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            text-align: center;
+            
+        }
+        tr {
+            padding-bottom: 20px;
+            padding-left: 60px;
+        }
+        td{
+            padding-bottom:20px;
+            padding-left:30px;
+        }
+
+       
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="center">
+            <div class="mountains"></div>
+            <div class="frame">
+                <div class="train">
+                    <div class="engine-front">
+                        <div class="chimney">
+                            <div class="smoke"></div>
+                            <div class="smoke smoke-2"></div>
+                            <div class="smoke smoke-3"></div>
+                            <div class="smoke smoke-4"></div>
+                        </div>
+                    </div>
+
+                    <div class="engine-body"></div>
+
+                    <div class="compartment">
+                        <div class="compartment-window"></div>
+                    </div>
+
+                    <div class="compartment compartment-two">
+                        <div class="compartment-window"></div>
+                    </div>
+
+                    <div class="compartment compartment-three">
+                        <div class="compartment-window"></div>
+                    </div>
+
+                    <div class="wheel-holder">
+                        <div class="wheel"></div>
+                        <div class="wheel wheel-2">
+                            <div class="wheel-joint"></div>
+                            <div class="wheel-joint wheel-joint-2"></div>
+                        </div>
+                        <div class="wheel wheel-3"></div>
+                        <div class="wheel wheel-4"></div>
+                        <div class="wheel wheel-5"></div>
+                        <div class="wheel wheel-6"></div>
+                        <div class="wheel wheel-7"></div>
+                        <div class="wheel wheel-8"></div>
+                        <div class="wheel wheel-9"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bridge"></div>
+
+        </div>
+        <div class="container body-content navbar-fixed-top" style="align-content:center">
+            
+            @RenderBody()
+            <hr />
+            <footer style="color:white">
+                <center>
+                    <p><u>&copy; @DateTime.Now.Year - Railway Reservation System</u></p>
+                    <p>Mini Project Under Development</p>
+                </center>
+            </footer>
+        </div>
+        <center>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Railway Reservation System", "Index", "Users", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" style="float: right">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Home", "Index", "Users")</li>
+                            if (User.IsInRole("admin"))
+                            {
+                                <li>@Html.ActionLink("Admin Home", "Index", "Admin")</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("Feedback", "Index", "Feedbacks")</li>
+                            }
+                            <li> <a href="Users/Details/@User.Identity.Name">Dear - @User.Identity.Name.ToUpper()</a></li>
+                            <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                        }
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+            </center>
+
+    </div>
+
+       
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

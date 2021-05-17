@@ -1,0 +1,54 @@
+﻿@model RailwayReservation.Train
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3 style="color:white">Are you sure you want to Remove this train?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt style="color:orange">
+            TRAIN NUMBER
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.train_id)
+        </dd>
+        <dt style="color:orange">
+            @Html.DisplayNameFor(model => model.source).ToString().ToUpper()
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.source)
+        </dd>
+
+        <dt style="color:orange">
+            @Html.DisplayNameFor(model => model.destination).ToString().ToUpper()
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.destination)
+        </dd>
+        <dt style="color:orange">
+            @Html.DisplayNameFor(model => model.fare).ToString().ToUpper()
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.fare)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index", "", new { @style = "color:#000aaa;font-size:20px" })
+        </div>
+    }
+</div>

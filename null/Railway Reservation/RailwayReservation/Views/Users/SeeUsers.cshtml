@@ -1,0 +1,43 @@
+﻿@model IEnumerable<RailwayReservation.User>
+
+@{
+    ViewBag.Title = "SeeUsers";
+}
+
+<h1 style = "color:White; font-size:30px;">SeeUsers</h1>
+<p>
+    @Html.ActionLink("Create New", "Create","", new { @style = "color:white; font-size:20px;" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username).ToString().ToUpper()
+        </th>
+        
+        <th></th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+          
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Users", new { id = item.username },"") |
+                @Html.ActionLink("Details", "Details", new { id = item.username }) |
+                @Html.ActionLink("Remove user", "Delete", new { id = item.username })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Admin Home", "Index", "Admin","", new { @style = "color:#000aaa; font-size:20px;" })
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

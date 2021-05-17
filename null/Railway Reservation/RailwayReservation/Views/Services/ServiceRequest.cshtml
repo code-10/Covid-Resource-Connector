@@ -1,0 +1,61 @@
+﻿@model IEnumerable<RailwayReservation.Service>
+
+@{
+    ViewBag.Title = "ServiceRequest";
+}
+
+<h2 style="color:white;text-align:center">Service Requests</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Passenger Name
+        </th>
+        <th>
+            PNR Number
+        </th>
+        <th>
+            Service Requested
+        </th>
+        <th>
+            User Remark
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Username
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ticket.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem=>item.pnr)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Service1)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Remark)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem=>item.ticket.username)
+    </td>
+
+    <td>
+        @Html.ActionLink("Perform Action", "Edit", new { id = item.ServiceId })
+        
+    </td>
+</tr>
+}
+
+</table>

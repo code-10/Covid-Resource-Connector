@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RailwayReservationModelStoreContainer" CdmEntityContainer="RailwayReservationEntities1">
+    <EntitySetMapping Name="tickets">
+      <EntityTypeMapping TypeName="RailwayReservationModel.ticket">
+        <MappingFragment StoreEntitySet="ticket">
+          <ScalarProperty Name="pnr" ColumnName="pnr" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="train_id" ColumnName="train_id" />
+          <ScalarProperty Name="fare" ColumnName="fare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trains">
+      <EntityTypeMapping TypeName="RailwayReservationModel.Train">
+        <MappingFragment StoreEntitySet="Trains">
+          <ScalarProperty Name="train_id" ColumnName="train_id" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="fare" ColumnName="fare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="RailwayReservationModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="RailwayReservationModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LostFounds">
+      <EntityTypeMapping TypeName="RailwayReservationModel.LostFound">
+        <MappingFragment StoreEntitySet="LostFound">
+          <ScalarProperty Name="train_id" ColumnName="train_id" />
+          <ScalarProperty Name="Colour" ColumnName="Colour" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="RailwayReservationModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Service1" ColumnName="Service" />
+          <ScalarProperty Name="pnr" ColumnName="pnr" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="RailwayReservationModel.Feedback">
+        <MappingFragment StoreEntitySet="Feedback">
+          <ScalarProperty Name="admin_reply" ColumnName="admin_reply" />
+          <ScalarProperty Name="pnr" ColumnName="pnr" />
+          <ScalarProperty Name="feedback_msg" ColumnName="feedback_msg" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="visitor_count">
+      <EntityTypeMapping TypeName="RailwayReservationModel.visitor_count">
+        <MappingFragment StoreEntitySet="visitor_count">
+          <ScalarProperty Name="visitor_no" ColumnName="visitor_no" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

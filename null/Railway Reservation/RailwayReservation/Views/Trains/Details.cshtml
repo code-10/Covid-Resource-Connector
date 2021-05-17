@@ -1,0 +1,49 @@
+﻿@model RailwayReservation.Train
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style = "color:white" >Train Details</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt style = "color:orange" >
+            TRAIN NUMBER        
+        </dt>
+
+        <dd style = "color:white" >
+            @Html.DisplayFor(model => model.train_id)
+        </dd>
+        <dt style = "color:orange" >
+            @Html.DisplayNameFor(model => model.source).ToString().ToUpper()
+        </dt >
+
+        <dd style = "color:white" >
+            @Html.DisplayFor(model => model.source)
+        </dd>
+
+        <dt style = "color:orange" >
+            @Html.DisplayNameFor(model => model.destination).ToString().ToUpper()
+        </dt>
+
+        <dd style = "color:white" >
+            @Html.DisplayFor(model => model.destination)
+        </dd>
+        <dt style = "color:orange" >
+            @Html.DisplayNameFor(model => model.fare).ToString().ToUpper()
+        </dt>
+
+        <dd style = "color:white" >
+            @Html.DisplayFor(model => model.fare)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.train_id }, new { @style = "color:#000aaa;font-size:20px" }) |
+   
+    @Html.ActionLink("Back to Home", "Index", "", new { @style = "color:#000aaa;font-size:20px" })
+</p>

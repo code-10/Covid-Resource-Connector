@@ -1,0 +1,62 @@
+﻿@model RailwayReservation.Service
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3 style="color:white">Are you sure you want to delete this Service Request?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="color:orange">
+            PNR
+        </dt>
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.pnr)
+        </dd>
+        <dt style="color:orange">
+            Service Type
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Service1)
+        </dd>
+
+        <dt style="color:orange">
+            Remark
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+
+        <dt style="color:orange">
+            Status
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt style="color:orange">
+            Name
+        </dt>
+
+        <dd style="color:white">
+            @Html.DisplayFor(model => model.ticket.name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Status", "", new { @style = "color:#000aaa; font-size:20px;" })
+        </div>
+    }
+</div>

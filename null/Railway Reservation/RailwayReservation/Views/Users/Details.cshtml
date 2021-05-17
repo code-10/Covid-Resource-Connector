@@ -1,0 +1,50 @@
+﻿@model RailwayReservation.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1 style="color:white">Details</h1>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="color:white; font-size:20px;">
+            Username
+        </dt>
+
+        <dd style="color:white; font-size:20px;">
+            @Html.DisplayFor(model => model.username)
+        </dd>
+        <dt style="color: white; font-size:20px;">
+            Password
+        </dt>
+
+        <dd style="color:white; font-size:20px;">
+            @Html.DisplayFor(model => model.password)
+        </dd>
+        @if (!User.IsInRole("admin"))
+        {
+            <dt style="color:white; font-size:20px;">
+                Tickets Booked
+            </dt>
+
+            using (var context = new RailwayReservationEntities1())
+            {
+                var ticket_count = context.tickets.Count(x => x.username == User.Identity.Name);
+                <dd style="color:white; font-size:20px;">
+                    @ticket_count
+                </dd>
+            }
+        }
+
+
+
+
+    </dl>
+</div>
+<p  style="color:white">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.username }, new { @style = "color:#000aaa; font-size:20px;" }) |
+    @Html.ActionLink("Back to Home", "Index" ,"", new { @style = "color:#000aaa; font-size:20px;" })
+</p>

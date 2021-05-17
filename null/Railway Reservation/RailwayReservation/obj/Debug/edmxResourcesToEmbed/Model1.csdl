@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RailwayReservationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ticket">
+    <Key>
+      <PropertyRef Name="pnr" />
+    </Key>
+    <Property Name="pnr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="destination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="train_id" Type="Int32" Nullable="false" />
+    <Property Name="fare" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Train" Relationship="Self.dbo_Trains" FromRole="ticket" ToRole="Trains" />
+    <NavigationProperty Name="User" Relationship="Self.dbo_Users" FromRole="ticket" ToRole="Users" />
+    <NavigationProperty Name="Services" Relationship="RailwayReservationModel.fk_dbo_ticket" FromRole="ticket" ToRole="Service" />
+    <NavigationProperty Name="Feedbacks" Relationship="RailwayReservationModel.fk_ticket" FromRole="ticket" ToRole="Feedback" />
+  </EntityType>
+  <EntityType Name="Train">
+    <Key>
+      <PropertyRef Name="train_id" />
+    </Key>
+    <Property Name="train_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="destination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fare" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tickets" Relationship="Self.dbo_Trains" FromRole="Trains" ToRole="ticket" />
+    <NavigationProperty Name="LostFounds" Relationship="RailwayReservationModel.dbo_train" FromRole="Train" ToRole="LostFound" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.dbo_Users_username" FromRole="UserRole" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tickets" Relationship="Self.dbo_Users" FromRole="Users" ToRole="ticket" />
+    <NavigationProperty Name="UserRoles" Relationship="Self.dbo_Users_username" FromRole="Users" ToRole="UserRole" />
+    <NavigationProperty Name="Feedbacks" Relationship="RailwayReservationModel.fk_username" FromRole="User" ToRole="Feedback" />
+  </EntityType>
+  <Association Name="dbo_Trains">
+    <End Role="Trains" Type="Self.Train" Multiplicity="1" />
+    <End Role="ticket" Type="Self.ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trains">
+        <PropertyRef Name="train_id" />
+      </Principal>
+      <Dependent Role="ticket">
+        <PropertyRef Name="train_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="dbo_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="ticket" Type="Self.ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="ticket">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="dbo_Users_username">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RailwayReservationEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tickets" EntityType="Self.ticket" />
+    <EntitySet Name="Trains" EntityType="Self.Train" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="dbo_Trains" Association="Self.dbo_Trains">
+      <End Role="Trains" EntitySet="Trains" />
+      <End Role="ticket" EntitySet="tickets" />
+    </AssociationSet>
+    <AssociationSet Name="dbo_Users" Association="Self.dbo_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ticket" EntitySet="tickets" />
+    </AssociationSet>
+    <AssociationSet Name="dbo_Users_username" Association="Self.dbo_Users_username">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <EntitySet Name="LostFounds" EntityType="RailwayReservationModel.LostFound" />
+    <AssociationSet Name="dbo_train" Association="RailwayReservationModel.dbo_train">
+      <End Role="Train" EntitySet="Trains" />
+      <End Role="LostFound" EntitySet="LostFounds" />
+    </AssociationSet>
+    <EntitySet Name="Services" EntityType="RailwayReservationModel.Service" />
+    <AssociationSet Name="fk_dbo_ticket" Association="RailwayReservationModel.fk_dbo_ticket">
+      <End Role="ticket" EntitySet="tickets" />
+      <End Role="Service" EntitySet="Services" />
+    </AssociationSet>
+    <EntitySet Name="Feedbacks" EntityType="RailwayReservationModel.Feedback" />
+    <AssociationSet Name="fk_ticket" Association="RailwayReservationModel.fk_ticket">
+      <End Role="ticket" EntitySet="tickets" />
+      <End Role="Feedback" EntitySet="Feedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="fk_username" Association="RailwayReservationModel.fk_username">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Feedback" EntitySet="Feedbacks" />
+    </AssociationSet>
+    <EntitySet Name="visitor_count" EntityType="RailwayReservationModel.visitor_count" />
+  </EntityContainer>
+  <EntityType Name="LostFound">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Brand" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Colour" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="train_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Train" Relationship="RailwayReservationModel.dbo_train" FromRole="LostFound" ToRole="Train" />
+  </EntityType>
+  <Association Name="dbo_train">
+    <End Type="RailwayReservationModel.Train" Role="Train" Multiplicity="1" />
+    <End Type="RailwayReservationModel.LostFound" Role="LostFound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Train">
+        <PropertyRef Name="train_id" />
+      </Principal>
+      <Dependent Role="LostFound">
+        <PropertyRef Name="train_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pnr" Type="Int32" Nullable="false" />
+    <Property Name="Service1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ticket" Relationship="RailwayReservationModel.fk_dbo_ticket" FromRole="Service" ToRole="ticket" />
+  </EntityType>
+  <Association Name="fk_dbo_ticket">
+    <End Type="RailwayReservationModel.ticket" Role="ticket" Multiplicity="1" />
+    <End Type="RailwayReservationModel.Service" Role="Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ticket">
+        <PropertyRef Name="pnr" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="pnr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="feedback_msg" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pnr" Type="Int32" Nullable="false" />
+    <Property Name="admin_reply" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ticket" Relationship="RailwayReservationModel.fk_ticket" FromRole="Feedback" ToRole="ticket" />
+    <NavigationProperty Name="User" Relationship="RailwayReservationModel.fk_username" FromRole="Feedback" ToRole="User" />
+  </EntityType>
+  <Association Name="fk_ticket">
+    <End Type="RailwayReservationModel.ticket" Role="ticket" Multiplicity="1" />
+    <End Type="RailwayReservationModel.Feedback" Role="Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ticket">
+        <PropertyRef Name="pnr" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="pnr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_username">
+    <End Type="RailwayReservationModel.User" Role="User" Multiplicity="1" />
+    <End Type="RailwayReservationModel.Feedback" Role="Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="Feedback">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="visitor_count">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="visitor_no" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>
