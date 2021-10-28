@@ -1,1 +1,1 @@
-A platform used for Posting and Viewing Information about Covid Resource Leads
+A platform which was used for Posting and Viewing Information about Covid Resource Leads
