@@ -17,7 +17,7 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Backup Date</th>
+                    <!--<th scope="col">Backup Date</th>-->
                     <th scope="col">Backup File</th>
                 </tr>
             </thead>
